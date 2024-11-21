@@ -1,33 +1,17 @@
 ---
-import '@fontsource-variable/inter';
-
-// 'DM Sans'
-// Nunito
-// Dosis
-// Outfit
-// Roboto
-// Literata
-// 'IBM Plex Sans'
-// Karla
-// Poppins
-// 'Fira Sans'
-// 'Libre Franklin'
-// Inconsolata
-// Raleway
-// Oswald
-// 'Space Grotesk'
-// Urbanist
+import '@fontsource-variable/noto-serif-display';
+import '@fontsource-variable/quicksand';
 ---
 
 <style is:inline>
   :root {
-    --aw-font-sans: 'Inter Variable';
-    --aw-font-serif: 'Inter Variable';
-    --aw-font-heading: 'Inter Variable';
+    --aw-font-sans: 'Quicksand Variable';
+    --aw-font-serif: 'Noto Serif Display Variable';
+    --aw-font-heading: 'Noto Serif Display Variable';
 
-    --aw-color-primary: rgb(1 97 239);
-    --aw-color-secondary: rgb(1 84 207);
-    --aw-color-accent: rgb(109 40 217);
+    --aw-color-primary: rgb(42, 112, 13);
+    --aw-color-secondary: rgb(42, 112, 13);
+    --aw-color-accent: rgb(42, 112, 13);
 
     --aw-color-text-heading: rgb(0 0 0);
     --aw-color-text-default: rgb(16 16 16);
@@ -37,27 +21,28 @@ import '@fontsource-variable/inter';
     --aw-color-bg-page-dark: rgb(3 6 32);
 
     ::selection {
-      background-color: lavender;
+      background-color: rgb(42, 112, 13);
+      color: rgb(255, 255, 255);
     }
   }
 
   .dark {
-    --aw-font-sans: 'Inter Variable';
-    --aw-font-serif: 'Inter Variable';
-    --aw-font-heading: 'Inter Variable';
+    --aw-font-sans: 'Quicksand Variable';
+    --aw-font-serif: 'Noto Serif Display Variable';
+    --aw-font-heading: 'Noto Serif Display Variable';
 
-    --aw-color-primary: rgb(1 97 239);
-    --aw-color-secondary: rgb(1 84 207);
-    --aw-color-accent: rgb(109 40 217);
+    --aw-color-primary: rgb(255, 255, 255);
+    --aw-color-secondary: rgb(42, 112, 13);
+    --aw-color-accent: rgb(255, 255, 255);
 
-    --aw-color-text-heading: rgb(247, 248, 248);
-    --aw-color-text-default: rgb(229 236 246);
+    --aw-color-text-heading: rgb(255, 255, 255);
+    --aw-color-text-default: rgb(255, 255, 255);
     --aw-color-text-muted: rgb(229 236 246 / 66%);
-    --aw-color-bg-page: rgb(3 6 32);
+    --aw-color-bg-page: rgb(42, 112, 13);
 
     ::selection {
       background-color: black;
-      color: snow;
+      color: rgb(255, 255, 255);
     }
   }
 </style>
