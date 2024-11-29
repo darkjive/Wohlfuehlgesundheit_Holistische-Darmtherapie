@@ -2,10 +2,16 @@
 import type { Form as Props } from '~/types';
 import Button from '~/components/ui/Button.astro';
 
-const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } = Astro.props;
+const { inputs, textarea, disclaimer, button = 'Absenden', description = '' } = Astro.props;
 ---
 
-<form>
+<form 
+action="https://api.web3forms.com/submit" 
+method="POST"
+>
+
+  <input type="hidden" name="redirect" value="/thanks">
+  <input type="hidden" name="access_key" value="9ab26f99-d0a4-4da3-bc8b-d120d01105f1">
   {
     inputs &&
       inputs.map(
@@ -13,7 +19,7 @@ const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } 
           name && (
             <div class="mb-6">
               {label && (
-                <label for={name} class="block text-sm font-medium">
+                <label for={name} class="block text-base mb-3 font-medium">
                   {label}
                 </label>
               )}
@@ -23,7 +29,7 @@ const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } 
                 id={name}
                 autocomplete={autocomplete}
                 placeholder={placeholder}
-                class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
+                class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-none bg-white dark:bg-dark"
               />
             </div>
           )
@@ -33,7 +39,7 @@ const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } 
   {
     textarea && (
       <div>
-        <label for="textarea" class="block text-sm font-medium">
+        <label for="textarea" class="block text-base mb-3 font-medium">
           {textarea.label}
         </label>
         <textarea
@@ -41,7 +47,7 @@ const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } 
           name={textarea.name ? textarea.name : 'message'}
           rows={textarea.rows ? textarea.rows : 4}
           placeholder={textarea.placeholder}
-          class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
+          class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-none bg-white dark:bg-dark"
         />
       </div>
     )
@@ -55,11 +61,11 @@ const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } 
             id="disclaimer"
             name="disclaimer"
             type="checkbox"
-            class="cursor-pointer mt-1 py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
+            class="cursor-pointer mt-1 p-8 block text-2xl rounded-lg border border-gray-200 dark:border-none bg-white dark:bg-slate-900"
           />
         </div>
         <div class="ml-3">
-          <label for="disclaimer" class="cursor-pointer select-none text-sm text-gray-600 dark:text-gray-400">
+          <label for="disclaimer" class="cursor-pointer select-none text-md text-gray-600 dark:text-white">
             {disclaimer.label}
           </label>
         </div>
@@ -80,7 +86,7 @@ const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } 
   {
     description && (
       <div class="mt-3 text-center">
-        <p class="text-sm text-gray-600 dark:text-gray-400">{description}</p>
+        <p class="text-sm text-gray-600 dark:text-white">{description}</p>
       </div>
     )
   }
