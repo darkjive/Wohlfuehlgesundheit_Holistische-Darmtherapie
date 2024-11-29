@@ -1,5 +1,5 @@
 site:
-  name: 
+  name:
   site: 'https://www.wohlfühlgesundheit.de/'
   base: '/'
   trailingSlash: false
@@ -9,9 +9,9 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: 
+    default:
     template: '%s — Gesundheitspraxis'
-  description: ""
+  description: ''
   robots:
     index: true
     follow: true

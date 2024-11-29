@@ -29,14 +29,7 @@ const {
     <Logo2 />
     <div class="">
       <div class="text-center pb-10 md:pb-16 max-w-5xl mx-auto">
-        {
-          tagline && (
-            <p
-              class="text-base text-gray-400 dark:text-gray-300 tracking-wide uppercase"
-              set:html={tagline}
-            />
-          )
-        }
+        {tagline && <p class="text-base text-gray-400 dark:text-gray-300 tracking-wide uppercase" set:html={tagline} />}
         {
           title && (
             <h1
@@ -72,9 +65,7 @@ const {
         </div>
         {content && <Fragment set:html={content} />}
       </div>
-      <div
-        class="intersect-once intercept-no-queue intersect-quarter"
-      >
+      <div class="intersect-once intercept-no-queue intersect-quarter">
         {
           image && (
             <div class="relative m-auto max-w-5xl">

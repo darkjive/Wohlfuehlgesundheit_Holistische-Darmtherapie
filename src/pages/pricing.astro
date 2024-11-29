@@ -16,144 +16,145 @@ const metadata = {
   <!-- HeroText Widget ******************* -->
 
   <HeroText
-  tagline="Angebote"
-  title="Attraktive Preise für Deine Gesundheit"
-  subtitle="Wähle den perfekten Plan, der zu Deinen Bedürfnissen passt."
-/>
+    tagline="Angebote"
+    title="Attraktive Preise für Deine Gesundheit"
+    subtitle="Wähle den perfekten Plan, der zu Deinen Bedürfnissen passt."
+  />
 
   <!-- Pricing Widget ******************* -->
 
   <Prices
-  title="Meine Preise"
-  subtitle="Zahle nur für das, was Du brauchst"
-  prices={[
-    {
-      title: 'Basis',
-      subtitle: 'Optimal für einen ersten Eindruck',
-      price: 19,
-      period: '(einmalig)',
-      items: [
-        {
-          description: 'Ernährungsanalyse und grundlegende Tipps',
+    title="Meine Preise"
+    subtitle="Zahle nur für das, was Du brauchst"
+    prices={[
+      {
+        title: 'Basis',
+        subtitle: 'Optimal für einen ersten Eindruck',
+        price: 19,
+        period: '(einmalig)',
+        items: [
+          {
+            description: 'Ernährungsanalyse und grundlegende Tipps',
+          },
+          {
+            description: 'Persönlicher Ernährungsplan',
+          },
+          {
+            description: 'Monatliche Check-ins',
+          },
+          {
+            description: 'E-Mail-Support',
+          },
+        ],
+        callToAction: {
+          target: '_blank',
+          text: 'Loslegen',
+          href: '#',
         },
-        {
-          description: 'Persönlicher Ernährungsplan',
-        },
-        {
-          description: 'Monatliche Check-ins',
-        },
-        {
-          description: 'E-Mail-Support',
-        },
-      ],
-      callToAction: {
-        target: '_blank',
-        text: 'Loslegen',
-        href: '#',
       },
-    },
-    {
-      title: 'Standard',
-      subtitle: 'Optimal für spürbare Ergebnisse',
-      price: 49,
-      period: '(einmalig)',
-      items: [
-        {
-          description: 'Erweiterte Ernährungsanalyse',
+      {
+        title: 'Standard',
+        subtitle: 'Optimal für spürbare Ergebnisse',
+        price: 49,
+        period: '(einmalig)',
+        items: [
+          {
+            description: 'Erweiterte Ernährungsanalyse',
+          },
+          {
+            description: 'Individueller Ernährungs- und Bewegungsplan',
+          },
+          {
+            description: 'Zweiwöchentliche Check-ins',
+          },
+          {
+            description: 'Telefon- und E-Mail-Support',
+          },
+          {
+            description: 'Zugang zu exklusiven Materialien',
+          },
+        ],
+        callToAction: {
+          target: '_blank',
+          text: 'Loslegen',
+          href: '#',
         },
-        {
-          description: 'Individueller Ernährungs- und Bewegungsplan',
-        },
-        {
-          description: 'Zweiwöchentliche Check-ins',
-        },
-        {
-          description: 'Telefon- und E-Mail-Support',
-        },
-        {
-          description: 'Zugang zu exklusiven Materialien',
-        },
-      ],
-      callToAction: {
-        target: '_blank',
-        text: 'Loslegen',
-        href: '#',
+        hasRibbon: true,
+        ribbonTitle: 'beliebt',
       },
-      hasRibbon: true,
-      ribbonTitle: 'beliebt',
-    },
-    {
-      title: 'Premium',
-      subtitle: 'Optimal langfristiges Ergebnis',
-      price: 99,
-      period: '(einmalig)',
-      items: [
-        {
-          description: 'Umfassende Ernährungsanalyse',
+      {
+        title: 'Premium',
+        subtitle: 'Optimal langfristiges Ergebnis',
+        price: 99,
+        period: '(einmalig)',
+        items: [
+          {
+            description: 'Umfassende Ernährungsanalyse',
+          },
+          {
+            description: 'Individueller Plan mit fortlaufender Anpassung',
+          },
+          {
+            description: 'Wöchentliche Check-ins',
+          },
+          {
+            description: 'Priorisierter Telefon- und E-Mail-Support',
+          },
+          {
+            description: 'Exklusiver Zugang zu Webinaren und Workshops',
+          },
+        ],
+        callToAction: {
+          target: '_blank',
+          text: 'Loslegen',
+          href: '#',
         },
-        {
-          description: 'Individueller Plan mit fortlaufender Anpassung',
-        },
-        {
-          description: 'Wöchentliche Check-ins',
-        },
-        {
-          description: 'Priorisierter Telefon- und E-Mail-Support',
-        },
-        {
-          description: 'Exklusiver Zugang zu Webinaren und Workshops',
-        },
-      ],
-      callToAction: {
-        target: '_blank',
-        text: 'Loslegen',
-        href: '#',
       },
-    },
-  ]}
-/>
+    ]}
+  />
 
   <!-- Features3 Widget ************** -->
 
   <Features3
-  title="Meine Beratungsangebote"
-  subtitle="Erfahre mehr über die Vorteile meiner individuellen Darmgesundheitsberatung"
-  columns={2}
-  items={[
-    {
-      title: 'Individuelle Preisgestaltung',
-      description: 'Ich biete verschiedene Beratungspläne an, die auf unterschiedliche Budgets und Bedürfnisse zugeschnitten sind.',
-      icon: 'tabler:stairs',
-    },
-    {
-      title: 'Transparente Preise',
-      description: 'Meine Preise sind klar und übersichtlich, ohne versteckte Kosten oder Überraschungen.',
-      icon: 'tabler:flip-vertical',
-    },
-    {
-      title: 'Sichere Zahlung mit PayPal',
-      description: 'Mit PayPal kannst Du sicher und bequem bezahlen.',
-      icon: 'tabler:shield-lock',
-    },
-    {
-      title: 'Sofortige Beratung',
-      description: 'Nach der Buchung erhältst Du sofortigen Zugang zu meinen Beratungsleistungen.',
-      icon: 'tabler:accessible',
-    },
-    {
-      title: 'Flexible Upgrades',
-      description: 'Du kannst jederzeit zu einem umfangreicheren Beratungsplan wechseln, um noch mehr Unterstützung zu erhalten.',
-      icon: 'tabler:chevrons-up',
-    },
-    {
-      title: '24/7 Unterstützung',
-      description: 'Ich beantworte Deine Fragen rund um die Uhr per E-Mail oder Telefon.',
-      icon: 'tabler:headset',
-    },
-  ]}
-  classes={{ container: 'max-w-5xl' }}
-/>
-
+    title="Meine Beratungsangebote"
+    subtitle="Erfahre mehr über die Vorteile meiner individuellen Darmgesundheitsberatung"
+    columns={2}
+    items={[
+      {
+        title: 'Individuelle Preisgestaltung',
+        description:
+          'Ich biete verschiedene Beratungspläne an, die auf unterschiedliche Budgets und Bedürfnisse zugeschnitten sind.',
+        icon: 'tabler:stairs',
+      },
+      {
+        title: 'Transparente Preise',
+        description: 'Meine Preise sind klar und übersichtlich, ohne versteckte Kosten oder Überraschungen.',
+        icon: 'tabler:flip-vertical',
+      },
+      {
+        title: 'Sichere Zahlung mit PayPal',
+        description: 'Mit PayPal kannst Du sicher und bequem bezahlen.',
+        icon: 'tabler:shield-lock',
+      },
+      {
+        title: 'Sofortige Beratung',
+        description: 'Nach der Buchung erhältst Du sofortigen Zugang zu meinen Beratungsleistungen.',
+        icon: 'tabler:accessible',
+      },
+      {
+        title: 'Flexible Upgrades',
+        description:
+          'Du kannst jederzeit zu einem umfangreicheren Beratungsplan wechseln, um noch mehr Unterstützung zu erhalten.',
+        icon: 'tabler:chevrons-up',
+      },
+      {
+        title: '24/7 Unterstützung',
+        description: 'Ich beantworte Deine Fragen rund um die Uhr per E-Mail oder Telefon.',
+        icon: 'tabler:headset',
+      },
+    ]}
+    classes={{ container: 'max-w-5xl' }}
+  />
 
   <!-- Steps Widget ****************** -->
 
@@ -200,38 +201,37 @@ const metadata = {
   <!-- FAQs Widget ******************* -->
 
   <FAQs
-  title="Häufig gestellte Fragen zur Beratung"
-  subtitle="Hier findest Du Antworten auf häufig gestellte Fragen zu meinen Beratungsdienstleistungen. Wenn Du weitere Fragen hast, stehe ich Dir gerne zur Verfügung."
-  columns={1}
-  items={[
-    {
-      title: 'Welche Art von Beratungsdienstleistungen bietest Du an?',
-      description:
-        'Ich biete eine Vielzahl von Beratungsdienstleistungen an, darunter persönliche Beratungsgespräche, Online-Sitzungen und maßgeschneiderte Beratungspläne.',
-    },
-    {
-      title: 'Wie kann ich einen Beratungstermin buchen?',
-      description:
-        'Um einen Beratungstermin zu buchen, kontaktiere mich bitte über das Kontaktformular auf meiner Webseite. Nach der Terminbestätigung erhältst Du eine Zahlungsaufforderung über PayPal.',
-    },
-    {
-      title: 'Welche Zahlungsmethoden akzeptierst Du?',
-      description:
-        'Ich akzeptiere ausschließlich PayPal als Zahlungsmethode. Dies bietet eine schnelle und sichere Abwicklung Deiner Zahlung.',
-    },
-    {
-      title: 'Kann ich eine Beratungssitzung verschieben oder absagen?',
-      description:
-        'Ja, Du kannst Deine Sitzung bis zu 24 Stunden vor dem geplanten Termin verschieben oder absagen. Bitte kontaktiere mich rechtzeitig, um Änderungen vorzunehmen.',
-    },
-    {
-      title: 'Gibt es versteckte Kosten?',
-      description:
-        'Nein, die angegebenen Preise für meine Beratungsdienstleistungen sind final. Es gibt keine versteckten Gebühren oder zusätzlichen Kosten.',
-    },
-  ]}
-/>
-
+    title="Häufig gestellte Fragen zur Beratung"
+    subtitle="Hier findest Du Antworten auf häufig gestellte Fragen zu meinen Beratungsdienstleistungen. Wenn Du weitere Fragen hast, stehe ich Dir gerne zur Verfügung."
+    columns={1}
+    items={[
+      {
+        title: 'Welche Art von Beratungsdienstleistungen bietest Du an?',
+        description:
+          'Ich biete eine Vielzahl von Beratungsdienstleistungen an, darunter persönliche Beratungsgespräche, Online-Sitzungen und maßgeschneiderte Beratungspläne.',
+      },
+      {
+        title: 'Wie kann ich einen Beratungstermin buchen?',
+        description:
+          'Um einen Beratungstermin zu buchen, kontaktiere mich bitte über das Kontaktformular auf meiner Webseite. Nach der Terminbestätigung erhältst Du eine Zahlungsaufforderung über PayPal.',
+      },
+      {
+        title: 'Welche Zahlungsmethoden akzeptierst Du?',
+        description:
+          'Ich akzeptiere ausschließlich PayPal als Zahlungsmethode. Dies bietet eine schnelle und sichere Abwicklung Deiner Zahlung.',
+      },
+      {
+        title: 'Kann ich eine Beratungssitzung verschieben oder absagen?',
+        description:
+          'Ja, Du kannst Deine Sitzung bis zu 24 Stunden vor dem geplanten Termin verschieben oder absagen. Bitte kontaktiere mich rechtzeitig, um Änderungen vorzunehmen.',
+      },
+      {
+        title: 'Gibt es versteckte Kosten?',
+        description:
+          'Nein, die angegebenen Preise für meine Beratungsdienstleistungen sind final. Es gibt keine versteckten Gebühren oder zusätzlichen Kosten.',
+      },
+    ]}
+  />
 
   <!-- CallToAction Widget *********** -->
 

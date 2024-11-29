@@ -5,13 +5,9 @@ import Button from '~/components/ui/Button.astro';
 const { inputs, textarea, disclaimer, button = 'Absenden', description = '' } = Astro.props;
 ---
 
-<form 
-action="https://api.web3forms.com/submit" 
-method="POST"
->
-
-  <input type="hidden" name="redirect" value="/thanks">
-  <input type="hidden" name="access_key" value="9ab26f99-d0a4-4da3-bc8b-d120d01105f1">
+<form action="https://api.web3forms.com/submit" method="POST">
+  <input type="hidden" name="redirect" value="/thanks" />
+  <input type="hidden" name="access_key" value="9ab26f99-d0a4-4da3-bc8b-d120d01105f1" />
   {
     inputs &&
       inputs.map(
