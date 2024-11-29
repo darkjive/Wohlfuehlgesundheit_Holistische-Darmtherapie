@@ -3,9 +3,9 @@ import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
 import Prices from '~/components/widgets/Pricing.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
-import Steps from '~/components/widgets/Steps.astro';
+// import Steps from '~/components/widgets/Steps.astro';
 import Features3 from '~/components/widgets/Features3.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
+// import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
   title: 'Pricing',
@@ -16,144 +16,148 @@ const metadata = {
   <!-- HeroText Widget ******************* -->
 
   <HeroText
-    tagline="Pricing"
-    title="Stellar Pricing for Every Journey"
-    subtitle="Choose the perfect plan that aligns with your cosmic goals."
-  />
+  tagline="Angebote"
+  title="Attraktive Preise für Deine Gesundheit"
+  subtitle="Wähle den perfekten Plan, der zu Deinen Bedürfnissen passt."
+/>
 
   <!-- Pricing Widget ******************* -->
 
   <Prices
-    title="Our prices"
-    subtitle="Only pay for what you need"
-    prices={[
-      {
-        title: 'basic',
-        subtitle: 'Optimal choice for personal use',
-        price: 29,
-        period: 'per month',
-        items: [
-          {
-            description: 'Etiam in libero, et volutpat',
-          },
-          {
-            description: 'Aenean ac nunc dolor tristique',
-          },
-          {
-            description: 'Cras scelerisque accumsan lib',
-          },
-          {
-            description: 'In hac habitasse',
-          },
-        ],
-        callToAction: {
-          target: '_blank',
-          text: 'Get started',
-          href: '#',
+  title="Meine Preise"
+  subtitle="Zahle nur für das, was Du brauchst"
+  prices={[
+    {
+      title: 'Basis',
+      subtitle: 'Optimal für einen ersten Eindruck',
+      price: 19,
+      period: '(einmalig)',
+      items: [
+        {
+          description: 'Ernährungsanalyse und grundlegende Tipps',
         },
-      },
-      {
-        title: 'standard',
-        subtitle: 'Optimal choice for small teams',
-        price: 69,
-        period: 'Per Month',
-        items: [
-          {
-            description: 'Proin vel laoreet',
-          },
-          {
-            description: 'Ut efficitur habitasse egestas',
-          },
-          {
-            description: 'Volutpat hac curabitur',
-          },
-          {
-            description: 'Pellentesque blandit ut nibh',
-          },
-          {
-            description: 'Donec fringilla sem',
-          },
-        ],
-        callToAction: {
-          target: '_blank',
-          text: 'Get started',
-          href: '#',
+        {
+          description: 'Persönlicher Ernährungsplan',
         },
-        hasRibbon: true,
-        ribbonTitle: 'popular',
-      },
-      {
-        title: 'premium',
-        subtitle: 'Optimal choice for companies',
-        price: 199,
-        period: 'Per Month',
-        items: [
-          {
-            description: 'Curabitur suscipit risus',
-          },
-          {
-            description: 'Aliquam habitasse malesuada',
-          },
-          {
-            description: 'Suspendisse sit amet blandit',
-          },
-          {
-            description: 'Suspendisse auctor blandit dui',
-          },
-        ],
-        callToAction: {
-          target: '_blank',
-          text: 'Get started',
-          href: '#',
+        {
+          description: 'Monatliche Check-ins',
         },
+        {
+          description: 'E-Mail-Support',
+        },
+      ],
+      callToAction: {
+        target: '_blank',
+        text: 'Loslegen',
+        href: '#',
       },
-    ]}
-  />
+    },
+    {
+      title: 'Standard',
+      subtitle: 'Optimal für spürbare Ergebnisse',
+      price: 49,
+      period: '(einmalig)',
+      items: [
+        {
+          description: 'Erweiterte Ernährungsanalyse',
+        },
+        {
+          description: 'Individueller Ernährungs- und Bewegungsplan',
+        },
+        {
+          description: 'Zweiwöchentliche Check-ins',
+        },
+        {
+          description: 'Telefon- und E-Mail-Support',
+        },
+        {
+          description: 'Zugang zu exklusiven Materialien',
+        },
+      ],
+      callToAction: {
+        target: '_blank',
+        text: 'Loslegen',
+        href: '#',
+      },
+      hasRibbon: true,
+      ribbonTitle: 'beliebt',
+    },
+    {
+      title: 'Premium',
+      subtitle: 'Optimal langfristiges Ergebnis',
+      price: 99,
+      period: '(einmalig)',
+      items: [
+        {
+          description: 'Umfassende Ernährungsanalyse',
+        },
+        {
+          description: 'Individueller Plan mit fortlaufender Anpassung',
+        },
+        {
+          description: 'Wöchentliche Check-ins',
+        },
+        {
+          description: 'Priorisierter Telefon- und E-Mail-Support',
+        },
+        {
+          description: 'Exklusiver Zugang zu Webinaren und Workshops',
+        },
+      ],
+      callToAction: {
+        target: '_blank',
+        text: 'Loslegen',
+        href: '#',
+      },
+    },
+  ]}
+/>
 
   <!-- Features3 Widget ************** -->
 
   <Features3
-    title="Price-related features"
-    subtitle="Discover the advantages of choosing our plans"
-    columns={2}
-    items={[
-      {
-        title: 'Tiered Pricing Plans',
-        description: 'Choose from a range of pricing plans designed to accommodate different budgets and requirements.',
-        icon: 'tabler:stairs',
-      },
-      {
-        title: 'Transparent Pricing',
-        description: 'Clearly displayed pricing details for each plan, with no hidden costs or unexpected charges.',
-        icon: 'tabler:flip-vertical',
-      },
-      {
-        title: 'Secure Payment Methods',
-        description: 'Secure payment gateways to protect your financial information during transactions.',
-        icon: 'tabler:shield-lock',
-      },
-      {
-        title: 'Instant Access',
-        description: `Immediate access to your chosen plan's features and templates upon subscription.`,
-        icon: 'tabler:accessible',
-      },
-      {
-        title: 'Upgrade Value',
-        description: 'Upgrade to higher-tier plans to unlock more features and benefits for an enhanced experience.',
-        icon: 'tabler:chevrons-up',
-      },
-      {
-        title: '24H support',
-        description: 'Questions answered via live chat, email or phone, every calendar day.',
-        icon: 'tabler:headset',
-      },
-    ]}
-    classes={{ container: 'max-w-5xl' }}
-  />
+  title="Meine Beratungsangebote"
+  subtitle="Erfahre mehr über die Vorteile meiner individuellen Darmgesundheitsberatung"
+  columns={2}
+  items={[
+    {
+      title: 'Individuelle Preisgestaltung',
+      description: 'Ich biete verschiedene Beratungspläne an, die auf unterschiedliche Budgets und Bedürfnisse zugeschnitten sind.',
+      icon: 'tabler:stairs',
+    },
+    {
+      title: 'Transparente Preise',
+      description: 'Meine Preise sind klar und übersichtlich, ohne versteckte Kosten oder Überraschungen.',
+      icon: 'tabler:flip-vertical',
+    },
+    {
+      title: 'Sichere Zahlung mit PayPal',
+      description: 'Mit PayPal kannst Du sicher und bequem bezahlen.',
+      icon: 'tabler:shield-lock',
+    },
+    {
+      title: 'Sofortige Beratung',
+      description: 'Nach der Buchung erhältst Du sofortigen Zugang zu meinen Beratungsleistungen.',
+      icon: 'tabler:accessible',
+    },
+    {
+      title: 'Flexible Upgrades',
+      description: 'Du kannst jederzeit zu einem umfangreicheren Beratungsplan wechseln, um noch mehr Unterstützung zu erhalten.',
+      icon: 'tabler:chevrons-up',
+    },
+    {
+      title: '24/7 Unterstützung',
+      description: 'Ich beantworte Deine Fragen rund um die Uhr per E-Mail oder Telefon.',
+      icon: 'tabler:headset',
+    },
+  ]}
+  classes={{ container: 'max-w-5xl' }}
+/>
+
 
   <!-- Steps Widget ****************** -->
 
-  <Steps
+  <!-- <Steps
     title="A guided journey from plans to creativity"
     tagline="simplified process"
     isReversed={true}
@@ -191,46 +195,47 @@ const metadata = {
       src: 'https://images.unsplash.com/photo-1536816579748-4ecb3f03d72a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
       alt: 'Steps image',
     }}
-  />
+  /> -->
 
   <!-- FAQs Widget ******************* -->
 
   <FAQs
-    title="Pricing FAQs"
-    subtitle="Choosing the right plan is important, and we're here to answer your questions. If you have queries about our pricing options, you're in the right place."
-    columns={1}
-    items={[
-      {
-        title: 'Do the plans come with customer support?',
-        description:
-          'Absolutely, all plans include access to our dedicated customer support to assist you with any queries or concerns.',
-      },
-      {
-        title: 'Is there a trial period for the different plans?',
-        description:
-          "Unfortunately, we don't offer trial periods for the plans. However, you can check out our demo section to preview the quality of our templates.",
-      },
-      {
-        title: 'Can I switch between plans?',
-        description:
-          'Certainly! You can easily upgrade or downgrade your plan, at any time, to find the one that best suits your evolving requirements.',
-      },
-      {
-        title: 'What payment methods do you accept?',
-        description:
-          'We accept major credit cards and online payment methods to ensure a convenient and secure transaction process.',
-      },
-      {
-        title: 'Are there any hidden fees beyond the displayed cost?',
-        description:
-          'No, the subscription cost covers all the features and templates listed under each plan. There are no hidden fees or extra charges.',
-      },
-    ]}
-  />
+  title="Häufig gestellte Fragen zur Beratung"
+  subtitle="Hier findest Du Antworten auf häufig gestellte Fragen zu meinen Beratungsdienstleistungen. Wenn Du weitere Fragen hast, stehe ich Dir gerne zur Verfügung."
+  columns={1}
+  items={[
+    {
+      title: 'Welche Art von Beratungsdienstleistungen bietest Du an?',
+      description:
+        'Ich biete eine Vielzahl von Beratungsdienstleistungen an, darunter persönliche Beratungsgespräche, Online-Sitzungen und maßgeschneiderte Beratungspläne.',
+    },
+    {
+      title: 'Wie kann ich einen Beratungstermin buchen?',
+      description:
+        'Um einen Beratungstermin zu buchen, kontaktiere mich bitte über das Kontaktformular auf meiner Webseite. Nach der Terminbestätigung erhältst Du eine Zahlungsaufforderung über PayPal.',
+    },
+    {
+      title: 'Welche Zahlungsmethoden akzeptierst Du?',
+      description:
+        'Ich akzeptiere ausschließlich PayPal als Zahlungsmethode. Dies bietet eine schnelle und sichere Abwicklung Deiner Zahlung.',
+    },
+    {
+      title: 'Kann ich eine Beratungssitzung verschieben oder absagen?',
+      description:
+        'Ja, Du kannst Deine Sitzung bis zu 24 Stunden vor dem geplanten Termin verschieben oder absagen. Bitte kontaktiere mich rechtzeitig, um Änderungen vorzunehmen.',
+    },
+    {
+      title: 'Gibt es versteckte Kosten?',
+      description:
+        'Nein, die angegebenen Preise für meine Beratungsdienstleistungen sind final. Es gibt keine versteckten Gebühren oder zusätzlichen Kosten.',
+    },
+  ]}
+/>
+
 
   <!-- CallToAction Widget *********** -->
 
-  <CallToAction
+  <!-- <CallToAction
     title="Ready to boost your projects?"
     subtitle="Join our community of satisfied customers who have transformed their work with our templates."
     actions={[
@@ -240,5 +245,5 @@ const metadata = {
         href: '/',
       },
     ]}
-  />
+  /> -->
 </Layout>
