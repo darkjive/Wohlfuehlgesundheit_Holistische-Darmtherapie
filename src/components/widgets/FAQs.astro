@@ -1,6 +1,5 @@
 ---
 import Headline from '~/components/ui/Headline.astro';
-import ItemGrid from '~/components/ui/ItemGrid.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import type { Faqs as Props } from '~/types';
 
@@ -9,7 +8,6 @@ const {
   subtitle = '',
   tagline = '',
   items = [],
-  columns = 2,
 
   id,
   isDark = false,
@@ -18,16 +16,17 @@ const {
 } = Astro.props;
 ---
 
-<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-7xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
+<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-4xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
   <Headline title={title} subtitle={subtitle} tagline={tagline} />
-  <ItemGrid
-    items={items}
-    columns={columns}
-    defaultIcon="tabler:chevron-right"
-    classes={{
-      container: `${columns === 1 ? 'max-w-4xl' : ''} gap-y-8 md:gap-y-12`,
-      panel: 'max-w-none',
-      icon: 'flex-shrink-0 mt-1 w-6 h-6 text-primary',
-    }}
-  />
+  <div class={`max-w-6xl mx-auto ${classes?.container ?? ''}`}>
+    {items.map((item) => (
+      <details class="border-b border-gray-200 py-4">
+        <summary class="text-lg cursor-pointer flex justify-between items-center">
+          {item.title}
+          <span class="ml-2">+</span>
+        </summary>
+        <p class="mt-2 text-gray-700">{item.description}</p>
+      </details>
+    ))}
+  </div>
 </WidgetWrapper>
