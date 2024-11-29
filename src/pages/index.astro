@@ -11,6 +11,9 @@ import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import Quote from '~/components/ui/Quote.astro';
+// import { YouTube } from 'astro-embed';
+import myImage from '../assets/images/weight-loss-scale-with-centimeter-stethoscope-dumbbell-clipboard-pen-diet-concept.jpg';
 
 const metadata = {
   title: 'AstroWind — Free template for creating websites with Astro + Tailwind CSS',
@@ -50,9 +53,10 @@ const metadata = {
     </Fragment>
   </Hero>
 
-  <!-- Note Widget ******************* -->
-
-  <Note />
+  <Quote 
+    quote="Eure Nahrungsmittel sollen eure Heilmittel und eure Heilmittel eure Nahrungsmittel sein." 
+    author="Hippokrates" 
+  />
 
   <!-- Features Widget *************** -->
 
