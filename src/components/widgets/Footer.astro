@@ -10,7 +10,14 @@ interface Link {
   icon?: string;
 }
 
+interface Links {
+  title?: string;
+  links: Array<Link>;
+}
+
 export interface Props {
+  links: Array<Links>;
+  secondaryLinks: Array<Link>;
   socialLinks: Array<Link>;
   footNote?: string;
   theme?: string;
@@ -21,42 +28,25 @@ const { socialLinks = [], footNote = '', theme = 'light' } = Astro.props;
 
 <footer class:list={[{ dark: theme === 'dark' }, 'relative not-prose']}>
   <div class="dark:bg-dark absolute inset-0 pointer-events-none" aria-hidden="true"></div>
-  <div
-    class="relative max-w-5xl mx-auto px-4 sm:px-6 dark:text-slate-300 intersect-once intersect-quarter intercept-no-queue motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
-  >
-    <ul class="flex flex-wrap text-xs sm:text-base sm:gap-1 gap-2 py-4 md:py-8">
-      {
-        links.map(({ links }) =>
-          links.map(({ text, href, ariaLabel }) => (
-            <li class="flex-auto md:justify-center sm:justify-start mb-2 flex items-center">
-              <a
-                class="text-muted hover:text-primary transition duration-150 ease-in-out"
-                href={href}
-                aria-label={ariaLabel}
-              >
-                <Fragment set:html={text} />
-              </a>
-            </li>
-          ))
-        )
-      }
+  <div class="relative max-w-5xl mx-auto px-4 sm:px-6 dark:text-slate-300">
+    <div class="text-sm text-center sm:text-base py-4 md:py-8">
       {
         socialLinks.length > 0 &&
           socialLinks.map(({ ariaLabel, href, text, icon }) => (
-            <span class="inline-block mb-2 px-4">
+            <li class="flex-auto md:justify-center sm:justify-start mb-2 flex items-center">
               <a
-                class="text-muted hover:bg-gray-100 focus:outline-none focus:ring-1 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-xs sm:text-base"
+                class="text-muted hover:bg-gray-100 focus:outline-none focus:ring-1 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-xs sm:text-base inline-flex items-center"
                 aria-label={ariaLabel}
                 href={href}
               >
                 {icon && <Icon name={icon} class="w-5 h-5" />}
                 <Fragment set:html={text} />
               </a>
-            </span>
+            </li>
           ))
       }
     </div>
-    <div class="border-t text-center py-6 md:py-8">
+    <div class="flex md:items-center border-t justify-center sm:justify-center py-6 md:py-8">
       <div class="text-xs uppercase sm:tracking-widest tracking dark:text-muted">
         <Fragment set:html={footNote} />
       </div>
