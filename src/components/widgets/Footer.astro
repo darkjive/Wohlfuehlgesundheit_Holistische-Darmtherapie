@@ -1,5 +1,7 @@
 ---
 import { Icon } from 'astro-icon/components';
+// import { SITE } from 'astrowind:config';
+// import { getHomePermalink } from '~/utils/permalinks';
 
 interface Link {
   text?: string;
@@ -25,14 +27,14 @@ const { socialLinks = [], footNote = '', theme = 'light' } = Astro.props;
       {
         socialLinks.length > 0 &&
           socialLinks.map(({ ariaLabel, href, text, icon }) => (
-            <a
-              class="inline-block p-5 text-primary dark:text-secondary hover:text-black focus:outline-none focus:ring-1 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg"
-              aria-label={ariaLabel}
-              href={href}
-            >
-              {icon && <Icon name={icon} class="w-7 h-7" />}
-              <Fragment set:html={text} />
-            </a>
+              <a
+                class="inline-block p-5 text-primary dark:text-secondary hover:text-black focus:outline-none focus:ring-1 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg"
+                aria-label={ariaLabel}
+                href={href}
+              >
+                {icon && <Icon name={icon} class="w-7 h-7" />}
+                <Fragment set:html={text} />
+              </a>
           ))
       }
     </div>
