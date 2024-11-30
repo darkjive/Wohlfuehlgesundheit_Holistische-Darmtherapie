@@ -7,10 +7,6 @@ export const headerData = {
       href: getPermalink('/homes/personal'),
     },
     {
-      text: 'Ausbildung',
-      href: getPermalink('/homes/personal#resume'),
-    },
-    {
       text: 'Angebote',
       href: getPermalink('/pricing'),
     },
@@ -31,6 +27,6 @@ export const footerData = {
     { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: '#' },
   ],
   footNote: `
-    © Gesundheitspraxis | Stefanie Leidel <br/> <a href="/terms">Impressum</a> · <a href="/privacy">Datenschutz</a>
+    © Gesundheitspraxis | Stefanie Leidel <br/> <a class="text-primary hover:text-black dark:text-secondary" href="/terms">Impressum</a> · <a class="text-primary hover:text-black dark:text-secondary" href="/privacy">Datenschutz</a>
   `,
 };

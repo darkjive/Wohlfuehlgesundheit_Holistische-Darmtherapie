@@ -22,8 +22,7 @@
 
 @layer components {
   .btn {
-    @apply
-      inline-flex
+    @apply inline-flex
       items-center
       justify-center
       rounded-full
@@ -42,8 +41,7 @@
   }
 
   .btn-primary {
-    @apply
-      btn
+    @apply btn
       font-semibold
       bg-primary
       text-white
@@ -58,8 +56,7 @@
   }
 
   .btn-secondary {
-    @apply
-    btn
+    @apply btn
     font-semibold
     bg-secondary
     text-[#2a700d]
@@ -71,11 +68,10 @@
     dark:border-secondary
     dark:hover:border-primary
     dark:hover:bg-primary;
-}
+  }
 
   .btn-tertiary {
-    @apply
-      btn
+    @apply btn
       border-none
       shadow-none
       text-muted
@@ -113,11 +109,11 @@
 }
 
 [astro-icon].icon-light > * {
-  stroke-width: 1;
+  stroke-width: 0.5;
 }
 
 [astro-icon].icon-bold > * {
-  stroke-width: 2.4;
+  stroke-width: 2;
 }
 
 [data-aw-toggle-menu] path {
@@ -129,6 +125,15 @@
 
 [data-aw-toggle-menu].expanded g > path:last-child {
   @apply rotate-45 translate-y-[-8px] translate-x-[14px];
+}
+
+/* Navigation */
+@media (max-width: 767px) {
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 /* To deprecated */

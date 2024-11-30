@@ -5,7 +5,6 @@ import type { Widget } from '~/types';
 interface Props extends Widget {
   quote?: string;
   author?: string;
-  backgroundImage?: string;
 }
 
 const {
@@ -23,7 +22,5 @@ const {
     <p class="text-primary p-5 dark:text-secondary font-heading text-9xl leading-[0.25rem]">“</p>
     <p class="text-3xl md:text-4xl tracking-tight mb-4 italic">{quote}</p>
     <p class="text-l text-gray-500 dark:text-gray-300">({author})</p>
-    
   </div>
-  
 </WidgetWrapper>

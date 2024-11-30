@@ -1,6 +1,6 @@
 site:
-  name:
-  site: 'https://www.wohlfühlgesundheit.de/'
+  name: ''
+  site: 'https://wohlfühlgesundheit.de'
   base: '/'
   trailingSlash: false
 
