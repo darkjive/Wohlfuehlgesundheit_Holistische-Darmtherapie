@@ -11,7 +11,7 @@ metadata:
   title:
     default:
     template: '%s — Gesundheitspraxis'
-  description: ''
+  description: 'Wohlfühlgesundheit - Stefanie Leidel, Ihr Ernährungscoach. Entdecken Sie Tipps und Programme zur Verbesserung Ihrer Gesundheit und Ihres Wohlbefindens. Starten Sie Ihre Reise zu einem gesünderen Lebensstil noch heute!'
   robots:
     index: true
     follow: true
