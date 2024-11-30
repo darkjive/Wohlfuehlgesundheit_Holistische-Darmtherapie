@@ -22,28 +22,6 @@ export const headerData = {
 };
 
 export const footerData = {
-  links: [
-    {
-      links: [
-        { text: 'Über mich', href: '/homes/personal' },
-      ],
-    },
-    {
-      links: [
-        { text: 'Ausbildung', href: '/homes/personal#resume' },
-      ],
-    },
-    {
-      links: [
-        { text: 'Angebote', href: '/pricing' },
-      ],
-    },
-    {
-      links: [
-        { text: 'Kontakt', href: '/contact' },
-      ],
-    },
-  ],
   secondaryLinks: [
     { text: 'Impressum', href: getPermalink('/terms') },
     { text: 'Datenschutz', href: getPermalink('/privacy') },
