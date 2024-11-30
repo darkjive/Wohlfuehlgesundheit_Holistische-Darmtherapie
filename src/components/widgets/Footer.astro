@@ -10,20 +10,13 @@ interface Link {
   icon?: string;
 }
 
-interface Links {
-  title?: string;
-  links: Array<Link>;
-}
-
 export interface Props {
-  links: Array<Links>;
-  secondaryLinks: Array<Link>;
   socialLinks: Array<Link>;
   footNote?: string;
   theme?: string;
 }
 
-const { socialLinks = [], links = [], footNote = '', theme = 'light' } = Astro.props;
+const { socialLinks = [], footNote = '', theme = 'light' } = Astro.props;
 ---
 
 <footer class:list={[{ dark: theme === 'dark' }, 'relative not-prose']}>
@@ -50,20 +43,20 @@ const { socialLinks = [], links = [], footNote = '', theme = 'light' } = Astro.p
       {
         socialLinks.length > 0 &&
           socialLinks.map(({ ariaLabel, href, text, icon }) => (
-            <li class="flex-auto md:justify-center sm:justify-start mb-2 flex items-center">
+            <span class="inline-block mb-2 px-4">
               <a
-                class="text-muted hover:bg-gray-100 focus:outline-none focus:ring-1 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-xs sm:text-base inline-flex items-center"
+                class="text-muted hover:bg-gray-100 focus:outline-none focus:ring-1 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-xs sm:text-base"
                 aria-label={ariaLabel}
                 href={href}
               >
                 {icon && <Icon name={icon} class="w-5 h-5" />}
                 <Fragment set:html={text} />
               </a>
-            </li>
+            </span>
           ))
       }
-    </ul>
-    <div class="flex md:items-center border-t justify-center sm:justify-center py-6 md:py-8">
+    </div>
+    <div class="border-t text-center py-6 md:py-8">
       <div class="text-xs uppercase sm:tracking-widest tracking dark:text-muted">
         <Fragment set:html={footNote} />
       </div>

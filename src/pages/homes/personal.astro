@@ -8,8 +8,6 @@ import Features3 from '~/components/widgets/Features3.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
 import Quote from '~/components/ui/Quote.astro';
 import Steps from '~/components/widgets/Steps.astro';
-// import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
-import { getPermalink } from '~/utils/permalinks';
 
 const metadata = {
   title: 'Über mich',
@@ -17,13 +15,13 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero2 Widget ******************* -->
+  <!-- Hero Widget ******************* -->
 
   <Hero
     id="hero"
     title="Stefanie Leidel"
     tagline="Ernährungscoach"
-    actions={[{ variant: 'primary', text: 'Schreibe mir', href: getPermalink('/contact#form') }]}
+    actions={[{ variant: 'secondary', text: 'Mehr erfahren', href: '/homes/personal#about' }]}
   >
     <Fragment slot="subtitle">
       Hallo, mein Name ist Stefanie Leidel, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
@@ -87,7 +85,7 @@ const metadata = {
     </Fragment>
 
     <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+      <div class="absolute inset-0 bg-green-100 dark:bg-dark"></div>
     </Fragment>
   </Content>
 
@@ -157,7 +155,11 @@ const metadata = {
       },
     ]}
   />
-  <Quote quote="Die Natur kann von keinem belehrt werden,  sie weiß immer das Richtige." author="Hippokrates" />
+  <Quote 
+    quote="Die Natur kann von keinem belehrt werden,  sie weiß immer das Richtige." 
+    author="Hippokrates"
+  />
+
   <!-- Testimonials Widget *********** -->
 
   <Testimonials

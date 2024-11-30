@@ -24,25 +24,21 @@ export const headerData = {
 export const footerData = {
   links: [
     {
-      title: '',
       links: [
         { text: 'Über mich', href: '/homes/personal' },
       ],
     },
     {
-      title: '',
       links: [
         { text: 'Ausbildung', href: '/homes/personal#resume' },
       ],
     },
     {
-      title: '',
       links: [
         { text: 'Angebote', href: '/pricing' },
       ],
     },
     {
-      title: '',
       links: [
         { text: 'Kontakt', href: '/contact' },
       ],
@@ -57,6 +53,6 @@ export const footerData = {
     { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: '#' },
   ],
   footNote: `
-    © Stefanie Leidel | Gesundheitspraxis · <a href="/terms">Impressum</a> · <a href="/privacy">Datenschutz</a>
+    © Gesundheitspraxis | Stefanie Leidel <br/> <a href="/terms">Impressum</a> · <a href="/privacy">Datenschutz</a>
   `,
 };
