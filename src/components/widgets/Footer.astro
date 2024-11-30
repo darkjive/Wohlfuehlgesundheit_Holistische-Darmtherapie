@@ -33,21 +33,21 @@ const { socialLinks = [], footNote = '', theme = 'light' } = Astro.props;
       {
         socialLinks.length > 0 &&
           socialLinks.map(({ ariaLabel, href, text, icon }) => (
-            <li class="flex-auto md:justify-center sm:justify-start mb-2 flex items-center">
+            <span class="mb-2 inline-block">
               <a
-                class="text-muted hover:bg-gray-100 focus:outline-none focus:ring-1 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-xs sm:text-base inline-flex items-center"
+                class="text-muted hover:text-primary focus:outline-none focus:ring-1 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-xs sm:text-base"
                 aria-label={ariaLabel}
                 href={href}
               >
                 {icon && <Icon name={icon} class="w-5 h-5" />}
                 <Fragment set:html={text} />
               </a>
-            </li>
+            </span>
           ))
       }
     </div>
-    <div class="flex md:items-center border-t justify-center sm:justify-center py-6 md:py-8">
-      <div class="text-xs uppercase sm:tracking-widest tracking dark:text-muted">
+    <div class="border-t py-6 md:py-8">
+      <div class="text-xs md:text-base text-center uppercase sm:tracking-widest tracking dark:text-muted">
         <Fragment set:html={footNote} />
       </div>
     </div>
