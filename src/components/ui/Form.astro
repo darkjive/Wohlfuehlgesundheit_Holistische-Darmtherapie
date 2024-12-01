@@ -8,6 +8,7 @@ const { inputs, textarea, disclaimer, button = 'Absenden', description = '' } = 
 <form action="https://api.web3forms.com/submit" method="POST">
   <input type="hidden" name="redirect" value="https://xn--wohlfhlgesundheit-62b.de/thanks" />
   <input type="hidden" name="access_key" value="9ab26f99-d0a4-4da3-bc8b-d120d01105f1" />
+  <input type="checkbox" name="botcheck" class="hidden" style="display: none;" />
   {
     inputs &&
       inputs.map(
