@@ -11,7 +11,7 @@ import Content from '~/components/widgets/Content.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 // import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
-import Quote from '~/components/ui/Quote.astro';
+import Quote from '~/components/widgets/Quote.astro';
 // import { YouTube } from 'astro-embed';
 import myImage from '../assets/images/weight-loss-scale-with-centimeter-stethoscope-dumbbell-clipboard-pen-diet-concept.jpg';
 
@@ -56,12 +56,10 @@ const metadata = {
       </span>
     </Fragment>
   </Hero>
-
   <Quote
     quote="Eure Nahrungsmittel sollen eure Heilmittel und eure Heilmittel eure Nahrungsmittel sein."
     author="Hippokrates"
   />
-
   <!-- Features Widget *************** -->
   <Features
     id="features"
@@ -94,7 +92,11 @@ const metadata = {
         icon: 'tabler:search',
       },
     ]}
-  />
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-green-100 dark:bg-transparent"></div>
+    </Fragment>
+  </Features>
 
   <!-- Content Widget **************** -->
   <Content
@@ -127,9 +129,8 @@ const metadata = {
       Im Erstgespräch besprechen wir Deine aktuellen Beschwerden und gesundheitlichen Ziele. Ich analysiere Deine Ernährungsgewohnheiten
       und Lebensweise, um individuelle Maßnahmen für Deine Darmgesundheit festzulegen.
     </Fragment>
-
     <Fragment slot="bg">
-      <div class="absolute inset-0 bg-green-100 dark:bg-transparent"></div>
+      <div class="absolute inset-0 bg-green-50 dark:bg-transparent"></div>
     </Fragment>
   </Content>
 
