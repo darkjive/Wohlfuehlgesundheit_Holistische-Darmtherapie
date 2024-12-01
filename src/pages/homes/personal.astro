@@ -6,7 +6,7 @@ import Content from '~/components/widgets/Content.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Features3 from '~/components/widgets/Features3.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
-import Quote from '~/components/ui/Quote.astro';
+import Quote from '~/components/widgets/Quote.astro';
 import Steps from '~/components/widgets/Steps.astro';
 
 const metadata = {
@@ -24,9 +24,9 @@ const metadata = {
     actions={[{ variant: 'secondary', text: 'Mehr erfahren', href: '/homes/personal#about' }]}
   >
     <Fragment slot="subtitle">
-      Herzlich willkommen bei Wohlfühlgesundheit!
-
-      Ich freue mich, dass du den Weg zu meiner Seite gefunden hast. Mein Name ist Stefanie Leidel und als Ernährungscoach unterstütze ich dich dabei, deine Gesundheit und dein Wohlbefinden zu verbessern. 
+      Herzlich willkommen bei Wohlfühlgesundheit! Ich freue mich, dass du den Weg zu meiner Seite gefunden hast. Mein
+      Name ist Stefanie Leidel und als Ernährungscoach unterstütze ich dich dabei, deine Gesundheit und dein
+      Wohlbefinden zu verbessern.
     </Fragment>
   </Hero>
 
@@ -70,15 +70,21 @@ const metadata = {
     <Fragment slot="content">
       <h2 class="text-2xl font-heading font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Über mich</h2>
       <p>
-        Als passionierte Ernährungscoach begleite ich dich auf deinem Weg zu einem gesünderen und glücklicheren Leben. Meine Leidenschaft für Ernährung und Gesundheit hat mich dazu inspiriert, Menschen zu unterstützen, ihre Ernährungsgewohnheiten zu verbessern und ihr Wohlbefinden zu steigern.
+        Als passionierte Ernährungscoach begleite ich dich auf deinem Weg zu einem gesünderen und glücklicheren Leben.
+        Meine Leidenschaft für Ernährung und Gesundheit hat mich dazu inspiriert, Menschen zu unterstützen, ihre
+        Ernährungsgewohnheiten zu verbessern und ihr Wohlbefinden zu steigern.
       </p>
       <br />
       <p>
-        Ich glaube daran, dass jeder Mensch einzigartig ist und es keine "One-Size-Fits-All"-Lösungen gibt. Deshalb lege ich großen Wert darauf, individuelle Programme zu entwickeln, die auf deine Bedürfnisse und Ziele abgestimmt sind.
+        Ich glaube daran, dass jeder Mensch einzigartig ist und es keine "One-Size-Fits-All"-Lösungen gibt. Deshalb lege
+        ich großen Wert darauf, individuelle Programme zu entwickeln, die auf deine Bedürfnisse und Ziele abgestimmt
+        sind.
       </p>
       <br />
       <p>
-        Egal, ob du abnehmen, deine Energie steigern oder einfach bewusster und gesünder leben möchtest – ich bin hier, um dich zu unterstützen. Mit praktischen Tipps, motivierenden Gesprächen und maßgeschneiderten Ernährungsplänen helfe ich dir, deine Gesundheitsziele zu erreichen und zu halten.
+        Egal, ob du abnehmen, deine Energie steigern oder einfach bewusster und gesünder leben möchtest – ich bin hier,
+        um dich zu unterstützen. Mit praktischen Tipps, motivierenden Gesprächen und maßgeschneiderten Ernährungsplänen
+        helfe ich dir, deine Gesundheitsziele zu erreichen und zu halten.
       </p>
     </Fragment>
 
@@ -132,6 +138,7 @@ const metadata = {
 
   <Features3
     title="Fähigkeiten"
+    classes={{ container: 'bg-green-50 dark:bg-transparent' }}
     subtitle="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
     columns={3}
     defaultIcon="tabler:point-filled"
