@@ -1,0 +1,5 @@
+# Auth
+AuthType Basic
+AuthName "Geschützter Bereich"
+AuthUserFile /kunden/homepages/21/d4298613629/htdocs/_sec/.htpasswd
+Require valid-user
