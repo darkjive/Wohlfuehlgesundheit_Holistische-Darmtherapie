@@ -3,12 +3,14 @@ import Layout from '~/layouts/PageLayout.astro';
 
 import Hero from '~/components/widgets/Hero.astro';
 import Content from '~/components/widgets/Content.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
+// import CallToAction from '~/components/widgets/CallToAction.astro';
 import Features3 from '~/components/widgets/Features3.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
 import Quote from '~/components/widgets/Quote.astro';
 import Steps from '~/components/widgets/Steps.astro';
+import Image from '~/components/common/Image.astro';
 
+import certImage from '~/assets/images/INA_Cert2025.jpg';
 const metadata = {
   title: 'Über mich',
 };
@@ -20,12 +22,12 @@ const metadata = {
   <Hero
     id="hero"
     title="Stefanie Leidel"
-    tagline="Ernährungscoach"
+    tagline="Holistische Darmtherapeutin"
     actions={[{ variant: 'secondary', text: 'Mehr erfahren', href: '/homes/personal#about' }]}
   >
     <Fragment slot="subtitle">
-      Herzlich willkommen bei Wohlfühlgesundheit! Ich freue mich, dass du den Weg zu meiner Seite gefunden hast. Mein
-      Name ist Stefanie Leidel und als Ernährungscoach unterstütze ich dich dabei, deine Gesundheit und dein
+      Ich freue mich, dass du den Weg zu meiner Seite gefunden hast. Mein
+      Name ist Stefanie Leidel und als Holistische Darmtherapeutin unterstütze ich dich dabei, deine Gesundheit und dein
       Wohlbefinden zu verbessern.
     </Fragment>
   </Hero>
@@ -41,10 +43,10 @@ const metadata = {
         callToAction: {
           target: '_blank',
           text: 'Instagramm',
-          href: '#',
+          href: 'https://www.instagram.com/stories/wohl_fuehl_gesundheit/',
         },
       },
-      {
+/*       {
         icon: 'tabler:brand-facebook',
         callToAction: {
           target: '_blank',
@@ -52,7 +54,7 @@ const metadata = {
           href: '#',
         },
       },
-      {
+ */      {
         icon: 'tabler:brand-pinterest',
         callToAction: {
           target: '_blank',
@@ -97,7 +99,7 @@ const metadata = {
 
   <Steps
     id="resume"
-    title="Lebenslauf"
+    title="Lebenslauf:"
     items={[
       {
         title:
@@ -119,7 +121,7 @@ const metadata = {
 
   <Steps
     id="education"
-    title="Ausbildung"
+    title="Ausbildung:"
     items={[
       {
         title:
@@ -134,6 +136,22 @@ const metadata = {
     ]}
     classes={{ container: 'max-w-3xl' }}
   />
+<section class="relative border-t dark:border-none not-prose scroll-mt-[72px]">
+<div class="relative mx-auto px-4 md:px-6 py-12 md:py-16 lg:py-20 text-default intersect-once intersect-quarter intercept-no-queue motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade max-w-3xl">
+  <h2 class="font-bold text-center leading-tighter tracking-tighter font-heading text-heading text-3xl lg:text-4xl">Zertifikate:</h2>    
+</div>
+
+
+<!-- Zertifikat Bild -->
+<div class="relative mx-auto px-4 md:px-6 text-default intersect-once intersect-quarter intercept-no-queue motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade max-w-3xl">
+  <Image
+    src={certImage}
+    alt="Zertifikate"
+    class="w-full max-w-md mx-auto rounded-lg shadow-md"
+    loading="lazy"
+  />
+</div>
+</section>
   <!-- Features3 Widget ************** -->
 
   <Features3
@@ -191,7 +209,7 @@ const metadata = {
 
   <!-- CallToAction Widget *********** -->
 
-  <CallToAction
+  <!--   <CallToAction
     title="Du willst hier auch stehen?"
     subtitle="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
     actions={[
@@ -202,4 +220,5 @@ const metadata = {
       },
     ]}
   />
+ -->
 </Layout>

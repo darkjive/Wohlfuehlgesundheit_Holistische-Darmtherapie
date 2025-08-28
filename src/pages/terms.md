@@ -3,7 +3,7 @@ title: 'Impressum'
 layout: '~/layouts/MarkdownLayout.astro'
 ---
 
-_Letzte Aktualisierung_: Januar 01, 2025
+_Letzte Aktualisierung: 01. August 2025_
 
 ## Anbieter
 
@@ -11,9 +11,38 @@ _Letzte Aktualisierung_: Januar 01, 2025
 Unterdorf 24, 64823 Groß-Umstadt, Deutschland  
 E-Mail: [steffi@wohlfühlgesundheit.de](mailto:steffi@wohlfühlgesundheit.de)
 
-## Bildnachweis
+**Hinweis:**
+Die hier angebotene Beratung basiert auf wissenschaftlichen Erkenntnissen zur
+Darmgesundheit. Ich erstelle keine medizinischen Diagnosen und führe keine
+Heilbehandlungen durch. Falls gesundheitliche Beschwerden oder Laborwerte
+auf eine mögliche Erkrankung hinweisen, empfehle ich, eine ärztliche oder
+heilpraktische Abklärung in Anspruch zu nehmen.
+Meine Beratung dient ausschließlich der individuellen Ernährungs- und
+Lebensstiloptimierung, was das Fördern des allgemeinen Wohlbefindens
+einschließt. Es ersetzt keine ärztliche Therapie.
 
-Foto von Süheyl Burak auf Unsplash
+## Berufsbezogene Informationen
+
+Holistische Darmtherapeutin
+
+## Umsatzsteuer-ID
+
+Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:  
+DEXXXXXXXXX
+
+## Bildnachweise
+
+Unseen Studio  
+https://unsplash.com/de/fotos/person-die-auf-braunem-holztisch-in-der-nahe-von-weissem-keramikbecher-schreibt-s9CC2SKySJM
+
+Ollissv  
+https://unsplash.com/de/fotos/person-in-roter-jacke-die-herzillustration-macht-AITGS-Bi7Io
+
+Dan Gold  
+https://unsplash.com/de/fotos/makroaufnahme-von-gemuse-4_jhDO54BYg
+
+Drew Hays  
+https://unsplash.com/de/fotos/person-holding-round-clear-container-tGYrlchfObE
 
 ## Haftung für Inhalte
 
@@ -22,5 +51,3 @@ Die Inhalte dieser Website wurden sorgfältig erstellt, jedoch ohne Gewähr für
 ## Urheberrecht
 
 Die Inhalte dieser Seite unterliegen dem Urheberrecht. Eine Nutzung außerhalb der gesetzlichen Grenzen erfordert eine schriftliche Genehmigung.
-
-_Made with 💖 and Astro | All rights reserved._

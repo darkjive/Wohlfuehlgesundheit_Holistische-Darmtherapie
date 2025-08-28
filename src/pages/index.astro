@@ -13,11 +13,11 @@ import FAQs from '~/components/widgets/FAQs.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Quote from '~/components/widgets/Quote.astro';
 // import { YouTube } from 'astro-embed';
-import myImage from '../assets/images/weight-loss-scale-with-centimeter-stethoscope-dumbbell-clipboard-pen-diet-concept.jpg';
+// import myImage from '../assets/images/weight-loss-scale-with-centimeter-stethoscope-dumbbell-clipboard-pen-diet-concept.jpg';
 
 const metadata = {
-  title: 'Gesundheitspraxis | Stefanie Leidel ',
-  ignoreTitleTemplate: true,
+  title: 'Start',
+  // ignoreTitleTemplate: true,
 };
 ---
 
@@ -41,18 +41,17 @@ const metadata = {
     image={{ src: '~/assets/images/hero-image.png', alt: 'Darmgesundheit' }}
   >
     <Fragment slot="title">
-      <span class="text-accent xl:inline"> Gesundheitspraxis </span>
+      <span class="text-accent xl:inline"> Wohlfühlgesundheit </span>
       <br />
       <span class="dark:text-white font-thin uppercase text-[1.15rem] sm:text-1xl md:text-3xl tracking-wide font-sans">
-        Stefanie Leidel</span
+        Holistische Darmtherapie</span
       >
     </Fragment>
 
     <Fragment slot="subtitle">
       <span class="sm:inline">
-        <span class="font-semibold"> Willkommen!</span> Ich helfe Dir, Deine Gesundheit zu verbessern. Vielleicht hast Du
-        Symptome wie Müdigkeit oder Verdauungsbeschwerden? Oder Allergien, Nahrungsmittelunverträglichkeiten oder Zöliakie?
-        Ich unterstütze Dich bei der Suche nach Lösungen.
+        Vielleicht hast Du Symptome wie Müdigkeit oder Verdauungsbeschwerden? Oder Allergien,
+        Nahrungsmittelunverträglichkeiten oder Zöliakie? Ich unterstütze Dich bei der Suche nach Lösungen.
       </span>
     </Fragment>
   </Hero>
@@ -64,32 +63,32 @@ const metadata = {
   <Features
     id="features"
     tagline="Angebote"
-    title="Was ich für dich tun kann"
-    subtitle="In meiner Praxis biete ich eine Vielzahl von Dienstleistungen rund um das Thema Darmgesundheit an. Hier findest Du eine Übersicht meiner Angebote und wie ich Dich unterstützen kann, Deine Gesundheit zu verbessern."
+    title="Was ich für Dich tun kann"
+    subtitle="In meinen Online-Coachings biete ich eine Vielzahl von Dienstleistungen rund um das Thema Darmgesundheit an. Hier findest Du eine Übersicht meiner Angebote und wie ich Dich unterstützen kann, Deine Gesundheit zu verbessern."
     items={[
       {
         title: 'Erstgespräch',
         description:
-          'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
+          'Im Erstgespräch analysiere ich Deine Beschwerden und Ziele. Wir entwickeln gemeinsam einen individuellen Plan für Deine Darmgesundheit.',
         icon: 'tabler:brand-hipchat',
+      },
+      {
+        title: 'Stuhlanalyse',
+        description:
+          'Auf Basis der Stuhlanalyse gebe ich Dir Ernährungstipps zur Verbesserung Deiner Darmgesundheit. Bei auffälligen Werten empfehle ich eine ärztliche Abklärung.',
+        icon: 'tabler:microscope',
       },
       {
         title: 'Ernährungstraining',
         description:
-          'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
+          'Ich helfe Dir, eine darmfreundliche Ernährung zu entwickeln und umzusetzen, die Deine Verdauung fördert.',
         icon: 'tabler:salad',
       },
       {
         title: 'Darmfachberatung',
         description:
-          'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
+          'In der Darmberatung analysiere ich Deine speziellen Beschwerden und erarbeite Lösungen zur Linderung und Förderung einer gesunden Darmflora.',
         icon: 'tabler:report-medical',
-      },
-      {
-        title: 'Antlitzdiagnostik',
-        description:
-          'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
-        icon: 'tabler:search',
       },
     ]}
   >
@@ -104,30 +103,30 @@ const metadata = {
     title="Angebote"
     items={[
       {
-        title: 'Lorem ipsum dolor sit amet',
+        title: 'Erstgespräch zur Darmgesundheit',
         description:
-          'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
+          'Im Erstgespräch analysiere ich Deine Beschwerden und Ziele, um einen individuellen Plan für Deine Darmgesundheit zu erstellen.',
       },
       {
-        title: 'Lorem ipsum dolor sit amet',
+        title: 'Individuelle Darmberatung',
         description:
-          'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
+          'Ich gehe gezielt auf Deine Darmprobleme ein und erarbeite Lösungen zur Linderung von Beschwerden wie Blähungen und Verstopfung.',
       },
       {
-        title: 'Lorem ipsum dolor sit amet',
+        title: 'Probiotische Unterstützung',
         description:
-          'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
+          'Ich erkläre Dir, wie Du Probiotika effektiv in Deine Ernährung integrieren kannst, um Deine Verdauung und Darmflora zu stärken.',
       },
     ]}
     image={{
-      src: 'https://images.pexels.com/photos/7176026/pexels-photo-7176026.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      src: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
       alt: 'Colorful Image',
     }}
   >
     <Fragment slot="content">
       <h3 class="text-1xl uppercase font-medium tracking-tight dark:text-white sm:text-3xl mb-2">Erstgespräch</h3>
-      Im Erstgespräch besprechen wir Deine aktuellen Beschwerden und gesundheitlichen Ziele. Ich analysiere Deine Ernährungsgewohnheiten
-      und Lebensweise, um individuelle Maßnahmen für Deine Darmgesundheit festzulegen.
+      Im Erstgespräch besprechen wir Deine Beschwerden und Ziele. Ich entwickle gemeinsam mit Dir Maßnahmen zur Verbesserung
+      Deiner Darmgesundheit.
     </Fragment>
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-green-50 dark:bg-transparent"></div>
@@ -139,30 +138,30 @@ const metadata = {
     isReversed
     items={[
       {
-        title: 'Lorem ipsum dolor sit amet',
+        title: 'Darmflora und Mikrobiom',
         description:
-          'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
+          'Wir analysieren die Zusammensetzung Deiner Mikrobiota und stellen durch Ernährungsumstellungen und Probiotika das Gleichgewicht wieder her.',
       },
       {
-        title: 'Lorem ipsum dolor sit amet',
+        title: 'Symptomatische Behandlung von Darmbeschwerden',
         description:
-          'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
+          'Ich entwickle mit Dir Lösungen zur Linderung von Blähungen, Reizdarmsymptomen und anderen Verdauungsstörungen.',
       },
       {
-        title: 'Lorem ipsum dolor sit amet',
+        title: 'Stress und Darmgesundheit',
         description:
-          'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
+          'Wir analysieren, wie Stress Deine Verdauung beeinflusst und welche Maßnahmen helfen, das Wohlbefinden zu steigern.',
       },
     ]}
     image={{
-      src: 'https://images.pexels.com/photos/7298675/pexels-photo-7298675.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      src: 'https://images.unsplash.com/photo-1505334559002-c2103a3e106b?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
       alt: 'Colorful Image',
     }}
   >
     <Fragment slot="content">
       <h3 class="text-1xl uppercase font-medium tracking-tight dark:text-white sm:text-3xl mb-2">Darmfachberatung</h3>
-      In der Darmfachberatung gehe ich gezielt auf Deine speziellen Darmprobleme ein. Gemeinsam erarbeiten wir Strategien
-      zur Verbesserung Deiner Darmflora und zur Linderung von Beschwerden wie Blähungen, Durchfall oder Verstopfung.
+      In der Darmfachberatung gehe ich gezielt auf Deine speziellen Darmprobleme ein und entwickle individuelle Strategien
+      zur Linderung.
     </Fragment>
 
     <Fragment slot="bg">
@@ -174,30 +173,30 @@ const metadata = {
   <Content
     items={[
       {
-        title: 'Lorem ipsum dolor sit amet',
+        title: 'Ernährungsberatung für eine gesunde Verdauung',
         description:
-          'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
+          'Ich zeige Dir, wie Du ballaststoffreiche Lebensmittel in Deine Ernährung integrierst, um die Darmgesundheit zu fördern.',
       },
       {
-        title: 'Lorem ipsum dolor sit amet',
+        title: 'Darmfreundliche Rezepte',
         description:
-          'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
+          'Ich biete Dir Rezepte an, die prä- und probiotische Zutaten enthalten und Deine Verdauung unterstützen.',
       },
       {
-        title: 'Lorem ipsum dolor sit amet',
+        title: 'Langfristige Darmpflege',
         description:
-          'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
+          'Wir entwickeln einen Plan, der Dir hilft, Deine Verdauung langfristig zu verbessern und Deine Darmflora in Balance zu halten.',
       },
     ]}
     image={{
-      src: myImage,
+      src: 'https://images.unsplash.com/photo-1498837167922-ddd27525d352?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
       alt: 'Colorful Image',
     }}
   >
     <Fragment slot="content">
       <h3 class="text-1xl uppercase font-medium tracking-tight dark:text-white sm:text-3xl mb-2">Ernährungstraining</h3>
-      Im Ernährungstraining helfe ich Dir dabei, eine darmfreundliche Ernährung zu entwickeln und umzusetzen. Du erhältst
-      von mir praktische Tipps und maßgeschneiderte Ernährungspläne, die speziell auf Deine Bedürfnisse abgestimmt sind.
+      Im Ernährungstraining helfe ich Dir, eine darmfreundliche Ernährung zu entwickeln, die auf Deine Bedürfnisse abgestimmt
+      ist.
     </Fragment>
 
     <Fragment slot="bg">
@@ -210,31 +209,29 @@ const metadata = {
     isReversed
     items={[
       {
-        title: 'Lorem ipsum dolor sit amet',
+        title: 'Stuhluntersuchung und Darmgesundheit',
         description:
-          'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
+          'Mit einer Stuhluntersuchung erhalte ich wichtige Informationen über Deine Darmflora und kann Dir gezielte Empfehlungen geben.',
       },
       {
-        title: 'Lorem ipsum dolor sit amet',
+        title: 'Darmparasiten und ihre Auswirkungen',
         description:
-          'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
+          'Ich unterstütze Dich bei der Erkennung von Darmparasiten und zeige Dir, wie Du Deinen Darm von ihnen befreien kannst.',
       },
       {
-        title: 'Lorem ipsum dolor sit amet',
+        title: 'Nahrungsmittelunverträglichkeiten und der Darm',
         description:
-          'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
+          'Wir analysieren, welche Lebensmittel Deine Verdauung stören und entwickeln eine Strategie zur Verbesserung Deiner Darmgesundheit.',
       },
     ]}
     image={{
-      src: 'https://image.jimcdn.com/app/cms/image/transf/dimension=237x1024:format=jpg/path/sb79b42c79099ee4d/image/i7b379654e415e580/version/1410251234/image.jpg',
+      src: 'https://images.unsplash.com/photo-1486825586573-7131f7991bdd?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
       alt: 'Colorful Image',
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-1xl uppercase font-medium tracking-tight dark:text-white sm:text-3xl mb-2">Antlitzdiagnostik</h3>
-      Die Antlitzdiagnostik ist eine Methode, um über Dein Gesicht Hinweise auf mögliche gesundheitliche Störungen zu erkennen.
-      Durch diese ganzheitliche Betrachtung kann ich gezielt auf Dein Gesundheitsbild eingehen und entsprechende Maßnahmen
-      empfehlen.
+      <h3 class="text-1xl uppercase font-medium tracking-tight dark:text-white sm:text-3xl mb-2">Stuhlanalyse</h3>
+      Auf Basis der Stuhlanalyse gebe ich Dir Ernährungstipps und Empfehlungen zur Verbesserung Deiner Darmgesundheit.
     </Fragment>
 
     <Fragment slot="bg">
@@ -250,88 +247,68 @@ const metadata = {
     classes={{ container: 'max-w-6xl' }}
     items={[
       {
-        title: 'Warum ist eine gesunde Darmflora wichtig?',
+        title: 'Was beinhaltet die Beratung zur Darmgesundheit?',
         description:
-          'Eine gesunde Darmflora spielt eine entscheidende Rolle für das Immunsystem, die Verdauung und die allgemeine Gesundheit. Sie hilft, Nährstoffe aus der Nahrung aufzunehmen, schädliche Bakterien zu bekämpfen und die Darmbarriere zu stärken.',
+          'Die Beratung zur Darmgesundheit basiert auf wissenschaftlichen Erkenntnissen. Sie ersetzt keine medizinische Diagnostik oder Heilbehandlung. Bei auffälligen Beschwerden oder Laborwerten, die auf Erkrankungen hinweisen, empfehle ich die Konsultation eines Arztes oder Heilpraktikers.',
       },
       {
-        title: 'Welche Lebensmittel fördern eine gesunde Darmflora?',
+        title: 'Wie funktioniert das Erstgespräch?',
         description:
-          'Probiotika und Präbiotika sind entscheidend für eine gesunde Darmflora. Probiotische Lebensmittel wie Joghurt, Sauerkraut und Kimchi enthalten lebende Bakterien, die den Darm positiv beeinflussen. Präbiotische Lebensmittel wie Bananen, Zwiebeln und Knoblauch liefern Ballaststoffe, die das Wachstum gesunder Bakterien unterstützen.',
+          'Im Erstgespräch gehen wir Deine Gesundheitsgeschichte durch und sprechen über Deine Beschwerden. Gemeinsam klären wir, wie ich Dich mit individueller Beratung unterstützen kann, um Deine Gesundheit zu fördern.',
       },
       {
-        title: 'Welche Rolle spielt Ballaststoff in der Darmgesundheit?',
+        title: 'Welche Methoden verwendest Du?',
         description:
-          'Ballaststoffe sind unverzichtbar für eine gesunde Verdauung. Sie fördern die Darmbewegung, verhindern Verstopfung und unterstützen das Wachstum nützlicher Bakterien im Darm. Eine ballaststoffreiche Ernährung kann auch das Risiko von Darmkrebs senken.',
+          'Ich nutze evidenzbasierte Methoden, um Deine Ernährung, Darmgesundheit und Stressbewältigung zu optimieren. Deine Bedürfnisse stehen dabei im Mittelpunkt, um eine nachhaltige Gesundheitsverbesserung zu erreichen.',
       },
       {
-        title: 'Wie wirken sich Antibiotika auf den Darm aus?',
+        title: 'Bietest Du Ernährungsberatung basierend auf Laborwerten an?',
         description:
-          'Antibiotika können sowohl schädliche als auch nützliche Bakterien im Darm abtöten, was zu einer Disbalance der Darmflora führen kann. Nach einer Antibiotikatherapie ist es wichtig, die Darmflora durch probiotische Lebensmittel oder Nahrungsergänzungsmittel wieder aufzubauen.',
+          'Ja, ich biete Ernährungsberatung an, die auch Laboranalysen berücksichtigt. Die Ergebnisse von Stuhlanalysen dienen nur der Ernährungsoptimierung und nicht der medizinischen Diagnostik. Bei auffälligen Werten rate ich zu einer ärztlichen Abklärung.',
       },
       {
-        title: 'Kann Stress die Darmgesundheit beeinflussen?',
+        title: 'Wie interpretierst Du Laborwerte, insbesondere Stuhlanalysen?',
         description:
-          'Ja, Stress kann die Darmgesundheit erheblich beeinflussen. Chronischer Stress kann die Darmbarriere schwächen, die Darmflora aus dem Gleichgewicht bringen und Verdauungsprobleme wie Reizdarmsyndrom (IBS) verschlimmern. Entspannungstechniken und eine ausgewogene Ernährung können helfen, die Darmgesundheit zu unterstützen.',
+          'Ich biete eine ernährungswissenschaftliche Auswertung von Stuhlanalysen an, um Deine Ernährung und Deinen Lebensstil zu optimieren. Medizinische Diagnosen und Therapieempfehlungen erfolgen durch qualifizierte Ärzte oder Heilpraktiker.',
       },
       {
-        title: 'Was ist Zöliakie und wie beeinflusst sie den Darm?',
+        title: 'Was sind mögliche Laboruntersuchungen im Rahmen der Darmgesundheit?',
         description:
-          'Zöliakie ist eine Autoimmunerkrankung, bei der der Verzehr von Gluten die Darmzotten schädigt. Eine strikte glutenfreie Ernährung ist notwendig, um den Darm zu schützen und die Symptome zu vermeiden.',
+          'Mögliche Untersuchungen umfassen Stuhltests, Mikrobiom-Analysen und Laktosetests, die Aufschluss über das Gleichgewicht der Darmflora und mögliche Optimierungen in Deiner Ernährung geben.',
       },
       {
-        title: 'Kann die Darmgesundheit Diabetes mellitus Typ 2 beeinflussen?',
+        title: 'Was bedeutet es, wenn okkultes Blut im Stuhl nachgewiesen wird?',
         description:
-          'Ja, eine ungesunde Darmflora kann Insulinresistenz fördern und somit das Risiko für Typ-2-Diabetes erhöhen. Eine ballaststoffreiche Ernährung und Probiotika können helfen, die Darmgesundheit zu verbessern und das Diabetesrisiko zu senken.',
+          'Okkultes Blut im Stuhl kann auf Entzündungen oder Mikrorisse im Darm hinweisen. Eine ärztliche Abklärung wird empfohlen, um die Ursache zu klären.',
       },
       {
-        title: 'Wie hängt die Darmgesundheit mit Hashimoto Thyreoiditis zusammen?',
+        title: 'Was bedeutet eine reduzierte Anzahl von Bifidobacterium und Lactobacillus?',
         description:
-          'Entzündungen im Darm können Autoimmunerkrankungen wie Hashimoto begünstigen. Eine gesunde Darmflora kann helfen, Entzündungen zu reduzieren und die Symptome zu lindern.',
+          'Eine reduzierte Anzahl dieser Bakterien deutet auf ein Ungleichgewicht in der Darmflora hin. Eine Probiose-Therapie könnte hilfreich sein, um das Mikrobiom wieder ins Gleichgewicht zu bringen.',
       },
       {
-        title: 'Können psychische Belastungen und Depressionen durch die Darmgesundheit beeinflusst werden?',
+        title: 'Was passiert, wenn ich eine Laktoseintoleranz habe?',
         description:
-          'Ja, der Darm und das Gehirn sind eng verbunden. Eine gesunde Darmflora kann sich positiv auf die psychische Gesundheit auswirken und Symptome von Depressionen lindern.',
-      },
-      {
-        title: 'Was ist das Reizdarmsyndrom (IBS) und wie wird es beeinflusst?',
-        description:
-          'Das Reizdarmsyndrom ist eine häufige Darmerkrankung, die durch eine gestörte Darmflora verschlimmert werden kann. Eine angepasste Ernährung und Probiotika können helfen, die Symptome zu lindern.',
+          'Wenn der Blutzuckerspiegel nach der Laktoseaufnahme erhöht ist, deutet dies auf eine Laktoseintoleranz hin. Es wird empfohlen, laktosehaltige Lebensmittel zu meiden und alternative Produkte zu verwenden.',
       },
     ]}
   />
 
-  <!-- CallToAction Widget *********** -->
+  <!-- Call To Action **************** -->
   <CallToAction
+    title="Möchtest Du mehr erfahren?"
+    subtitle="Vereinbare jetzt Deinen Termin und starte den Weg zu besserer Gesundheit!"
     actions={[
       {
+        text: 'Jetzt Kontakt aufnehmen',
+        href: '/contact',
         variant: 'primary',
-        text: 'Zu den Angeboten',
-        href: '/pricing',
-        target: '',
-        icon: 'tabler:heart',
+        icon: '',
+      },
+      {
+        text: 'Mehr Erfahren',
+        href: '#features',
       },
     ]}
-  >
-    <Fragment slot="title"> Sorge für Deine Darmgesundheit! </Fragment>
-
-    <Fragment slot="subtitle">
-      Fühlst Du Dich oft müde und abgeschlagen? Hast Du Verdauungsbeschwerden oder Probleme mit Deiner Haut? Eine
-      gesunde Darmflora kann viele Deiner Beschwerden lindern!
-    </Fragment>
-  </CallToAction>
-
-  <!-- <Hero>
-    <Fragment slot="image">
-      <YouTube id="YewYiqzkyfI" title="" />
-      <style is:inline>
-        lite-youtube {
-          margin: 0 auto;
-          max-width: 100%;
-          border: 1px solid #ccc;
-        }
-      </style>
-    </Fragment>
-  </Hero> -->
+  />
 </Layout>

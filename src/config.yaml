@@ -10,13 +10,13 @@ site:
 metadata:
   title:
     default:
-    template: '%s — Gesundheitspraxis'
-  description: 'Wohlfühlgesundheit - Stefanie Leidel, Ihr Ernährungscoach. Entdecken Sie Tipps und Programme zur Verbesserung Ihrer Gesundheit und Ihres Wohlbefindens. Starten Sie Ihre Reise zu einem gesünderen Lebensstil noch heute!'
+    template: '%s | Wohlfühlgesundheit — Holistische Darmtherapie'
+  description: 'Wohlfühlgesundheit — Holistische Darmtherapie, Ihre Holistische Darmtherapeutin. Entdecken Sie Tipps und Programme zur Verbesserung Ihrer Gesundheit und Ihres Wohlbefindens. Starten Sie Ihre Reise zu einem gesünderen Lebensstil noch heute!'
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: Gesundheitspraxis | Stefanie Leidel
+    site_name: Wohlfühlgesundheit — Holistische Darmtherapie
     images:
       - url: '~/assets/images/default.png'
         width: 1200
