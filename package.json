@@ -30,6 +30,7 @@
     "@fontsource-variable/quicksand": "^5.1.0",
     "astro": "^5.2.3",
     "astro-embed": "^0.7.4",
+    "astro-emoji": "^1.2.0",
     "astro-icon": "^1.1.1",
     "limax": "4.1.0",
     "lodash.merge": "^4.6.2",
