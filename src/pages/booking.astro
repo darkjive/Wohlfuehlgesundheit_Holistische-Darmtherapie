@@ -1,0 +1,531 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+
+const metadata = {
+  title: 'Online Termin buchen - Zoom Meeting',
+  description: 'Buchen Sie einen Online-Beratungstermin für Darmgesundheit via Zoom',
+};
+---
+
+<Layout metadata={metadata}>
+  <HeroText 
+    tagline="Online Beratung" 
+    title="Zoom Meeting buchen"
+    subtitle="Vereinbaren Sie einen persönlichen Online-Termin für Ihre Darmgesundheits-Beratung. Bequem von zu Hause aus."
+  />
+
+  <div class="mx-auto max-w-4xl px-6 py-12">
+    <div class="grid gap-8 md:grid-cols-2">
+      <!-- Booking Kalender -->
+      <div class="rounded-lg bg-white p-6 shadow-lg dark:bg-gray-800">
+        <h3 class="mb-4 text-xl font-semibold text-gray-900 dark:text-white">
+          Verfügbare Termine
+        </h3>
+        <div id="calendar-container">
+          <div class="mb-4">
+            <label for="month-select" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+              Monat auswählen
+            </label>
+            <select id="month-select" class="w-full rounded-md border border-gray-300 px-3 py-2 dark:border-gray-600 dark:bg-gray-700 dark:text-white">
+              <!-- Wird dynamisch gefüllt -->
+            </select>
+          </div>
+          <div id="calendar" class="grid grid-cols-7 gap-2 text-center">
+            <!-- Kalender wird hier generiert -->
+          </div>
+        </div>
+        <div id="time-slots" class="mt-6 hidden">
+          <h4 class="mb-3 font-medium text-gray-900 dark:text-white">Verfügbare Zeiten</h4>
+          <div id="time-buttons" class="grid grid-cols-2 gap-2">
+            <!-- Zeitslots werden hier generiert -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Booking Form -->
+      <div class="rounded-lg bg-white p-6 shadow-lg dark:bg-gray-800">
+        <h3 class="mb-4 text-xl font-semibold text-gray-900 dark:text-white">
+          Termin Details
+        </h3>
+        
+        <!-- Zoom App Download Info -->
+        <div class="mb-6 rounded-lg bg-blue-50 p-4 dark:bg-blue-900/30">
+          <h4 class="mb-2 text-sm font-medium text-blue-800 dark:text-blue-200">
+            📱 Zoom App empfohlen
+          </h4>
+          <p class="mb-3 text-sm text-blue-700 dark:text-blue-300">
+            Für die beste Meeting-Erfahrung laden Sie die Zoom App herunter:
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <a 
+              href="https://apps.apple.com/de/app/zoom/id546505307" 
+              target="_blank"
+              class="inline-flex items-center rounded-md bg-black px-3 py-2 text-sm font-medium text-white hover:bg-gray-800"
+            >
+              <svg class="mr-2 h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+              </svg>
+              App Store
+            </a>
+            <a 
+              href="https://play.google.com/store/apps/details?id=us.zoom.videomeetings" 
+              target="_blank"
+              class="inline-flex items-center rounded-md bg-green-600 px-3 py-2 text-sm font-medium text-white hover:bg-green-700"
+            >
+              <svg class="mr-2 h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.61 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/>
+              </svg>
+              Google Play
+            </a>
+            <a 
+              href="https://zoom.us/download" 
+              target="_blank"
+              class="inline-flex items-center rounded-md bg-blue-600 px-3 py-2 text-sm font-medium text-white hover:bg-blue-700"
+            >
+              <svg class="mr-2 h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M6,2C4.89,2 4,2.89 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2H6Z"/>
+              </svg>
+              Desktop
+            </a>
+          </div>
+          <p class="mt-2 text-xs text-blue-600 dark:text-blue-400">
+            Sie können auch direkt über den Browser teilnehmen (Link wird nach der Buchung gesendet).
+          </p>
+        </div>
+        <form id="booking-form" class="space-y-4">
+          <div>
+            <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+              Vor- und Nachname *
+            </label>
+            <input 
+              type="text" 
+              id="name" 
+              name="name" 
+              required
+              class="w-full rounded-md border border-gray-300 px-3 py-2 dark:border-gray-600 dark:bg-gray-700 dark:text-white"
+            />
+          </div>
+
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+              E-Mail-Adresse *
+            </label>
+            <input 
+              type="email" 
+              id="email" 
+              name="email" 
+              required
+              class="w-full rounded-md border border-gray-300 px-3 py-2 dark:border-gray-600 dark:bg-gray-700 dark:text-white"
+            />
+          </div>
+
+          <div>
+            <label for="phone" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+              Telefonnummer
+            </label>
+            <input 
+              type="tel" 
+              id="phone" 
+              name="phone"
+              class="w-full rounded-md border border-gray-300 px-3 py-2 dark:border-gray-600 dark:bg-gray-700 dark:text-white"
+            />
+          </div>
+
+          <div>
+            <label for="consultation-type" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+              Art der Beratung *
+            </label>
+            <select 
+              id="consultation-type" 
+              name="consultation-type" 
+              required
+              class="w-full rounded-md border border-gray-300 px-3 py-2 dark:border-gray-600 dark:bg-gray-700 dark:text-white"
+            >
+              <option value="">Bitte auswählen</option>
+              <option value="erstberatung">Erstberatung Darmgesundheit (90 Min)</option>
+              <option value="folgetermin">Folgetermin (60 Min)</option>
+              <option value="stuhlbefund">Stuhlbefund-Interpretation (45 Min)</option>
+              <option value="ernaehrungsberatung">Ernährungsberatung (60 Min)</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+              Anliegen / Beschwerden (optional)
+            </label>
+            <textarea 
+              id="message" 
+              name="message" 
+              rows="3"
+              class="w-full rounded-md border border-gray-300 px-3 py-2 dark:border-gray-600 dark:bg-gray-700 dark:text-white"
+              placeholder="Beschreiben Sie kurz Ihr Anliegen..."
+            ></textarea>
+          </div>
+
+          <div id="selected-datetime" class="hidden rounded-md bg-blue-50 p-3 dark:bg-blue-900">
+            <p class="text-sm font-medium text-blue-800 dark:text-blue-200">
+              Gewählter Termin: <span id="datetime-display"></span>
+            </p>
+          </div>
+
+          <div class="flex items-center">
+            <input 
+              type="checkbox" 
+              id="privacy" 
+              name="privacy" 
+              required
+              class="h-4 w-4 rounded border-gray-300 text-blue-600"
+            />
+            <label for="privacy" class="ml-2 text-sm text-gray-700 dark:text-gray-300">
+              Ich stimme der Verarbeitung meiner Daten zu und akzeptiere die 
+              <a href="/datenschutz" class="text-blue-600 hover:underline">Datenschutzerklärung</a> *
+            </label>
+          </div>
+
+          <button 
+            type="submit" 
+            id="submit-btn"
+            disabled
+            class="w-full rounded-md bg-blue-600 px-4 py-2 text-white hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed"
+          >
+            Zoom Meeting buchen
+          </button>
+        </form>
+
+        <div id="booking-result" class="mt-4 hidden">
+          <!-- Ergebnis wird hier angezeigt -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    class ZoomBookingSystem {
+      constructor() {
+        this.selectedDate = null;
+        this.selectedTime = null;
+        this.currentMonth = new Date().getMonth();
+        this.currentYear = new Date().getFullYear();
+        
+        // Verfügbare Zeiten (24h Format)
+        this.availableTimes = [
+          '09:00', '10:00', '11:00', '12:00', 
+          '13:00', '14:00', '15:00', '16:00', '17:00'
+        ];
+        
+        // Gesperrte Tage (Wochenende standardmäßig gesperrt)
+        this.blockedDays = [0, 6]; // Sonntag = 0, Samstag = 6
+        
+        // Bereits gebuchte Termine (würde normalerweise von API kommen)
+        this.bookedSlots = [
+          // Format: 'YYYY-MM-DD HH:MM'
+        ];
+        
+        this.init();
+      }
+
+      init() {
+        this.setupMonthSelector();
+        this.generateCalendar();
+        this.setupEventListeners();
+      }
+
+      setupMonthSelector() {
+        const monthSelect = document.getElementById('month-select');
+        const months = [
+          'Januar', 'Februar', 'März', 'April', 'Mai', 'Juni',
+          'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'
+        ];
+
+        // Nächste 6 Monate anzeigen
+        for (let i = 0; i < 6; i++) {
+          const date = new Date();
+          date.setMonth(date.getMonth() + i);
+          const monthIndex = date.getMonth();
+          const year = date.getFullYear();
+          
+          const option = document.createElement('option');
+          option.value = `${year}-${monthIndex}`;
+          option.textContent = `${months[monthIndex]} ${year}`;
+          
+          if (i === 0) option.selected = true;
+          monthSelect.appendChild(option);
+        }
+      }
+
+      generateCalendar() {
+        const calendar = document.getElementById('calendar');
+        calendar.innerHTML = '';
+
+        // Wochentage Headers
+        const dayHeaders = ['So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa'];
+        dayHeaders.forEach(day => {
+          const dayHeader = document.createElement('div');
+          dayHeader.className = 'font-medium text-gray-500 py-2';
+          dayHeader.textContent = day;
+          calendar.appendChild(dayHeader);
+        });
+
+        // Tage des Monats
+        const firstDay = new Date(this.currentYear, this.currentMonth, 1).getDay();
+        const daysInMonth = new Date(this.currentYear, this.currentMonth + 1, 0).getDate();
+        const today = new Date();
+
+        // Leere Zellen für die Tage vor dem ersten Tag des Monats
+        for (let i = 0; i < firstDay; i++) {
+          const emptyDay = document.createElement('div');
+          calendar.appendChild(emptyDay);
+        }
+
+        // Tage des Monats
+        for (let day = 1; day <= daysInMonth; day++) {
+          const dayElement = document.createElement('button');
+          dayElement.className = 'p-2 rounded-md hover:bg-blue-100 dark:hover:bg-blue-800';
+          dayElement.textContent = day;
+
+          const currentDate = new Date(this.currentYear, this.currentMonth, day);
+          const dayOfWeek = currentDate.getDay();
+
+          // Vergangene Tage und gesperrte Tage deaktivieren
+          if (currentDate < today || this.blockedDays.includes(dayOfWeek)) {
+            dayElement.className += ' text-gray-400 cursor-not-allowed';
+            dayElement.disabled = true;
+          } else {
+            dayElement.className += ' text-gray-900 dark:text-white hover:bg-blue-100 dark:hover:bg-blue-800';
+            dayElement.addEventListener('click', () => this.selectDate(day));
+          }
+
+          calendar.appendChild(dayElement);
+        }
+      }
+
+      selectDate(day) {
+        // Vorherige Auswahl entfernen
+        document.querySelectorAll('#calendar button').forEach(btn => {
+          btn.classList.remove('bg-blue-600', 'text-white');
+        });
+
+        // Neue Auswahl markieren
+        event.target.classList.add('bg-blue-600', 'text-white');
+        
+        this.selectedDate = `${this.currentYear}-${String(this.currentMonth + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+        this.showTimeSlots();
+      }
+
+      showTimeSlots() {
+        const timeSlotsContainer = document.getElementById('time-slots');
+        const timeButtonsContainer = document.getElementById('time-buttons');
+        
+        timeSlotsContainer.classList.remove('hidden');
+        timeButtonsContainer.innerHTML = '';
+
+        this.availableTimes.forEach(time => {
+          const timeSlot = `${this.selectedDate} ${time}`;
+          const button = document.createElement('button');
+          button.type = 'button';
+          button.className = 'p-2 rounded-md border border-gray-300 hover:bg-blue-100 dark:border-gray-600 dark:hover:bg-blue-800';
+          button.textContent = time;
+
+          // Prüfen ob bereits gebucht
+          if (this.bookedSlots.includes(timeSlot)) {
+            button.className += ' bg-gray-200 text-gray-500 cursor-not-allowed dark:bg-gray-700';
+            button.disabled = true;
+            button.textContent += ' (belegt)';
+          } else {
+            button.addEventListener('click', () => this.selectTime(time, button));
+          }
+
+          timeButtonsContainer.appendChild(button);
+        });
+      }
+
+      selectTime(time, buttonElement) {
+        // Vorherige Auswahl entfernen
+        document.querySelectorAll('#time-buttons button').forEach(btn => {
+          btn.classList.remove('bg-blue-600', 'text-white');
+        });
+
+        // Neue Auswahl markieren
+        buttonElement.classList.add('bg-blue-600', 'text-white');
+        
+        this.selectedTime = time;
+        this.updateSelectedDateTime();
+        this.enableSubmitButton();
+      }
+
+      updateSelectedDateTime() {
+        const selectedDatetimeDiv = document.getElementById('selected-datetime');
+        const datetimeDisplay = document.getElementById('datetime-display');
+        
+        if (this.selectedDate && this.selectedTime) {
+          const date = new Date(this.selectedDate + 'T' + this.selectedTime);
+          const options = { 
+            weekday: 'long', 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit'
+          };
+          
+          datetimeDisplay.textContent = date.toLocaleDateString('de-DE', options) + ' Uhr';
+          selectedDatetimeDiv.classList.remove('hidden');
+        }
+      }
+
+      enableSubmitButton() {
+        const submitBtn = document.getElementById('submit-btn');
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const consultationType = document.getElementById('consultation-type').value;
+        const privacy = document.getElementById('privacy').checked;
+
+        if (this.selectedDate && this.selectedTime && name && email && consultationType && privacy) {
+          submitBtn.disabled = false;
+        }
+      }
+
+      setupEventListeners() {
+        // Month selector
+        document.getElementById('month-select').addEventListener('change', (e) => {
+          const [year, month] = e.target.value.split('-');
+          this.currentYear = parseInt(year);
+          this.currentMonth = parseInt(month);
+          this.generateCalendar();
+          document.getElementById('time-slots').classList.add('hidden');
+        });
+
+        // Form validation
+        ['name', 'email', 'consultation-type', 'privacy'].forEach(id => {
+          document.getElementById(id).addEventListener('change', () => {
+            this.enableSubmitButton();
+          });
+        });
+
+        // Form submission
+        document.getElementById('booking-form').addEventListener('submit', (e) => {
+          e.preventDefault();
+          this.submitBooking();
+        });
+      }
+
+      async submitBooking() {
+        const formData = new FormData(document.getElementById('booking-form'));
+        const bookingData = {
+          name: formData.get('name'),
+          email: formData.get('email'),
+          phone: formData.get('phone'),
+          consultationType: formData.get('consultation-type'),
+          message: formData.get('message'),
+          date: this.selectedDate,
+          time: this.selectedTime,
+          datetime: `${this.selectedDate}T${this.selectedTime}:00`
+        };
+
+        const submitBtn = document.getElementById('submit-btn');
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Wird gebucht...';
+        submitBtn.disabled = true;
+
+        try {
+          // Hier würde normalerweise der API-Call an dein Backend gehen
+          // const response = await fetch('/api/book-zoom-meeting', {
+          //   method: 'POST',
+          //   headers: { 'Content-Type': 'application/json' },
+          //   body: JSON.stringify(bookingData)
+          // });
+
+          // Simulierte Antwort für Demo
+          await new Promise(resolve => setTimeout(resolve, 2000));
+          
+          this.showBookingResult({
+            success: true,
+            meetingId: '123-456-789',
+            meetingUrl: 'https://zoom.us/j/123456789',
+            meetingPassword: 'DarmGes2024',
+            message: 'Ihr Zoom-Meeting wurde erfolgreich erstellt!'
+          });
+
+        } catch (error) {
+          this.showBookingResult({
+            success: false,
+            message: 'Es ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.'
+          });
+        } finally {
+          submitBtn.textContent = originalText;
+          submitBtn.disabled = false;
+        }
+      }
+
+      showBookingResult(result) {
+        const resultDiv = document.getElementById('booking-result');
+        
+        if (result.success) {
+          resultDiv.innerHTML = `
+            <div class="rounded-md bg-green-50 p-4 dark:bg-green-900">
+              <div class="flex">
+                <div class="flex-shrink-0">
+                  <svg class="h-5 w-5 text-green-400" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                  </svg>
+                </div>
+                <div class="ml-3">
+                  <h3 class="text-sm font-medium text-green-800 dark:text-green-200">
+                    Termin erfolgreich gebucht!
+                  </h3>
+                  <div class="mt-2 text-sm text-green-700 dark:text-green-300">
+                    <p>${result.message}</p>
+                    <p class="mt-2">
+                      <strong>Meeting-ID:</strong> ${result.meetingId}<br>
+                      <strong>Meeting-Passwort:</strong> ${result.meetingPassword}<br>
+                      <strong>Zoom-Link:</strong> <a href="${result.meetingUrl}" class="underline text-blue-600 hover:text-blue-800" target="_blank">${result.meetingUrl}</a>
+                    </p>
+                    <div class="mt-4 p-3 bg-white rounded-md dark:bg-gray-800">
+                      <h4 class="text-xs font-medium text-gray-700 dark:text-gray-300 mb-2">Schnellzugriff Zoom Apps:</h4>
+                      <div class="flex flex-wrap gap-2">
+                        <a href="https://apps.apple.com/de/app/zoom/id546505307" target="_blank" class="text-xs bg-black text-white px-2 py-1 rounded hover:bg-gray-800">📱 iOS App</a>
+                        <a href="https://play.google.com/store/apps/details?id=us.zoom.videomeetings" target="_blank" class="text-xs bg-green-600 text-white px-2 py-1 rounded hover:bg-green-700">📱 Android App</a>
+                        <a href="https://zoom.us/download" target="_blank" class="text-xs bg-blue-600 text-white px-2 py-1 rounded hover:bg-blue-700">💻 Desktop App</a>
+                      </div>
+                    </div>
+                    <p class="mt-2 text-xs">
+                      Sie erhalten eine Bestätigungs-E-Mail mit allen Details, dem Zoom-Link und Kalender-Einladung.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          `;
+        } else {
+          resultDiv.innerHTML = `
+            <div class="rounded-md bg-red-50 p-4 dark:bg-red-900">
+              <div class="flex">
+                <div class="flex-shrink-0">
+                  <svg class="h-5 w-5 text-red-400" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
+                  </svg>
+                </div>
+                <div class="ml-3">
+                  <h3 class="text-sm font-medium text-red-800 dark:text-red-200">
+                    Buchung fehlgeschlagen
+                  </h3>
+                  <div class="mt-2 text-sm text-red-700 dark:text-red-300">
+                    <p>${result.message}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          `;
+        }
+        
+        resultDiv.classList.remove('hidden');
+      }
+    }
+
+    // System initialisieren wenn DOM geladen ist
+    document.addEventListener('DOMContentLoaded', () => {
+      new ZoomBookingSystem();
+    });
+  </script>
+</Layout>

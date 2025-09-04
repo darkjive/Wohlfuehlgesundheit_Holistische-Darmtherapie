@@ -11,6 +11,7 @@ import Steps from '~/components/widgets/Steps.astro';
 import Image from '~/components/common/Image.astro';
 
 import certImage from '~/assets/images/INA_Cert2025.jpg';
+import certImage2 from '~/assets/images/Teilnahmebestaetigung_Leidel.jpg';
 const metadata = {
   title: 'Über mich',
 };
@@ -26,8 +27,8 @@ const metadata = {
     actions={[{ variant: 'secondary', text: 'Mehr erfahren', href: '/homes/personal#about' }]}
   >
     <Fragment slot="subtitle">
-      Ich freue mich, dass du den Weg zu meiner Seite gefunden hast. Mein Name ist Stefanie Leidel und als Holistische
-      Darmtherapeutin unterstütze ich dich dabei, deine Gesundheit und dein Wohlbefinden zu verbessern.
+      Schön, dass du hier bist! Mein Name ist Stefanie Leidel. Als zertifizierte holistische Darmtherapeutin und
+      Ernährungsberaterin begleite ich dich auf deinem Weg zu mehr Gesundheit und Wohlbefinden.
     </Fragment>
   </Hero>
 
@@ -41,51 +42,36 @@ const metadata = {
         icon: 'tabler:brand-instagram',
         callToAction: {
           target: '_blank',
-          text: 'Instagramm',
+          text: 'Instagram',
           href: 'https://www.instagram.com/stories/wohl_fuehl_gesundheit/',
-        },
-      },
-      /*       {
-        icon: 'tabler:brand-facebook',
-        callToAction: {
-          target: '_blank',
-          text: 'Facebook',
-          href: '#',
-        },
-      },
- */ {
-        icon: 'tabler:brand-pinterest',
-        callToAction: {
-          target: '_blank',
-          text: 'Pinterest',
-          href: '#',
         },
       },
     ]}
     image={{
       src: '~/assets/images/steffi.jpg',
-      alt: 'Colorful Image',
+      alt: 'Stefanie Leidel',
       loading: 'eager',
     }}
   >
     <Fragment slot="content">
       <h2 class="text-2xl font-heading font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Über mich</h2>
       <p>
-        Als passionierte Ernährungscoach begleite ich dich auf deinem Weg zu einem gesünderen und glücklicheren Leben.
-        Meine Leidenschaft für Ernährung und Gesundheit hat mich dazu inspiriert, Menschen zu unterstützen, ihre
-        Ernährungsgewohnheiten zu verbessern und ihr Wohlbefinden zu steigern.
+        Ich habe eine 12-monatige Ausbildung am Institut für Naturheilkunde und Ayurveda erfolgreich abgeschlossen
+        (April 2024 – März 2025). Dabei habe ich die Fachkompetenz als <strong
+          >zertifizierte holistische Darmtherapeutin und Ernährungsberaterin</strong
+        > erlangt.
       </p>
       <br />
       <p>
-        Ich glaube daran, dass jeder Mensch einzigartig ist und es keine "One-Size-Fits-All"-Lösungen gibt. Deshalb lege
-        ich großen Wert darauf, individuelle Programme zu entwickeln, die auf deine Bedürfnisse und Ziele abgestimmt
-        sind.
+        Die Ausbildung umfasste unter anderem Anatomie der Verdauungsorgane, das Immunsystem, Darmmikrobiom und
+        Darm-Hirn-Achse, Stoffwechsel- und Regulationssysteme, Säure-Basen-Haushalt, Nähr- und Vitalstoffe,
+        ganzheitliche Ernährungslehre, Darm- und Lebertherapie, Stressmanagement sowie Praxisfälle mit Anamnesen,
+        Stuhlbefund-Interpretationen und individuellen Gesundheitsplänen.
       </p>
       <br />
       <p>
-        Egal, ob du abnehmen, deine Energie steigern oder einfach bewusster und gesünder leben möchtest – ich bin hier,
-        um dich zu unterstützen. Mit praktischen Tipps, motivierenden Gesprächen und maßgeschneiderten Ernährungsplänen
-        helfe ich dir, deine Gesundheitsziele zu erreichen und zu halten.
+        In meiner Arbeit ist es mir wichtig, aktuelles Wissen mit einer ganzheitlichen und praxisnahen Beratung zu
+        verbinden. Mein Ziel ist es, dir zu helfen, dein Wohlbefinden zu stärken und langfristig in Balance zu kommen.
       </p>
     </Fragment>
 
@@ -98,18 +84,12 @@ const metadata = {
 
   <Steps
     id="resume"
-    title="Lebenslauf:"
+    title="Beruflicher Werdegang"
     items={[
       {
         title:
-          'Lorem ipsum <br /> <span class="font-normal">At vero eos et accusam et justo duo dolores et ea rebum.</span> <br /> <span class="text-sm font-normal">2021 - Present</span>',
-        description: `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.`,
-        icon: 'tabler:briefcase',
-      },
-      {
-        title:
-          'Lorem ipsum <br /> <span class="font-normal">At vero eos et accusam et justo duo dolores et ea rebum.</span> <br /> <span class="text-sm font-normal">2010 - 2021</span>',
-        description: `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.`,
+          'Gesundheitsberatung <br /> <span class="font-normal">Selbstständig</span> <br /> <span class="text-sm font-normal">2025 - heute</span>',
+        description: `Begleitung von Klientinnen und Klienten mit dem Schwerpunkt ganzheitliche Darmtherapie und Ernährungsberatung.`,
         icon: 'tabler:briefcase',
       },
     ]}
@@ -120,64 +100,76 @@ const metadata = {
 
   <Steps
     id="education"
-    title="Ausbildung:"
+    title="Ausbildung"
     items={[
       {
         title:
-          'Lorem ipsum <br /> <span class="font-normal">Firma/Unternehmen, Stadt, Adresse</span> <br /> <span class="text-sm font-normal">2021 - Heute</span>',
-        icon: 'tabler:school',
-      },
-      {
-        title:
-          'Lorem ipsum <br /> <span class="font-normal">Firma/Unternehmen, Stadt, Adresse</span> <br /> <span class="text-sm font-normal">2021 - Heute</span>',
+          'Zertifizierte holistische Darmtherapeutin & Ernährungsberaterin <br /> <span class="font-normal">Institut für Naturheilkunde und Ayurveda, Dorsten</span> <br /> <span class="text-sm font-normal">April 2024 – März 2025</span>',
         icon: 'tabler:school',
       },
     ]}
     classes={{ container: 'max-w-3xl' }}
   />
+
   <section class="relative border-t dark:border-none not-prose scroll-mt-[72px]">
-    <div
-      class="relative mx-auto px-4 md:px-6 py-12 md:py-16 lg:py-20 text-default intersect-once intersect-quarter intercept-no-queue motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade max-w-3xl"
-    >
-      <h2 class="font-bold text-center leading-tighter tracking-tighter font-heading text-heading text-3xl lg:text-4xl">
-        Zertifikate:
+    <div class="relative mx-auto px-4 md:px-6 py-12 md:py-16 lg:py-20 text-default max-w-3xl text-center">
+      <h2 class="font-bold font-heading text-heading text-3xl lg:text-4xl">Zertifikate</h2>
+    </div>
+
+    <!-- Zertifikat Bild -->
+    <div class="relative mx-auto px-4 md:px-6 text-default max-w-3xl">
+      <Image
+        src={certImage}
+        alt="Zertifikat INA 2025"
+        class="w-full max-w-md mx-auto rounded-lg shadow-md"
+        loading="lazy"
+      />
+    </div>
+  </section>
+
+  <section class="relative border-t dark:border-none not-prose scroll-mt-[72px]">
+    <div class="relative mx-auto px-4 md:px-6 py-12 md:py-16 lg:py-20 text-default max-w-3xl text-center">
+      <h2 class="font-bold font-heading text-heading text-3xl lg:text-4xl">
+        Teilnahmebestätigung für die Ausbildung am Institut für Naturheilkunde
       </h2>
     </div>
 
     <!-- Zertifikat Bild -->
-    <div
-      class="relative mx-auto px-4 md:px-6 text-default intersect-once intersect-quarter intercept-no-queue motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade max-w-3xl"
-    >
-      <Image src={certImage} alt="Zertifikate" class="w-full max-w-md mx-auto rounded-lg shadow-md" loading="lazy" />
+    <div class="relative mx-auto px-4 md:px-6 text-default max-w-3xl">
+      <Image
+        src={certImage2}
+        alt="Teilnahmebestätigung für die Ausbildung am Institut für Naturheilkunde"
+        class="w-full max-w-md mx-auto rounded-lg shadow-md"
+        loading="lazy"
+      />
     </div>
   </section>
+
   <!-- Features3 Widget ************** -->
 
   <Features3
     title="Fähigkeiten"
     classes={{ container: 'bg-green-50 dark:bg-transparent' }}
-    subtitle="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
+    subtitle="Ganzheitliche Darmgesundheit, Ernährungsberatung und individuelle Gesundheitspläne."
     columns={3}
     defaultIcon="tabler:point-filled"
     items={[
       {
-        title: 'Lorem ipsum dolor sit amet',
-        description:
-          'At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
+        title: 'Darmgesundheit',
+        description: 'Anamnesen, Stuhlbefund-Interpretationen und ganzheitliche Darmtherapie.',
       },
       {
-        title: 'Lorem ipsum dolor sit amet',
-        description:
-          'At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
+        title: 'Ernährungsberatung',
+        description: 'Individuelle Ernährungspläne basierend auf deinen Bedürfnissen und Zielen.',
       },
       {
-        title: 'Lorem ipsum dolor sit amet',
-        description:
-          'At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
+        title: 'Stressmanagement',
+        description: 'Aktivierung des Vagusnervs und Methoden für mehr innere Balance.',
       },
     ]}
   />
-  <Quote quote="Die Natur kann von keinem belehrt werden,  sie weiß immer das Richtige." author="Hippokrates" />
+
+  <Quote quote="Die Natur kann von keinem belehrt werden, sie weiß immer das Richtige." author="Hippokrates" />
 
   <!-- Testimonials Widget *********** -->
 
@@ -186,38 +178,23 @@ const metadata = {
     subtitle="Hier findest du einige Erfahrungsberichte meiner Klienten."
     testimonials={[
       {
-        testimonial: `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.`,
+        testimonial: `Die Beratung von Stefanie hat mir geholfen, meine Verdauungsprobleme endlich in den Griff zu bekommen. Besonders die Kombination aus Ernährungstipps und Darmtherapie hat mir neue Lebensqualität geschenkt.`,
         name: 'Markus Fischer',
-        job: 'Automatiktürenmonteur',
+        job: 'Klient',
         image: {
-          src: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+          src: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80',
           alt: 'Markus Fischer',
         },
       },
       {
-        testimonial: `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.`,
+        testimonial: `Dank der einfühlsamen und fundierten Begleitung von Stefanie fühle ich mich leichter, energiegeladener und ausgeglichener.`,
         name: 'Sandra Muster',
-        job: 'Bürokauffrau',
+        job: 'Klientin',
         image: {
-          src: 'https://images.unsplash.com/photo-1554151228-14d9def656e4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=772&q=80',
+          src: 'https://images.unsplash.com/photo-1554151228-14d9def656e4?ixlib=rb-4.0.3&auto=format&fit=crop&w=772&q=80',
           alt: 'Sandra Muster',
         },
       },
     ]}
   />
-
-  <!-- CallToAction Widget *********** -->
-
-  <!--   <CallToAction
-    title="Du willst hier auch stehen?"
-    subtitle="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Schreib mir ',
-        href: '/',
-      },
-    ]}
-  />
- -->
 </Layout>

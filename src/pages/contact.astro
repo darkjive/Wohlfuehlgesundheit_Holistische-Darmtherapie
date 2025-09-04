@@ -2,6 +2,7 @@
 import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
 import ContactUs from '~/components/widgets/Contact.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
 // import Features2 from '~/components/widgets/Features2.astro';
 
 const metadata = {
@@ -37,5 +38,28 @@ const metadata = {
       label: 'Durch das Absenden dieses Kontaktformulars stimmst du der Erhebung Deiner persönlichen Daten zu.',
     }}
     description="Ich antworte in der Regel innerhalb von 24 Stunden."
+  />
+  <Testimonials
+    title="Was meine Klienten sagen"
+    testimonials={[
+      {
+        testimonial: `Die Stuhlbefundinterpretation war so detailliert und verständlich erklärt. Stefanie nimmt sich wirklich die Zeit, die man braucht, um alles zu verstehen.`,
+        name: 'Thomas M.',
+        job: 'Klient aus Darmstadt',
+        image: {
+          alt: 'Thomas M.',
+          src: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80',
+        },
+      },
+      {
+        testimonial: `Endlich jemand, der den Darm wirklich ganzheitlich betrachtet! Die Verbindung zwischen Stress und Darmgesundheit war für mich ein Augenöffner.`,
+        name: 'Sarah L.',
+        job: 'Klientin aus Groß-Umstadt',
+        image: {
+          src: 'https://images.unsplash.com/photo-1554151228-14d9def656e4?ixlib=rb-4.0.3&auto=format&fit=crop&w=772&q=80',
+          alt: 'Sarah L.',
+        },
+      },
+    ]}
   />
 </Layout>

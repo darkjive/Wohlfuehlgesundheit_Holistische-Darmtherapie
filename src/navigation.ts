@@ -33,9 +33,9 @@ export const footerData = {
       href: 'https://www.instagram.com/stories/wohl_fuehl_gesundheit/',
     },
     // { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: '#' },
-    { ariaLabel: 'Pinterest', icon: 'tabler:brand-pinterest', href: '#' },
+    // { ariaLabel: 'Pinterest', icon: 'tabler:brand-pinterest', href: '#' },
   ],
   footNote: `
-    © Wohlfühlgesundheit <br/> <a class="text-primary hover:text-black dark:text-secondary" href="/terms">Impressum</a> · <a class="text-primary hover:text-black dark:text-secondary" href="/privacy">Datenschutz</a>
+    © Wohlfühlgesundheit · <a class="text-primary hover:text-black dark:text-secondary" href="/terms">Impressum</a> · <a class="text-primary hover:text-black dark:text-secondary" href="/privacy">Datenschutz</a>
   `,
 };

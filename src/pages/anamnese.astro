@@ -1,0 +1,230 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import ContactUs from '~/components/widgets/Contact.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+
+const metadata = {
+  title: 'Anamnesebogen Darmgesundheit',
+  description: 'Detaillierter Anamnesebogen für Magen-Darm-Beschwerden und Darmgesundheit',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
+  <HeroText 
+    tagline="Anamnesebogen Darmgesundheit" 
+    title="Ihre Gesundheit liegt mir am Herzen"
+    subtitle="Um Ihnen die bestmögliche Beratung zu bieten, benötige ich einige Informationen über Ihre aktuelle gesundheitliche Situation und Beschwerden."
+  />
+
+  <ContactUs
+    id="darm-anamnese-form"
+    title="Anamnesebogen für Darmgesundheit"
+    subtitle="Bitte füllen Sie diesen Bogen so vollständig wie möglich aus. Ihre Angaben werden vertraulich behandelt und helfen mir, Ihre Situation besser zu verstehen."
+    inputs={[
+      // Persönliche Daten
+      {
+        type: 'text',
+        name: 'name',
+        label: 'Vor- und Nachname',
+        autocomplete: 'name',
+      },
+      {
+        type: 'email',
+        name: 'email',
+        label: 'E-Mail-Adresse',
+        autocomplete: 'email',
+      },
+      {
+        type: 'tel',
+        name: 'phone',
+        label: 'Telefonnummer',
+        placeholder: 'z.B. 06151 123456',
+        autocomplete: 'tel',
+      },
+      {
+        type: 'date',
+        name: 'birthdate',
+        label: 'Geburtsdatum',
+      },
+      {
+        type: 'text',
+        name: 'height',
+        label: 'Körpergröße (cm)',
+        placeholder: 'z.B. 175',
+      },
+      {
+        type: 'text',
+        name: 'weight',
+        label: 'Aktuelles Gewicht (kg)',
+        placeholder: 'z.B. 75',
+      },
+      
+      // Beschwerden - Dauer und Art
+      {
+        type: 'text',
+        name: 'beschwerden_dauer',
+        label: 'Wie lange haben Sie bereits Beschwerden?',
+        placeholder: 'z.B. einige Wochen, seit 3 Monaten, seit der Kindheit',
+      },
+      
+      // Aktuelle Beschwerden (Checkboxes simuliert durch Text)
+      {
+        type: 'text',
+        name: 'aktuelle_beschwerden',
+        label: 'Welche Beschwerden haben Sie aktuell?',
+        placeholder: 'z.B. Blähungen, Verstopfung, Durchfall, Bauchkrämpfe, Völlegefühl, etc.',
+      },
+      
+      // Stuhlgang
+      {
+        type: 'text',
+        name: 'stuhlgang_frequenz',
+        label: 'Wie häufig haben Sie Stuhlgang?',
+        placeholder: 'z.B. täglich, alle 2-3 Tage, mehrmals täglich, unregelmäßig',
+      },
+      
+      {
+        type: 'text',
+        name: 'stuhlgang_konsistenz',
+        label: 'Wie würden Sie die Konsistenz Ihres Stuhlgangs beschreiben?',
+        placeholder: 'z.B. normal geformt, sehr fest, breiig, flüssig, schleimig, wechselnd',
+      },
+      
+      // Gewichtsverlust
+      {
+        type: 'text',
+        name: 'gewichtsverlust',
+        label: 'Haben Sie in letzter Zeit ungewollt an Gewicht verloren?',
+        placeholder: 'z.B. Nein, oder: Ja, ca. 5 kg in den letzten 3 Monaten',
+      },
+      
+      // Familiengeschichte
+      {
+        type: 'text',
+        name: 'familiengeschichte',
+        label: 'Gibt es in Ihrer Familie chronische Darmerkrankungen?',
+        placeholder: 'z.B. Morbus Crohn, Colitis ulcerosa, Darmkrebs, Reizdarm oder: Nein',
+      },
+      
+      // Nahrungsmittelunverträglichkeiten
+      {
+        type: 'text',
+        name: 'unvertraeglichkeiten',
+        label: 'Haben Sie bekannte Nahrungsmittelunverträglichkeiten oder -allergien?',
+        placeholder: 'z.B. Laktose, Gluten, Fructose, Histamin, bestimmte Lebensmittel',
+      },
+      
+      // Ernährung
+      {
+        type: 'text',
+        name: 'ernaehrungsweise',
+        label: 'Wie würden Sie Ihre Ernährungsweise beschreiben?',
+        placeholder: 'z.B. normale Mischkost, vegetarisch, vegan, glutenfrei, Low Carb',
+      },
+      
+      // Vorerkrankungen
+      {
+        type: 'text',
+        name: 'vorerkrankungen',
+        label: 'Haben Sie relevante Vorerkrankungen?',
+        placeholder: 'z.B. Diabetes, Schilddrüsenerkrankungen, Operationen am Magen-Darm-Trakt, etc.',
+      },
+      
+      // Medikamente
+      {
+        type: 'text',
+        name: 'medikamente',
+        label: 'Nehmen Sie regelmäßig Medikamente ein?',
+        placeholder: 'Bitte alle Medikamente auflisten, auch frei verkäufliche',
+      },
+      
+      // Stress und Lebensstil
+      {
+        type: 'text',
+        name: 'stress_level',
+        label: 'Wie würden Sie Ihr aktuelles Stressniveau einschätzen?',
+        placeholder: 'z.B. niedrig, mittel, hoch, sehr hoch - bitte begründen Sie kurz',
+      },
+      
+      {
+        type: 'text',
+        name: 'schlafqualitaet',
+        label: 'Wie ist Ihre Schlafqualität?',
+        placeholder: 'z.B. sehr gut, gut, mittelmäßig, schlecht - wie viele Stunden schlafen Sie?',
+      },
+      
+      // Auslandsreisen
+      {
+        type: 'text',
+        name: 'auslandsreisen',
+        label: 'Waren Sie in letzter Zeit im Ausland?',
+        placeholder: 'Falls ja, wann und wo? (besonders wichtig: Asien, Afrika, Südamerika)',
+      },
+      
+      // Laborwerte
+      {
+        type: 'text',
+        name: 'laborwerte',
+        label: 'Wurden bei Ihnen bereits auffällige Laborwerte festgestellt?',
+        placeholder: 'z.B. Anämie, erhöhte Leberwerte, Vitamin-D-Mangel, B12-Mangel, etc.',
+      },
+    ]}
+    
+    textarea={{
+      label: 'Zusätzliche Informationen',
+      placeholder: 'Hier haben Sie Platz für weitere wichtige Informationen zu Ihren Beschwerden, Ihrer Krankengeschichte oder Fragen, die Sie haben...',
+      rows: 6,
+    }}
+    
+    disclaimer={{
+      label: 'Mit dem Absenden dieses Anamnesebogens stimme ich der vertraulichen Verarbeitung meiner Gesundheitsdaten zu. Mir ist bewusst, dass diese Angaben der Erstberatung dienen und eine ärztliche Diagnose nicht ersetzen.',
+    }}
+    
+    description="Ihre Angaben werden streng vertraulich behandelt. Nach Erhalt Ihres Anamnesebogens melde ich mich innerhalb von 48 Stunden bei Ihnen, um das weitere Vorgehen zu besprechen."
+  />
+
+  <Testimonials
+    title="Erfahrungen meiner Klienten"
+    subtitle="Was andere über meine ganzheitliche Herangehensweise an die Darmgesundheit sagen"
+    testimonials={[
+      {
+        testimonial: `Der ausführliche Anamnesebogen hat mir geholfen, meine Beschwerden strukturiert zu durchdenken. Stefanie hat daraus ein individuelles Konzept entwickelt, das wirklich zu mir passt.`,
+        name: 'Maria K.',
+        job: 'Klientin aus Frankfurt',
+        image: {
+          alt: 'Maria K.',
+          src: 'https://images.unsplash.com/photo-1494790108755-2616b612b977?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80',
+        },
+      },
+      {
+        testimonial: `Die Verbindung zwischen Stress, Ernährung und Darmgesundheit war für mich völlig neu. Durch die ganzheitliche Betrachtung konnte ich endlich meine jahrelangen Beschwerden verbessern.`,
+        name: 'Thomas M.',
+        job: 'Klient aus Darmstadt', 
+        image: {
+          alt: 'Thomas M.',
+          src: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80',
+        },
+      },
+      {
+        testimonial: `Endlich jemand, der sich wirklich Zeit nimmt und den Darm nicht isoliert betrachtet. Die Stuhlbefundinterpretation war so detailliert und verständlich erklärt.`,
+        name: 'Sarah L.',
+        job: 'Klientin aus Groß-Umstadt',
+        image: {
+          src: 'https://images.unsplash.com/photo-1554151228-14d9def656e4?ixlib=rb-4.0.3&auto=format&fit=crop&w=772&q=80',
+          alt: 'Sarah L.',
+        },
+      },
+      {
+        testimonial: `Der Anamnesebogen war sehr durchdacht und umfassend. Dadurch konnte Stefanie bereits beim Erstgespräch gezielt auf meine Probleme eingehen.`,
+        name: 'Michael R.',
+        job: 'Klient aus Aschaffenburg',
+        image: {
+          src: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80',
+          alt: 'Michael R.',
+        },
+      },
+    ]}
+  />
+</Layout>
