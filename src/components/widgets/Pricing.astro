@@ -25,7 +25,7 @@ const {
       {
         prices &&
           prices.map(({ title, subtitle, price, period, items, callToAction, hasRibbon = false, ribbonTitle }) => (
-            <div class="mx-auto flex w-full max-w-sm intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter">
+            <div class="mx-auto flex w-full max-w-sm">
               {price && period && (
                 <div class="rounded-lg backdrop-blur border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 shadow px-6 py-8 flex w-full max-w-sm flex-col justify-between text-center">
                   {hasRibbon && ribbonTitle && (
