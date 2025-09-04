@@ -57,15 +57,15 @@ Website für die Gesundheitspraxis Stefaniel, entwickelt mit Astro und Tailwind 
 
 Alle Befehle werden im Hauptverzeichnis des Projekts ausgeführt:
 
-| Befehl | Aktion |
-|--------|---------|
-| `npm install` | Installiert Abhängigkeiten |
-| `npm run dev` | Startet den Entwicklungsserver auf localhost:4321 |
-| `npm run build` | Erstellt die produktionsreife Website in ./dist/ |
-| `npm run preview` | Vorschau der gebauten Website vor dem Deployment |
-| `npm run check` | Überprüft das Projekt auf Fehler |
-| `npm run fix` | Führt ESLint aus und formatiert Code mit Prettier |
-| `npm run astro ...` | Führt Astro CLI-Befehle aus |
+| Befehl              | Aktion                                            |
+| ------------------- | ------------------------------------------------- |
+| `npm install`       | Installiert Abhängigkeiten                        |
+| `npm run dev`       | Startet den Entwicklungsserver auf localhost:4321 |
+| `npm run build`     | Erstellt die produktionsreife Website in ./dist/  |
+| `npm run preview`   | Vorschau der gebauten Website vor dem Deployment  |
+| `npm run check`     | Überprüft das Projekt auf Fehler                  |
+| `npm run fix`       | Führt ESLint aus und formatiert Code mit Prettier |
+| `npm run astro ...` | Führt Astro CLI-Befehle aus                       |
 
 ## Konfiguration
 
@@ -94,7 +94,7 @@ apps:
   post:
     isEnabled: true
     permalink: '/blog/%slug%'
-    
+
 ui:
   theme: 'system' # "system" | "light" | "dark"
 ```
@@ -102,11 +102,14 @@ ui:
 ## Anpassungen
 
 ### Styling
+
 Für Anpassungen der Schriftarten, Farben oder anderen Design-Elementen:
+
 - `src/components/CustomStyles.astro`
 - `src/assets/styles/tailwind.css`
 
 ### Inhalte
+
 - Seiten: `src/pages/`
 - Blog-Artikel: `src/content/post/`
 - Komponenten: `src/components/`
@@ -114,6 +117,7 @@ Für Anpassungen der Schriftarten, Farben oder anderen Design-Elementen:
 ## Deployment
 
 1. Produktionsbuild erstellen:
+
    ```bash
    npm run build
    ```
