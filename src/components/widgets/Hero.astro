@@ -16,7 +16,7 @@ const {
 } = Astro.props;
 ---
 
-<section data-aos="fade-up" data-aos-delay="150" class="relative md:-mt-[76px] not-prose" {...id ? { id } : {}}>
+<section class="relative md:-mt-[76px] not-prose" {...id ? { id } : {}}>
   <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
     <slot name="bg">
       {bg ? <Fragment set:html={bg} /> : null}
@@ -25,13 +25,13 @@ const {
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
     <div class="pt-0 md:pt-[76px] pointer-events-none"></div>
     <Logo2 />
-    <div class="">
+    <div data-aos="fade-up" data-aos-delay="150" class="">
       <div class="text-center pb-10 md:pb-16 max-w-5xl mx-auto">
         {tagline && <p class="text-base text-gray-400 dark:text-gray-300 tracking-wide uppercase" set:html={tagline} />}
         {
           title && (
             <h1
-              class="text-4xl md:text-6xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200"
+              class="text-[2.2em]/8 md:text-6xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200"
               set:html={title}
             />
           )
