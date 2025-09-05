@@ -16,14 +16,8 @@ const {
 } = Astro.props;
 ---
 
-<section
-  class="relative md:-mt-[76px] not-prose"
-  {...id ? { id } : {}}
->
-  <div
-    class="absolute inset-0 pointer-events-none"
-    aria-hidden="true"
-  >
+<section data-aos="fade-up" data-aos-delay="50" class="relative md:-mt-[76px] not-prose" {...id ? { id } : {}}>
+  <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
     <slot name="bg">
       {bg ? <Fragment set:html={bg} /> : null}
     </slot>
@@ -33,14 +27,7 @@ const {
     <Logo2 />
     <div class="">
       <div class="text-center pb-10 md:pb-16 max-w-5xl mx-auto">
-        {
-          tagline && (
-            <p
-              class="text-base text-gray-400 dark:text-gray-300 tracking-wide uppercase"
-              set:html={tagline}
-            />
-          )
-        }
+        {tagline && <p class="text-base text-gray-400 dark:text-gray-300 tracking-wide uppercase" set:html={tagline} />}
         {
           title && (
             <h1
@@ -50,14 +37,7 @@ const {
           )
         }
         <div class="max-w-3xl mx-auto">
-          {
-            subtitle && (
-              <p
-                class="text-xl text-muted mb-6 dark:text-slate-300"
-                set:html={subtitle}
-              />
-            )
-          }
+          {subtitle && <p class="text-xl text-muted mb-6 dark:text-slate-300" set:html={subtitle} />}
           {
             actions && (
               <div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4">
@@ -76,9 +56,7 @@ const {
         </div>
         {content && <Fragment set:html={content} />}
       </div>
-      <div
-        class="relative m-auto max-w-5xl"
-      >
+      <div class="relative m-auto max-w-5xl">
         {
           image && (
             <div class="relative m-auto max-w-5xl">

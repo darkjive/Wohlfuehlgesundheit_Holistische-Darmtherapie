@@ -2,6 +2,12 @@
 import { UI } from 'astrowind:config';
 ---
 
+<!-- AOS CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+
+<!-- AOS JavaScript -->
+<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
 <script is:inline define:vars={{ defaultTheme: UI.theme }}>
   if (window.basic_script) {
     return;
@@ -31,6 +37,20 @@ import { UI } from 'astrowind:config';
   };
   initTheme();
 
+  // AOS initialisieren
+  function initAOS() {
+    if (typeof AOS !== 'undefined') {
+      AOS.init({
+        duration: 1000,
+        easing: 'ease-out-cubic',
+        once: true,
+        offset: 40,
+        delay: 0,
+        disable: window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      });
+    }
+  }
+
   function attachEvent(selector, event, fn) {
     const matches = typeof selector === 'string' ? document.querySelectorAll(selector) : selector;
     if (matches && matches.length) {
@@ -43,6 +63,9 @@ import { UI } from 'astrowind:config';
   const onLoad = function () {
     let lastKnownScrollPosition = window.scrollY;
     let ticking = true;
+
+    // AOS initialisieren nach dem Laden
+    initAOS();
 
     attachEvent('#header nav', 'click', function () {
       document.querySelector('[data-aw-toggle-menu]')?.classList.remove('expanded');
@@ -139,6 +162,7 @@ import { UI } from 'astrowind:config';
       }
     });
   };
+
   const onPageShow = function () {
     document.documentElement.classList.add('motion-safe:scroll-smooth');
     const elem = document.querySelector('[data-aw-toggle-menu]');
@@ -158,5 +182,9 @@ import { UI } from 'astrowind:config';
     initTheme();
     onLoad();
     onPageShow();
+    // AOS für ViewTransitions refreshen
+    if (typeof AOS !== 'undefined') {
+      AOS.refresh();
+    }
   });
 </script>

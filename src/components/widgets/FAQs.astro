@@ -18,7 +18,7 @@ const {
 
 <WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-4xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
   <Headline title={title} subtitle={subtitle} tagline={tagline} />
-  <div class={`max-w-6xl mx-auto ${classes?.container ?? ''}`}>
+  <div data-aos="fade-up" data-aos-delay="500" class={`max-w-6xl mx-auto ${classes?.container ?? ''}`}>
     {
       items.map((item) => (
         <details class="border-b border-gray-200 py-4">
