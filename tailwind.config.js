@@ -1,6 +1,4 @@
 import defaultTheme from 'tailwindcss/defaultTheme';
-import plugin from 'tailwindcss/plugin';
-import typographyPlugin from '@tailwindcss/typography';
 import aspectRatioPlugin from '@tailwindcss/aspect-ratio';
 
 export default {
@@ -32,10 +30,6 @@ export default {
   },
   plugins: [
     aspectRatioPlugin,
-    typographyPlugin,
-    plugin(({ addVariant }) => {
-      addVariant('intersect', '&:not([no-intersect])');
-    }),
   ],
   darkMode: 'class',
 };
