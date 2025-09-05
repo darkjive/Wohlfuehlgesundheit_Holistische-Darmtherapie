@@ -41,10 +41,10 @@ import { UI } from 'astrowind:config';
   function initAOS() {
     if (typeof AOS !== 'undefined') {
       AOS.init({
-        duration: 1000,
+        duration: 3000,
         easing: 'ease-out-cubic',
         once: true,
-        offset: 40,
+        offset: 60,
         delay: 0,
         disable: window.matchMedia('(prefers-reduced-motion: reduce)').matches
       });
