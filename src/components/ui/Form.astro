@@ -7,45 +7,45 @@ const { inputs, textarea, disclaimer, button = 'Absenden', description = '' } = 
 <form action="https://api.web3forms.com/submit" method="POST">
   <!-- REQUIRED: Your Access key -->
   <input type="hidden" name="access_key" value="1eb862a4-eff0-46f8-83b7-8c640d8d7594" />
-  
+
   <!-- REQUIRED: Empfänger E-Mail-Adresse - HIER war der Fehler! -->
   <input type="hidden" name="email" value="root@xn--wohlfhlgesundheit-62b.de" />
-  
+
   <!-- Optional: Redirect nach erfolgreichem Absenden -->
   <input type="hidden" name="redirect" value="https://xn--wohlfhlgesundheit-62b.de/thanks" />
-  
+
   <!-- Optional: Subject Line -->
   <input type="hidden" name="subject" value="Neue Nachricht von der Website" />
-  
+
   <!-- Optional: From Name -->
   <input type="hidden" name="from_name" value="Wohlfuehlgesundheit Website" />
-  
+
   <!-- Required: SPAM Protection -->
   <input type="checkbox" name="botcheck" class="hidden" style="display: none;" />
 
   {
     inputs &&
-    inputs.map(
-      ({ type = 'text', name, label = '', autocomplete = 'on', placeholder = '' }) =>
-        name && (
-          <div class="mb-6">
-            {label && (
-              <label for={name} class="block text-base mb-3 font-medium">
-                {label}
-              </label>
-            )}
-            <input
-              type={type}
-              name={name}
-              id={name}
-              autocomplete={autocomplete}
-              placeholder={placeholder}
-              class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-none bg-white dark:bg-dark"
-              required={type === 'email' ? true : undefined}
-            />
-          </div>
-        )
-    )
+      inputs.map(
+        ({ type = 'text', name, label = '', autocomplete = 'on', placeholder = '' }) =>
+          name && (
+            <div class="mb-6">
+              {label && (
+                <label for={name} class="block text-base mb-3 font-medium">
+                  {label}
+                </label>
+              )}
+              <input
+                type={type}
+                name={name}
+                id={name}
+                autocomplete={autocomplete}
+                placeholder={placeholder}
+                class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-none bg-white dark:bg-dark"
+                required={type === 'email' ? true : undefined}
+              />
+            </div>
+          )
+      )
   }
 
   {

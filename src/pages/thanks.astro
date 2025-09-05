@@ -5,24 +5,25 @@ import Logo2 from '~/components/Logo2.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 // import Features2 from '~/components/widgets/Features2.astro';
 const metadata = {
-title: 'Thanks',
+  title: 'Thanks',
 };
 ---
+
 <Layout metadata={metadata}>
-<!-- HeroText Widget ******************* -->
-<Logo2 />
-<HeroText tagline="💖 💖 💖" title="Danke, das hat geklappt!" />
-<!-- Call To Action **************** -->
-<CallToAction
-title="Nächster Schritt: Ausführliche Darmgesundheits-Anamnese"
-subtitle="Für eine optimale Beratung benötige ich detaillierte Informationen über Ihre gesundheitliche Situation. Der Anamnesebogen hilft mir, Ihre Beschwerden besser zu verstehen und ein individuelles Therapiekonzept zu entwickeln."
-actions={[
- {
-variant: 'primary',
-text: 'Anamnesebogen ausfüllen',
-href: '/anamnese',
-icon: 'tabler:clipboard-check',
- },
- ]}
-/>
+  <!-- HeroText Widget ******************* -->
+  <Logo2 />
+  <HeroText tagline="💖 💖 💖" title="Danke, das hat geklappt!" />
+  <!-- Call To Action **************** -->
+  <CallToAction
+    title="Nächster Schritt: Ausführliche Darmgesundheits-Anamnese"
+    subtitle="Für eine optimale Beratung benötige ich detaillierte Informationen über Ihre gesundheitliche Situation. Der Anamnesebogen hilft mir, Ihre Beschwerden besser zu verstehen und ein individuelles Therapiekonzept zu entwickeln."
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Anamnesebogen ausfüllen',
+        href: '/anamnese',
+        icon: 'tabler:clipboard-check',
+      },
+    ]}
+  />
 </Layout>

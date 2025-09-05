@@ -12,8 +12,8 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <!-- HeroText Widget ******************* -->
-  <HeroText 
-    tagline="Anamnesebogen Darmgesundheit" 
+  <HeroText
+    tagline="Anamnesebogen Darmgesundheit"
     title="Ihre Gesundheit liegt mir am Herzen"
     subtitle="Um Ihnen die bestmögliche Beratung zu bieten, benötige ich einige Informationen über Ihre aktuelle gesundheitliche Situation und Beschwerden."
   />
@@ -60,7 +60,7 @@ const metadata = {
         label: 'Aktuelles Gewicht (kg)',
         placeholder: 'z.B. 75',
       },
-      
+
       // Beschwerden - Dauer und Art
       {
         type: 'text',
@@ -68,7 +68,7 @@ const metadata = {
         label: 'Wie lange haben Sie bereits Beschwerden?',
         placeholder: 'z.B. einige Wochen, seit 3 Monaten, seit der Kindheit',
       },
-      
+
       // Aktuelle Beschwerden (Checkboxes simuliert durch Text)
       {
         type: 'text',
@@ -76,7 +76,7 @@ const metadata = {
         label: 'Welche Beschwerden haben Sie aktuell?',
         placeholder: 'z.B. Blähungen, Verstopfung, Durchfall, Bauchkrämpfe, Völlegefühl, etc.',
       },
-      
+
       // Stuhlgang
       {
         type: 'text',
@@ -84,14 +84,14 @@ const metadata = {
         label: 'Wie häufig haben Sie Stuhlgang?',
         placeholder: 'z.B. täglich, alle 2-3 Tage, mehrmals täglich, unregelmäßig',
       },
-      
+
       {
         type: 'text',
         name: 'stuhlgang_konsistenz',
         label: 'Wie würden Sie die Konsistenz Ihres Stuhlgangs beschreiben?',
         placeholder: 'z.B. normal geformt, sehr fest, breiig, flüssig, schleimig, wechselnd',
       },
-      
+
       // Gewichtsverlust
       {
         type: 'text',
@@ -99,7 +99,7 @@ const metadata = {
         label: 'Haben Sie in letzter Zeit ungewollt an Gewicht verloren?',
         placeholder: 'z.B. Nein, oder: Ja, ca. 5 kg in den letzten 3 Monaten',
       },
-      
+
       // Familiengeschichte
       {
         type: 'text',
@@ -107,7 +107,7 @@ const metadata = {
         label: 'Gibt es in Ihrer Familie chronische Darmerkrankungen?',
         placeholder: 'z.B. Morbus Crohn, Colitis ulcerosa, Darmkrebs, Reizdarm oder: Nein',
       },
-      
+
       // Nahrungsmittelunverträglichkeiten
       {
         type: 'text',
@@ -115,7 +115,7 @@ const metadata = {
         label: 'Haben Sie bekannte Nahrungsmittelunverträglichkeiten oder -allergien?',
         placeholder: 'z.B. Laktose, Gluten, Fructose, Histamin, bestimmte Lebensmittel',
       },
-      
+
       // Ernährung
       {
         type: 'text',
@@ -123,7 +123,7 @@ const metadata = {
         label: 'Wie würden Sie Ihre Ernährungsweise beschreiben?',
         placeholder: 'z.B. normale Mischkost, vegetarisch, vegan, glutenfrei, Low Carb',
       },
-      
+
       // Vorerkrankungen
       {
         type: 'text',
@@ -131,7 +131,7 @@ const metadata = {
         label: 'Haben Sie relevante Vorerkrankungen?',
         placeholder: 'z.B. Diabetes, Schilddrüsenerkrankungen, Operationen am Magen-Darm-Trakt, etc.',
       },
-      
+
       // Medikamente
       {
         type: 'text',
@@ -139,7 +139,7 @@ const metadata = {
         label: 'Nehmen Sie regelmäßig Medikamente ein?',
         placeholder: 'Bitte alle Medikamente auflisten, auch frei verkäufliche',
       },
-      
+
       // Stress und Lebensstil
       {
         type: 'text',
@@ -147,14 +147,14 @@ const metadata = {
         label: 'Wie würden Sie Ihr aktuelles Stressniveau einschätzen?',
         placeholder: 'z.B. niedrig, mittel, hoch, sehr hoch - bitte begründen Sie kurz',
       },
-      
+
       {
         type: 'text',
         name: 'schlafqualitaet',
         label: 'Wie ist Ihre Schlafqualität?',
         placeholder: 'z.B. sehr gut, gut, mittelmäßig, schlecht - wie viele Stunden schlafen Sie?',
       },
-      
+
       // Auslandsreisen
       {
         type: 'text',
@@ -162,7 +162,7 @@ const metadata = {
         label: 'Waren Sie in letzter Zeit im Ausland?',
         placeholder: 'Falls ja, wann und wo? (besonders wichtig: Asien, Afrika, Südamerika)',
       },
-      
+
       // Laborwerte
       {
         type: 'text',
@@ -171,17 +171,16 @@ const metadata = {
         placeholder: 'z.B. Anämie, erhöhte Leberwerte, Vitamin-D-Mangel, B12-Mangel, etc.',
       },
     ]}
-    
     textarea={{
       label: 'Zusätzliche Informationen',
-      placeholder: 'Hier haben Sie Platz für weitere wichtige Informationen zu Ihren Beschwerden, Ihrer Krankengeschichte oder Fragen, die Sie haben...',
+      placeholder:
+        'Hier haben Sie Platz für weitere wichtige Informationen zu Ihren Beschwerden, Ihrer Krankengeschichte oder Fragen, die Sie haben...',
       rows: 6,
     }}
-    
     disclaimer={{
-      label: 'Mit dem Absenden dieses Anamnesebogens stimme ich der vertraulichen Verarbeitung meiner Gesundheitsdaten zu. Mir ist bewusst, dass diese Angaben der Erstberatung dienen und eine ärztliche Diagnose nicht ersetzen.',
+      label:
+        'Mit dem Absenden dieses Anamnesebogens stimme ich der vertraulichen Verarbeitung meiner Gesundheitsdaten zu. Mir ist bewusst, dass diese Angaben der Erstberatung dienen und eine ärztliche Diagnose nicht ersetzen.',
     }}
-    
     description="Ihre Angaben werden streng vertraulich behandelt. Nach Erhalt Ihres Anamnesebogens melde ich mich innerhalb von 48 Stunden bei Ihnen, um das weitere Vorgehen zu besprechen."
   />
 
@@ -201,7 +200,7 @@ const metadata = {
       {
         testimonial: `Die Verbindung zwischen Stress, Ernährung und Darmgesundheit war für mich völlig neu. Durch die ganzheitliche Betrachtung konnte ich endlich meine jahrelangen Beschwerden verbessern.`,
         name: 'Thomas M.',
-        job: 'Klient aus Darmstadt', 
+        job: 'Klient aus Darmstadt',
         image: {
           alt: 'Thomas M.',
           src: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80',

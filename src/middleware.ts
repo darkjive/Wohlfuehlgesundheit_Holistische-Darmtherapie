@@ -8,10 +8,10 @@ const STATIC_FILE_PATTERNS = [
 
 export const onRequest = defineMiddleware(async (context, next) => {
   const { pathname } = context.url;
-  
-  if (STATIC_FILE_PATTERNS.some(pattern => pattern.test(pathname))) {
+
+  if (STATIC_FILE_PATTERNS.some((pattern) => pattern.test(pathname))) {
     return new Response('Not Found', { status: 404 });
   }
-  
+
   return next();
 });

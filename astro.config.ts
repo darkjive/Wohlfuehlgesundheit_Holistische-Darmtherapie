@@ -13,25 +13,15 @@ import type { AstroIntegration } from 'astro';
 
 import astrowind from './vendor/integration';
 
-import {
-  readingTimeRemarkPlugin,
-  responsiveTablesRehypePlugin,
-  lazyImagesRehypePlugin,
-} from './src/utils/frontmatter';
+import { readingTimeRemarkPlugin, responsiveTablesRehypePlugin, lazyImagesRehypePlugin } from './src/utils/frontmatter';
 
 import jopSoftwarecookieconsent from '@jop-software/astro-cookieconsent';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const hasExternalScripts = false;
-const whenExternalScripts = (
-  items: (() => AstroIntegration) | (() => AstroIntegration)[] = []
-) =>
-  hasExternalScripts
-    ? Array.isArray(items)
-      ? items.map((item) => item())
-      : [items()]
-    : [];
+const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroIntegration)[] = []) =>
+  hasExternalScripts ? (Array.isArray(items) ? items.map((item) => item()) : [items()]) : [];
 
 export default defineConfig({
   output: 'static',
@@ -126,20 +116,17 @@ export default defineConfig({
               sections: [
                 {
                   title: 'Notwendig',
-                  description:
-                    'Diese Cookies sind für die grundlegende Funktionalität erforderlich.',
+                  description: 'Diese Cookies sind für die grundlegende Funktionalität erforderlich.',
                   linkedCategory: 'necessary',
                 },
                 {
                   title: 'Statistik',
-                  description:
-                    'Hilft uns zu verstehen, wie Besucher unsere Website nutzen.',
+                  description: 'Hilft uns zu verstehen, wie Besucher unsere Website nutzen.',
                   linkedCategory: 'analytics',
                 },
                 {
                   title: 'Marketing',
-                  description:
-                    'Wird verwendet, um personalisierte Inhalte und Werbung anzuzeigen.',
+                  description: 'Wird verwendet, um personalisierte Inhalte und Werbung anzuzeigen.',
                   linkedCategory: 'marketing',
                 },
               ],
@@ -165,8 +152,8 @@ export default defineConfig({
         '~': path.resolve(__dirname, './src'),
       },
     },
-        build: {
-      sourcemap: false,  // Stoppt .map Generierung
+    build: {
+      sourcemap: false, // Stoppt .map Generierung
     },
   },
 });

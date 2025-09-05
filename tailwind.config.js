@@ -30,9 +30,6 @@ export default {
       },
     },
   },
-  plugins: [
-    aspectRatioPlugin,
-    typographyPlugin,
-  ],
+  plugins: [aspectRatioPlugin, typographyPlugin],
   darkMode: 'class',
 };

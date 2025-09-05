@@ -19,8 +19,7 @@ export const headerData = {
       href: getPermalink('/contact'),
     },
   ],
-//    actions: [{ text: 'Download', href: 'https://github.com/arthelokyo/astrowind', target: '_blank' }],
-
+  //    actions: [{ text: 'Download', href: 'https://github.com/arthelokyo/astrowind', target: '_blank' }],
 };
 
 export const footerData = {
