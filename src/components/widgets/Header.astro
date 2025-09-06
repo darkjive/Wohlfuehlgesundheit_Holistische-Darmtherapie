@@ -59,7 +59,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
       },
     ]}
   >
-    <div class:list={[{ 'md:flex-1': position === 'left' }]}>
+    <div class:list={[{ 'md:flex-1': position === 'center' }]}>
       <a class="flex items-center" href={getHomePermalink()}>
         <Logo />
       </a>

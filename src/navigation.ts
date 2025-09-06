@@ -11,11 +11,11 @@ export const headerData = {
       href: getPermalink('/homes/personal'),
     },
     {
-      text: 'Angebote',
-      href: getPermalink('/pricing'),
+      text: 'Termin buchen',
+      href: getPermalink('/anamnese'),
     },
     {
-      text: 'Kontakt',
+      text: 'Fragen?',
       href: getPermalink('/contact'),
     },
   ],
