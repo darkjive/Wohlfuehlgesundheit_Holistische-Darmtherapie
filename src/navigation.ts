@@ -8,7 +8,7 @@ export const headerData = {
     },
     {
       text: 'Über mich',
-      href: getPermalink('/homes/personal'),
+      href: getPermalink('/ueber-mich'),
     },
     {
       text: 'Termin buchen',
@@ -16,7 +16,7 @@ export const headerData = {
     },
     {
       text: 'Fragen?',
-      href: getPermalink('/contact'),
+      href: getPermalink('/kontakt'),
     },
   ],
   //    actions: [{ text: 'Download', href: 'https://github.com/arthelokyo/astrowind', target: '_blank' }],
@@ -24,8 +24,8 @@ export const headerData = {
 
 export const footerData = {
   secondaryLinks: [
-    { text: 'Impressum', href: getPermalink('/terms') },
-    { text: 'Datenschutz', href: getPermalink('/privacy') },
+    { text: 'Impressum', href: getPermalink('/impressum') },
+    { text: 'Datenschutz', href: getPermalink('/datenschutz') },
   ],
   socialLinks: [
     {
@@ -37,6 +37,6 @@ export const footerData = {
     // { ariaLabel: 'Pinterest', icon: 'tabler:brand-pinterest', href: '#' },
   ],
   footNote: `
-    © Wohlfühlgesundheit · <a class="text-primary hover:text-black dark:text-secondary" href="/terms">Impressum</a> · <a class="text-primary hover:text-black dark:text-secondary" href="/privacy">Datenschutz</a>
+    © Wohlfühlgesundheit · <a class="text-primary hover:text-black dark:text-secondary" href="/impressum">Impressum</a> · <a class="text-primary hover:text-black dark:text-secondary" href="/datenschutz">Datenschutz</a>
   `,
 };

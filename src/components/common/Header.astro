@@ -1,7 +1,7 @@
 ---
-import Logo from '~/components/Logo.astro';
-import ToggleTheme from '~/components/common/ToggleTheme.astro';
-import ToggleMenu from '~/components/common/ToggleMenu.astro';
+import Logo from '~/components/Logo-sm.astro';
+import ToggleTheme from '~/components/ui/ToggleTheme.astro';
+import ToggleMenu from '~/components/ui/ToggleMenu.astro';
 
 import { getHomePermalink } from '~/utils/permalinks';
 import { trimSlash } from '~/utils/permalinks';
@@ -67,7 +67,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
 
     <nav
       class:list={[
-        'items-center w-full md:w-auto hidden md:flex text-default overflow-y-auto overflow-x-hidden md:overflow-y-visible md:overflow-x-auto',
+        'items-center w-full hidden md:flex text-default',
         {
           'md:flex-1': position === 'center',
           'md:justify-center': position === 'center',
@@ -78,7 +78,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
       aria-label="Main navigation"
     >
       <ul
-        class="flex flex-col text-center md:flex-row w-full md:w-auto text-xl md:text-[0.9375rem] tracking-[0.01rem] font-medium"
+        class="flex flex-col text-center md:flex-row w-full text-xl md:text-[0.9375rem] tracking-[0.01rem] font-medium"
       >
         {
           links
