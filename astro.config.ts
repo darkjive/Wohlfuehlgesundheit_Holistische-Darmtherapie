@@ -4,7 +4,6 @@ import { fileURLToPath } from 'url';
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
-import mdx from '@astrojs/mdx';
 import partytown from '@astrojs/partytown';
 
 import icon from 'astro-icon';
@@ -26,12 +25,18 @@ const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroInteg
 export default defineConfig({
   output: 'static',
 
+  // Production Build-Optimierungen
+  compressHTML: true,
+  build: {
+    assets: '_astro',
+    inlineStylesheets: 'auto',
+  },
+
   integrations: [
     tailwind({
       applyBaseStyles: false,
     }),
     sitemap(),
-    mdx(),
     icon({
       include: {
         tabler: ['*'],
@@ -151,6 +156,25 @@ export default defineConfig({
       alias: {
         '~': path.resolve(__dirname, './src'),
       },
+    },
+    
+    // Source-Map-Fehler beheben
+    build: {
+      sourcemap: false, // Source Maps für Production deaktivieren
+      cssCodeSplit: true,
+      rollupOptions: {
+        output: {
+          // Asset-Namen optimieren
+          assetFileNames: 'assets/[name].[hash][extname]',
+          chunkFileNames: 'assets/[name].[hash].js',
+          entryFileNames: 'assets/[name].[hash].js',
+        },
+      },
+    },
+    
+    // CSS-Optimierungen
+    css: {
+      devSourcemap: false,
     },
   },
 });
