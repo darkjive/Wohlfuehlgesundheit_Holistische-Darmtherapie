@@ -12,8 +12,6 @@ import type { AstroIntegration } from 'astro';
 
 import astrowind from './vendor/integration';
 
-import { readingTimeRemarkPlugin, responsiveTablesRehypePlugin, lazyImagesRehypePlugin } from './src/utils/frontmatter';
-
 import jopSoftwarecookieconsent from '@jop-software/astro-cookieconsent';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -146,18 +144,13 @@ export default defineConfig({
     domains: ['cdn.pixabay.com'],
   },
 
-  markdown: {
-    remarkPlugins: [readingTimeRemarkPlugin],
-    rehypePlugins: [responsiveTablesRehypePlugin, lazyImagesRehypePlugin],
-  },
-
   vite: {
     resolve: {
       alias: {
         '~': path.resolve(__dirname, './src'),
       },
     },
-    
+
     // Source-Map-Fehler beheben
     build: {
       sourcemap: false, // Source Maps für Production deaktivieren
@@ -171,7 +164,7 @@ export default defineConfig({
         },
       },
     },
-    
+
     // CSS-Optimierungen
     css: {
       devSourcemap: false,
