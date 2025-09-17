@@ -1,6 +1,6 @@
 # Gesundheitspraxis Stefaniel
 
-Website für die Gesundheitspraxis Stefaniel, entwickelt mit Astro und Tailwind CSS.
+Website: Wohlfühlgesundheit Holistische Darmtherapie , entwickelt mit Astro und Tailwind CSS.
 
 ## Projektstruktur
 
