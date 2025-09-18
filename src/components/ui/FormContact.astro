@@ -1,0 +1,106 @@
+---
+import type { Form as Props } from '~/types';
+import Button from '~/components/ui/Button.astro';
+const { inputs, textarea, disclaimer, button = 'Absenden', description = '' } = Astro.props;
+---
+
+<form action="https://api.web3forms.com/submit" method="POST">
+  <!-- REQUIRED: Your Access key -->
+  <input type="hidden" name="access_key" value="1eb862a4-eff0-46f8-83b7-8c640d8d7594" />
+
+  <!-- REQUIRED: Empfänger E-Mail-Adresse -->
+  <input type="hidden" name="email" value="root@xn--wohlfhlgesundheit-62b.de" />
+
+  <!-- Optional: Redirect nach erfolgreichem Absenden -->
+  <input type="hidden" name="redirect" value="https://xn--wohlfhlgesundheit-62b.de/danke" />
+
+  <!-- Optional: Subject Line -->
+  <input type="hidden" name="subject" value="Neue Nachricht von der Website (Kontaktseite)" />
+
+  <!-- Optional: From Name -->
+  <input type="hidden" name="from_name" value="Wohlfuehlgesundheit Website" />
+
+  <!-- Required: SPAM Protection -->
+  <input type="checkbox" name="botcheck" class="hidden" style="display: none;" />
+
+  {
+    inputs &&
+      inputs.map(
+        ({ type = 'text', name, label = '', autocomplete = 'on', placeholder = '' }) =>
+          name && (
+            <div class="mb-6">
+              {label && (
+                <label for={name} class="block text-base mb-3 font-medium">
+                  {label}
+                </label>
+              )}
+              <input
+                type={type}
+                name={name}
+                id={name}
+                autocomplete={autocomplete}
+                placeholder={placeholder}
+                class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-none bg-white dark:bg-dark"
+                required={type === 'email' ? true : undefined}
+              />
+            </div>
+          )
+      )
+  }
+
+  {
+    textarea && (
+      <div>
+        <label for="textarea" class="block text-base mb-3 font-medium">
+          {textarea.label}
+        </label>
+        <textarea
+          id="textarea"
+          name={textarea.name ? textarea.name : 'message'}
+          rows={textarea.rows ? textarea.rows : 4}
+          placeholder={textarea.placeholder}
+          class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-none bg-white dark:bg-dark"
+        />
+      </div>
+    )
+  }
+
+  {
+    disclaimer && (
+      <div class="mt-3 flex items-start">
+        <div class="flex mt-0.5">
+          <input
+            id="disclaimer"
+            name="disclaimer"
+            type="checkbox"
+            class="cursor-pointer mt-1 p-8 block text-2xl rounded-lg border border-gray-200 dark:border-none bg-white dark:bg-slate-900"
+            required
+          />
+        </div>
+        <div class="ml-3">
+          <label for="disclaimer" class="cursor-pointer select-none text-md text-gray-600 dark:text-white">
+            {disclaimer.label}
+          </label>
+        </div>
+      </div>
+    )
+  }
+
+  {
+    button && (
+      <div class="mt-10 grid">
+        <Button variant="primary" type="submit">
+          {button}
+        </Button>
+      </div>
+    )
+  }
+
+  {
+    description && (
+      <div class="mt-3 text-center">
+        <p class="text-sm text-gray-600 dark:text-white">{description}</p>
+      </div>
+    )
+  }
+</form>

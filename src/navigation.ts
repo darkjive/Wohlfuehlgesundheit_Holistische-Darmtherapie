@@ -19,7 +19,6 @@ export const headerData = {
       href: getPermalink('/kontakt'),
     },
   ],
-  //    actions: [{ text: 'Download', href: 'https://github.com/arthelokyo/astrowind', target: '_blank' }],
 };
 
 export const footerData = {
@@ -33,8 +32,6 @@ export const footerData = {
       icon: 'tabler:brand-instagram',
       href: 'https://www.instagram.com/stories/wohl_fuehl_gesundheit/',
     },
-    // { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: '#' },
-    // { ariaLabel: 'Pinterest', icon: 'tabler:brand-pinterest', href: '#' },
   ],
   footNote: `
     © Wohlfühlgesundheit · <a class="text-primary hover:text-black dark:text-secondary" href="/impressum">Impressum</a> · <a class="text-primary hover:text-black dark:text-secondary" href="/datenschutz">Datenschutz</a>
