@@ -16,6 +16,10 @@ export const headerData = {
     },
     {
       text: 'Fragen?',
+      href: getPermalink('/#faq'),
+    },
+    {
+      text: 'Schreib mir',
       href: getPermalink('/kontakt'),
     },
   ],
@@ -28,6 +32,7 @@ export const footerData = {
   ],
   socialLinks: [
     {
+      text: 'Folge mir auf Instagram',
       ariaLabel: 'Instagram',
       icon: 'tabler:brand-instagram',
       href: 'https://www.instagram.com/stories/wohl_fuehl_gesundheit/',

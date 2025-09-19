@@ -38,7 +38,7 @@ const metadata = {
     <Fragment slot="title">
       <span class="text-accent">Wohlfühl<span class="lg:hidden">-<br /></span>gesundheit</span>
       <br />
-      <span class="dark:text-white font-thin uppercase text-[1.15rem] sm:text-1xl md:text-3xl tracking-wide font-sans">
+      <span class="sm:text-1xl font-sans text-[1.15rem] font-thin uppercase tracking-wide dark:text-white md:text-3xl">
         Holistische Darmtherapie</span
       >
     </Fragment>
@@ -49,18 +49,31 @@ const metadata = {
         Immunsystem unterstützt und mehr Balance in dein Leben bringst.
       </span>
     </Fragment>
+    <Fragment slot="bg">
+      <div
+        class="absolute inset-0 bg-green-100 bg-[url(~/assets/images/assets_task_01k5bmcw2beb2tnwgq1edcv91d_1758105932_img_0.webp)] bg-cover dark:bg-transparent dark:bg-none"
+      >
+      </div>
+    </Fragment>
   </Hero>
 
   <Quote
     quote="Eure Nahrungsmittel sollen eure Heilmittel und eure Heilmittel eure Nahrungsmittel sein."
     author="Hippokrates"
-  />
+  >
+    <Fragment slot="bg">
+      <div
+        class="bg-bottom-right bg-size-[auto_50px] absolute inset-0 -z-10 bg-[url(~/assets/images/hippokrates.jpg)] bg-no-repeat dark:bg-transparent dark:bg-none"
+      >
+      </div>
+    </Fragment>
+  </Quote>
   <!-- Features Widget *************** -->
   <Features
     id="features"
-    tagline="Angebote"
-    title="Was ich für Dich tun kann"
-    subtitle="Dein Darm ist der Schlüssel zu mehr Wohlbefinden. Ich begleite dich auf deinem Weg – mit Herz, Fachwissen & einem klaren Plan."
+    tagline="Was ich für Dich tun kann"
+    title="Wohlbefinden und Gesundheit beginnen im Darm"
+    subtitle="Dein Darm ist der Schlüssel zu mehr Wohlbefinden. Ich begleite dich auf deinem Weg - mit Herz, Fachwissen & einem klaren Plan."
     items={[
       {
         title: 'Anamnese & Vorgespräch',
@@ -114,14 +127,10 @@ const metadata = {
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-lg font-medium tracking-tight dark:text-white mb-2">Warum ist Darmgesundheit so wichtig?</h3>
+      <h3 class="mb-2 text-lg font-medium tracking-tight dark:text-white">Warum ist Darmgesundheit so wichtig?</h3>
       Dein Darm ist viel mehr als nur ein Verdauungsorgan. Er beherbergt 100 Billionen Bakterien, die Dein Immunsystem, Deine
       Hormone und sogar Deine Stimmung beeinflussen. Als zertifizierte holistische Darmtherapeutin helfe ich Dir, dieses
       komplexe System wieder ins Gleichgewicht zu bringen.
-    </Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
   </Content>
 
@@ -153,13 +162,13 @@ const metadata = {
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-lg font-medium tracking-tight dark:text-white mb-2">Dein Weg zu mehr Darmgesundheit</h3>
+      <h3 class="mb-2 text-lg font-medium tracking-tight dark:text-white">Dein Weg zu mehr Darmgesundheit</h3>
       Meine holistische Herangehensweise bedeutet: Ich schaue nicht nur auf Deine Symptome, sondern betrachte Dich als ganzen
       Menschen. Gemeinsam entwickeln wir einen individuellen Plan, der Deine Darmgesundheit nachhaltig verbessert und Dein
       Wohlbefinden steigert.
     </Fragment>
     <Fragment slot="bg">
-      <div class="absolute inset-0 bg-green-50 dark:bg-transparent"></div>
+      <div class="absolute inset-0 bg-[#e8e7d9] dark:bg-transparent"></div>
     </Fragment>
   </Content>
 
@@ -190,13 +199,13 @@ const metadata = {
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-lg font-medium tracking-tight dark:text-white mb-2">Wissenschaftlich fundiert & natürlich</h3>
+      <h3 class="mb-2 text-lg font-medium tracking-tight dark:text-white">Wissenschaftlich fundiert & natürlich</h3>
       Alle meine Methoden basieren auf aktuellen wissenschaftlichen Erkenntnissen zur Darmgesundheit und meiner zertifizierten
       Ausbildung zur holistischen Darmtherapeutin. Ich kombiniere bewährte naturheilkundliche Ansätze mit modernem Wissen
       über das Darmmikrobiom und die Darm-Hirn-Achse.
     </Fragment>
     <Fragment slot="bg">
-      <div class="absolute inset-0 bg-purple-50 dark:bg-transparent"></div>
+      <div class="absolute inset-0 bg-[#fde4e6] dark:bg-transparent"></div>
     </Fragment>
   </Content>
   <!-- Variante 4: Standard 16:9 Aspect Ratio statt 16:6 
@@ -205,6 +214,7 @@ const metadata = {
 </div>  -->
   <!-- FAQs Widget ******************* -->
   <FAQs
+    id="faq"
     title="Häufig gestellte Fragen"
     subtitle="Hier findest Du Antworten auf die wichtigsten Fragen rund um meine holistische Darmtherapie und Ernährungsberatung."
     tagline="FAQs"
@@ -269,5 +279,6 @@ const metadata = {
         href: '/anamnese',
       },
     ]}
+    bg={`<div class="absolute inset-0 bg-green-100 dark:bg-transparent dark:bg-none bg-cover bg-[url(~/assets/images/assets_task_01k5bm31wxexkv3amsa0sya52y_1758105615_img_0.webp)]"></div>`}
   />
 </Layout>
