@@ -20,26 +20,27 @@ export interface Props {
 const { socialLinks = [], footNote = '', theme = 'light' } = Astro.props;
 ---
 
-<footer class:list={[{ dark: theme === 'dark' }, 'relative not-prose']}>
-  <div class="dark:bg-dark absolute inset-0 pointer-events-none" aria-hidden="true"></div>
-  <div class="relative max-w-5xl mx-auto px-4 sm:px-6">
-    <div class="text-center py-4 md:py-8 pt-0">
+<footer class:list={[{ dark: theme === 'dark' }, 'not-prose relative']}>
+  <div class="dark:bg-dark pointer-events-none absolute inset-0 dark:bg-none" aria-hidden="true"></div>
+  <div class="relative mx-auto max-w-5xl px-4 sm:px-6">
+    <div class="py-4 pt-0 text-center md:py-8">
       {
         socialLinks.length > 0 &&
           socialLinks.map(({ ariaLabel, href, text, icon }) => (
             <a
-              class="inline-block p-5 text-primary dark:text-secondary hover:text-black focus:outline-none focus:ring-1 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg"
+              class="inline-block rounded-lg p-5 text-primary hover:text-black focus:outline-none focus:ring-1 focus:ring-gray-200 dark:text-secondary dark:focus:ring-gray-700"
               aria-label={ariaLabel}
               href={href}
             >
-              {icon && <Icon name={icon} class="w-7 h-7" />}
+              {icon && <Icon name={icon} class="inline-block h-7 w-7" />}
+              <br />
               <Fragment set:html={text} />
             </a>
           ))
       }
     </div>
-    <div class="border-t dark:border-none py-6 md:py-8">
-      <div class="text-xs md:text-base text-center uppercase sm:tracking-widest tracking-wider dark:text-muted">
+    <div class="border-t py-6 dark:border-none md:py-8">
+      <div class="text-center text-xs uppercase tracking-wider dark:text-muted sm:tracking-widest md:text-base">
         <Fragment set:html={footNote} />
       </div>
     </div>

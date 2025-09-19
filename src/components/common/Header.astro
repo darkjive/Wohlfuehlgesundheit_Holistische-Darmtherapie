@@ -45,7 +45,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
 <header
   class:list={[
     { sticky: isSticky, relative: !isSticky, dark: isDark },
-    'top-0 z-40 flex-none mx-auto w-full border-b border-gray-50/0 transition-[opacity] ease-in-out',
+    'top-0 z-40 mx-auto w-full flex-none border-b border-gray-50/0 transition-[opacity] ease-in-out',
   ]}
   {...isSticky ? { 'data-aw-sticky-header': true } : {}}
   {...id ? { id } : {}}
@@ -53,7 +53,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
   <div class="absolute inset-0"></div>
   <div
     class:list={[
-      'relative text-default py-3 px-3 md:px-6 mx-auto w-full flex justify-between items-center',
+      'relative mx-auto flex w-full items-center justify-between px-3 py-3 text-default md:px-6',
       {
         'max-w-7xl': !isFullWidth,
       },
@@ -67,7 +67,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
 
     <nav
       class:list={[
-        'items-center w-full hidden md:flex text-default',
+        'hidden w-full items-center text-default md:flex',
         {
           'md:flex-1': position === 'center',
           'md:justify-center': position === 'center',
@@ -78,7 +78,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
       aria-label="Main navigation"
     >
       <ul
-        class="flex flex-col text-center md:flex-row w-full text-xl md:text-[0.9375rem] tracking-[0.01rem] font-medium"
+        class="flex w-full flex-col text-center text-xl font-medium tracking-[0.01rem] md:flex-row md:text-[0.9375rem]"
       >
         {
           links
@@ -88,17 +88,17 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
                 {links?.length ? (
                   <>
                     <a
-                      class="hover:text-primary dark:hover:text-white px-4 py-3 flex items-center whitespace-nowrap"
+                      class="flex items-center whitespace-nowrap px-4 py-3 hover:text-primary dark:hover:text-white"
                       href="#"
                     >
                       {text}
                     </a>
-                    <ul class="dropdown-menu text-center md:backdrop-blur-md dark:md:bg-dark rounded md:absolute pl-4 md:pl-0 md:hidden font-medium md:bg-white/90 md:min-w-[200px] drop-shadow-xl">
+                    <ul class="dropdown-menu dark:md:bg-dark rounded pl-4 text-center font-medium drop-shadow-xl md:absolute md:hidden md:min-w-[200px] md:bg-white/90 md:pl-0 md:backdrop-blur-md">
                       {links.map(({ text: text2, href: href2 }) => (
                         <li>
                           <a
                             class:list={[
-                              'first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap',
+                              'hover:text-link whitespace-no-wrap block px-5 py-2 first:rounded-t last:rounded-b dark:hover:bg-gray-700 dark:hover:text-white md:hover:bg-gray-100',
                               { 'aw-link-active': href2 === currentPath },
                             ]}
                             href={href2}
@@ -112,7 +112,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
                 ) : (
                   <a
                     class:list={[
-                      'hover:text-primary dark:hover:text-white px-4 py-3 flex items-center whitespace-nowrap',
+                      'flex items-center whitespace-nowrap px-4 py-3 hover:text-primary dark:hover:text-white',
                       { 'aw-link-active': href === currentPath },
                     ]}
                     href={href}
@@ -126,10 +126,10 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
       </ul>
     </nav>
 
-    <div class:list={['md:flex-1 flex items-center justify-end relative z-50']}>
+    <div class:list={['relative z-50 flex items-center justify-end md:flex-1']}>
       {showToggleTheme && <ToggleTheme iconClass="w-6 h-6 md:w-5 md:h-5 md:inline-block" />}
 
-      <div class="flex items-center md:hidden ml-4">
+      <div class="ml-4 flex items-center md:hidden">
         <ToggleMenu />
       </div>
     </div>

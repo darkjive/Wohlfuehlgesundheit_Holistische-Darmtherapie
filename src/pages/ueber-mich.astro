@@ -54,10 +54,10 @@ const metadata = {
     }}
   >
     <Fragment slot="content">
-      <h2 class="text-4xl font-heading font-bold tracking-tight dark:text-white sm:text-4xl mb-2">Über mich</h2>
+      <h2 class="mb-2 font-heading text-4xl font-bold tracking-tight dark:text-white sm:text-4xl">Über mich</h2>
       <p>
         Ich habe eine 12-monatige Ausbildung am Institut für Naturheilkunde und Ayurveda erfolgreich abgeschlossen
-        (April 2024 – März 2025). Dabei habe ich die Fachkompetenz als <strong
+        (April 2024 - März 2025). Dabei habe ich die Fachkompetenz als <strong
           >zertifizierte holistische Darmtherapeutin und Ernährungsberaterin</strong
         > erlangt.
       </p>
@@ -76,7 +76,7 @@ const metadata = {
     </Fragment>
 
     <Fragment slot="bg">
-      <div class="absolute inset-0 bg-green-100 dark:bg-dark"></div>
+      <div class="dark:bg-dark absolute inset-0 bg-green-100"></div>
     </Fragment>
   </Content>
 
@@ -114,18 +114,18 @@ const metadata = {
   <section
     data-aos="flip-left"
     data-aos-delay="150"
-    class="relative border-t dark:border-none not-prose scroll-mt-[72px]"
+    class="not-prose relative scroll-mt-[80px] border-t dark:border-none"
   >
-    <div class="relative mx-auto px-4 md:px-6 py-12 md:py-16 lg:py-20 text-default max-w-3xl text-center">
-      <h2 class="font-bold font-heading text-heading text-3xl lg:text-4xl">Zertifikate</h2>
+    <div class="relative mx-auto max-w-3xl px-4 py-12 text-center text-default md:px-6 md:py-16 lg:py-20">
+      <h2 class="text-heading font-heading text-3xl font-bold lg:text-4xl">Zertifikate</h2>
     </div>
 
     <!-- Zertifikat Bild -->
-    <div class="relative mx-auto px-4 md:px-6 text-default max-w-3xl">
+    <div class="relative mx-auto max-w-3xl px-4 text-default md:px-6">
       <Image
         src={certImage}
         alt="Zertifikat INA 2025"
-        class="w-full max-w-md mx-auto rounded-lg shadow-md"
+        class="mx-auto w-full max-w-md rounded-lg shadow-md"
         loading="lazy"
       />
     </div>
@@ -134,20 +134,20 @@ const metadata = {
   <section
     data-aos="flip-right"
     data-aos-delay="150"
-    class="relative border-t dark:border-none not-prose scroll-mt-[72px]"
+    class="not-prose relative scroll-mt-[80px] border-t dark:border-none"
   >
-    <div class="relative mx-auto px-4 md:px-6 py-12 md:py-16 lg:py-20 text-default max-w-3xl text-center">
-      <h2 class="font-bold font-heading text-heading text-3xl lg:text-4xl">
+    <div class="relative mx-auto max-w-3xl px-4 py-12 text-center text-default md:px-6 md:py-16 lg:py-20">
+      <h2 class="text-heading font-heading text-3xl font-bold lg:text-4xl">
         Teilnahmebestätigung für die Ausbildung am Institut für Naturheilkunde
       </h2>
     </div>
 
     <!-- Zertifikat Bild -->
-    <div class="relative mx-auto px-4 md:px-6 text-default max-w-3xl">
+    <div class="relative mx-auto max-w-3xl px-4 text-default md:px-6">
       <Image
         src={certImage2}
         alt="Teilnahmebestätigung für die Ausbildung am Institut für Naturheilkunde"
-        class="w-full max-w-md mx-auto rounded-lg shadow-md"
+        class="mx-auto w-full max-w-md rounded-lg shadow-md"
         loading="lazy"
       />
     </div>

@@ -12,9 +12,9 @@ const {
 ---
 
 <WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-6xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
-  <div data-aos="fade-up" data-aos-delay="150" class="max-w-3xl mx-auto text-center p-6">
-    <p class="text-primary p-5 dark:text-secondary font-heading text-9xl leading-[0.25rem]">“</p>
-    <p class="text-3xl md:text-4xl tracking-tight mb-4 italic">{quote}</p>
+  <div data-aos="fade-up" data-aos-delay="150" class="mx-auto max-w-3xl p-6 text-center">
+    <p class="p-5 font-heading text-9xl leading-[0.25rem] text-primary dark:text-secondary">“</p>
+    <p class="mb-4 text-3xl italic tracking-tight md:text-4xl">{quote}</p>
     <p class="text-l text-gray-500 dark:text-gray-300">({author})</p>
   </div>
   <Fragment set:html={bg} />

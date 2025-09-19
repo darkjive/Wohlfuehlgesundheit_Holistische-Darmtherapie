@@ -21,12 +21,12 @@ const {
     <div
       data-aos="fade-up"
       data-aos-delay="150"
-      class={twMerge('mb-8 md:mx-auto md:mb-12 text-center', containerClass)}
+      class={twMerge('mb-8 text-center md:mx-auto md:mb-12', containerClass)}
     >
-      {tagline && <p class="text-base text-gray-400 dark:text-gray-300 tracking-wide uppercase" set:html={tagline} />}
+      {tagline && <p class="text-base uppercase tracking-wide text-gray-400 dark:text-gray-300" set:html={tagline} />}
       {title && (
         <h2
-          class={twMerge('font-bold leading-tighter tracking-tighter font-heading text-heading text-3xl', titleClass)}
+          class={twMerge('leading-tighter text-heading font-heading text-3xl font-bold tracking-tighter', titleClass)}
           set:html={title}
         />
       )}
