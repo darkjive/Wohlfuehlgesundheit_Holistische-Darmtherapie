@@ -56,15 +56,26 @@ const metadata = {
       </div>
     </Fragment>
   </Hero>
+  <!-- Features Widget *************** -->
 
+  <!-- Quote Widget: Inspirierendes Zitat mit Hintergrundbild -->
   <Quote
     quote="Eure Nahrungsmittel sollen eure Heilmittel und eure Heilmittel eure Nahrungsmittel sein."
     author="Hippokrates"
   >
     <Fragment slot="bg">
       <div
-        class="bg-bottom-right bg-size-[auto_50px] absolute inset-0 -z-10 bg-[url(~/assets/images/hippokrates.jpg)] bg-no-repeat dark:bg-transparent dark:bg-none"
+        class="absolute inset-0 bg-[url(~/assets/images/hippokrates.jpg)] bg-right bg-no-repeat dark:bg-transparent md:bg-[url(~/assets/images/hippokrates-large.jpg)] md:bg-right md:bg-no-repeat"
       >
+      </div>
+    </Fragment>
+
+    <Fragment slot="content">
+      <div class="text-right md:ml-auto md:max-w-2xl">
+        <p class="text-xl italic tracking-tight md:text-2xl">
+          Eure Nahrungsmittel sollen eure Heilmittel und eure Heilmittel eure Nahrungsmittel sein.
+        </p>
+        <p class="mt-2 text-gray-500">(Hippokrates)</p>
       </div>
     </Fragment>
   </Quote>
