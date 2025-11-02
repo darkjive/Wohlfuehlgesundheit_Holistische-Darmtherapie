@@ -76,4 +76,4 @@ Die Inhalte und Werke auf dieser Website unterliegen dem deutschen Urheberrecht.
 
 ## Datenschutz
 
-Informationen zur Verarbeitung personenbezogener Daten finden Sie in unserer separaten [Datenschutzerklärung](/privacy).
+Informationen zur Verarbeitung personenbezogener Daten finden Sie in unserer separaten [Datenschutzerklärung](/datenschutz).
