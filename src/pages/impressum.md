@@ -48,7 +48,7 @@ Bei gesundheitlichen Beschwerden oder auffälligen Laborwerten empfehle ich ausd
 ## Umsatzsteuer-ID
 
 Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:  
-DE123456789 _(Platzhalter - bitte durch tatsächliche USt-IdNr. ersetzen)_
+**DE0884102804**
 
 ## Bildnachweise
 
