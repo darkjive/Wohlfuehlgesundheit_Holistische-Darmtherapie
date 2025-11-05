@@ -1,0 +1,97 @@
+---
+// Digestion.astro - Verdauung und Stuhlgang
+// Abschnitt für detaillierte Fragen zum Stuhlgang und zur Verdauung
+---
+
+<!-- Fragen zum Stuhlgang -->
+<div class="border-b border-gray-200 pb-8">
+  <h3 class="mb-6 text-xl font-semibold text-gray-900">Fragen zum Stuhlgang</h3>
+
+  <div class="space-y-6">
+    <div>
+      <label for="stuhlgang_freq" class="mb-2 block text-sm font-medium text-gray-700">
+        Wie häufig hast Du Stuhlgang?
+      </label>
+      <input
+        type="text"
+        id="stuhlgang_freq"
+        name="stuhlgang_freq"
+        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+      />
+    </div>
+
+    <div>
+      <label for="stuhlgang_schmerzen" class="mb-2 block text-sm font-medium text-gray-700">
+        Hast Du Schmerzen beim Stuhlgang?
+      </label>
+      <select
+        id="stuhlgang_schmerzen"
+        name="stuhlgang_schmerzen"
+        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+      >
+        <option value="">Bitte wählen</option>
+        <option value="nein">Nein</option>
+        <option value="ja">Ja</option>
+        <option value="manchmal">Manchmal</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="stuhlgang_auffaelligkeiten" class="mb-2 block text-sm font-medium text-gray-700">
+        Gab es Auffälligkeiten (Blut, Schleim usw.)?
+      </label>
+      <textarea
+        id="stuhlgang_auffaelligkeiten"
+        name="stuhlgang_auffaelligkeiten"
+        rows="2"
+        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+      ></textarea>
+    </div>
+
+    <div>
+      <label for="stuhlgang_konsistenz" class="mb-2 block text-sm font-medium text-gray-700">
+        Welche Form und Konsistenz hat Dein Stuhl?
+      </label>
+      <textarea
+        id="stuhlgang_konsistenz"
+        name="stuhlgang_konsistenz"
+        rows="2"
+        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+        placeholder="z.B. fest, weich, hart, flüssig"></textarea>
+    </div>
+
+    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+      <div>
+        <label for="stuhlgang_geruch_saeuerlich" class="mb-2 block text-sm font-medium text-gray-700">
+          Riecht Dein Stuhl säuerlich?
+        </label>
+        <select
+          id="stuhlgang_geruch_saeuerlich"
+          name="stuhlgang_geruch_saeuerlich"
+          class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+        >
+          <option value="">Bitte wählen</option>
+          <option value="nein">Nein</option>
+          <option value="ja">Ja</option>
+          <option value="manchmal">Manchmal</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="winde_geruch" class="mb-2 block text-sm font-medium text-gray-700">
+          Riechen Deine Winde stark nach „verfaulten Eiern"?
+        </label>
+        <select
+          id="winde_geruch"
+          name="winde_geruch"
+          class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+        >
+          <option value="">Bitte wählen</option>
+          <option value="nein">Nein</option>
+          <option value="ja">Ja</option>
+          <option value="manchmal">Manchmal</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
