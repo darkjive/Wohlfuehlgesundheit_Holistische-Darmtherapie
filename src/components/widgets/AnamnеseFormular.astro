@@ -1,0 +1,390 @@
+---
+// AnamnеseFormular.astro - Anamnesebogen mit Zoom-Buchung
+// Komponente für Gesundheitspraxis: Holistische Darmtherapie
+---
+
+<section class="bg-gradient-to-b from-white to-gray-50 py-16 sm:py-20">
+  <div class="mx-auto max-w-4xl px-4 sm:px-6">
+    <!-- Header -->
+    <div class="mb-10 text-center">
+      <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Anamnesebogen & Erstgespräch buchen</h2>
+      <p class="mt-4 text-lg text-gray-600">
+        Füllen Sie den Anamnesebogen aus und buchen Sie direkt Ihr persönliches Zoom-Erstgespräch.
+      </p>
+    </div>
+
+    <!-- Success Message (hidden by default) -->
+    <div id="success-message" class="mb-6 hidden rounded-lg bg-green-50 p-6 shadow-md">
+      <div class="flex items-start">
+        <svg class="mt-0.5 h-6 w-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+        <div class="ml-3">
+          <h3 class="text-lg font-semibold text-green-800">Termin erfolgreich gebucht!</h3>
+          <p class="mt-2 text-green-700" id="success-text"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Error Message (hidden by default) -->
+    <div id="error-message" class="mb-6 hidden rounded-lg bg-red-50 p-6 shadow-md">
+      <div class="flex items-start">
+        <svg class="mt-0.5 h-6 w-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+        <div class="ml-3">
+          <h3 class="text-lg font-semibold text-red-800">Fehler beim Senden</h3>
+          <p class="mt-2 text-red-700" id="error-text"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Form -->
+    <form id="anamnese-form" class="space-y-8 rounded-2xl bg-white p-6 shadow-xl sm:p-10">
+      <!-- Persönliche Daten -->
+      <div class="border-b border-gray-200 pb-8">
+        <h3 class="mb-6 flex items-center text-xl font-semibold text-gray-900">
+          <svg class="text-primary-600 mr-2 h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+          </svg>
+          Persönliche Daten
+        </h3>
+
+        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+          <div>
+            <label for="vorname" class="mb-2 block text-sm font-medium text-gray-700">
+              Vorname <span class="text-red-500">*</span>
+            </label>
+            <input
+              type="text"
+              id="vorname"
+              name="vorname"
+              required
+              class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 shadow-sm transition duration-150 focus:ring-2"
+              placeholder="Max"
+            />
+          </div>
+
+          <div>
+            <label for="nachname" class="mb-2 block text-sm font-medium text-gray-700">
+              Nachname <span class="text-red-500">*</span>
+            </label>
+            <input
+              type="text"
+              id="nachname"
+              name="nachname"
+              required
+              class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 shadow-sm transition duration-150 focus:ring-2"
+              placeholder="Mustermann"
+            />
+          </div>
+
+          <div>
+            <label for="email" class="mb-2 block text-sm font-medium text-gray-700">
+              E-Mail-Adresse <span class="text-red-500">*</span>
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 shadow-sm transition duration-150 focus:ring-2"
+              placeholder="max@beispiel.de"
+            />
+          </div>
+
+          <div>
+            <label for="telefon" class="mb-2 block text-sm font-medium text-gray-700">
+              Telefonnummer <span class="text-red-500">*</span>
+            </label>
+            <input
+              type="tel"
+              id="telefon"
+              name="telefon"
+              required
+              class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 shadow-sm transition duration-150 focus:ring-2"
+              placeholder="+49 123 456789"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Gesundheitsinformationen -->
+      <div class="border-b border-gray-200 pb-8">
+        <h3 class="mb-6 flex items-center text-xl font-semibold text-gray-900">
+          <svg class="text-primary-600 mr-2 h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+            ></path>
+          </svg>
+          Gesundheitsinformationen
+        </h3>
+
+        <div class="space-y-6">
+          <div>
+            <label for="hauptbeschwerde" class="mb-2 block text-sm font-medium text-gray-700">
+              Hauptbeschwerde(n) <span class="text-red-500">*</span>
+            </label>
+            <textarea
+              id="hauptbeschwerde"
+              name="hauptbeschwerde"
+              rows="4"
+              required
+              class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 shadow-sm transition duration-150 focus:ring-2"
+              placeholder="Beschreiben Sie Ihre aktuellen Beschwerden..."></textarea>
+          </div>
+
+          <div>
+            <label for="vorerkrankungen" class="mb-2 block text-sm font-medium text-gray-700"> Vorerkrankungen </label>
+            <textarea
+              id="vorerkrankungen"
+              name="vorerkrankungen"
+              rows="3"
+              class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 shadow-sm transition duration-150 focus:ring-2"
+              placeholder="Relevante Vorerkrankungen (optional)"></textarea>
+          </div>
+
+          <div>
+            <label for="medikamente" class="mb-2 block text-sm font-medium text-gray-700"> Aktuelle Medikamente </label>
+            <textarea
+              id="medikamente"
+              name="medikamente"
+              rows="3"
+              class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 shadow-sm transition duration-150 focus:ring-2"
+              placeholder="Nehmen Sie aktuell Medikamente ein? (optional)"></textarea>
+          </div>
+
+          <div>
+            <label for="ernaehrung" class="mb-2 block text-sm font-medium text-gray-700">
+              Ernährungsgewohnheiten
+            </label>
+            <select
+              id="ernaehrung"
+              name="ernaehrung"
+              class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+            >
+              <option value="mischkost">Mischkost</option>
+              <option value="vegetarisch">Vegetarisch</option>
+              <option value="vegan">Vegan</option>
+              <option value="sonstiges">Sonstiges</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="anmerkungen" class="mb-2 block text-sm font-medium text-gray-700"> Weitere Anmerkungen </label>
+            <textarea
+              id="anmerkungen"
+              name="anmerkungen"
+              rows="3"
+              class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 shadow-sm transition duration-150 focus:ring-2"
+              placeholder="Gibt es noch etwas, das wir wissen sollten? (optional)"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <!-- Terminauswahl -->
+      <div class="border-b border-gray-200 pb-8">
+        <h3 class="mb-6 flex items-center text-xl font-semibold text-gray-900">
+          <svg class="text-primary-600 mr-2 h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+          </svg>
+          Terminauswahl für Zoom-Erstgespräch
+        </h3>
+
+        <div class="grid grid-cols-1 gap-6 sm:grid-cols-3">
+          <div>
+            <label for="datum" class="mb-2 block text-sm font-medium text-gray-700">
+              Wunschdatum <span class="text-red-500">*</span>
+            </label>
+            <input
+              type="date"
+              id="datum"
+              name="datum"
+              required
+              class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+            />
+          </div>
+
+          <div>
+            <label for="uhrzeit" class="mb-2 block text-sm font-medium text-gray-700">
+              Uhrzeit <span class="text-red-500">*</span>
+            </label>
+            <select
+              id="uhrzeit"
+              name="uhrzeit"
+              required
+              class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+            >
+              <option value="">Bitte wählen</option>
+              <option value="09:00">09:00 Uhr</option>
+              <option value="10:00">10:00 Uhr</option>
+              <option value="11:00">11:00 Uhr</option>
+              <option value="14:00">14:00 Uhr</option>
+              <option value="15:00">15:00 Uhr</option>
+              <option value="16:00">16:00 Uhr</option>
+              <option value="17:00">17:00 Uhr</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="dauer" class="mb-2 block text-sm font-medium text-gray-700"> Dauer </label>
+            <select
+              id="dauer"
+              name="dauer"
+              class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+            >
+              <option value="30">30 Minuten</option>
+              <option value="60" selected>60 Minuten</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Datenschutz -->
+      <div class="pt-2">
+        <div class="flex items-start">
+          <div class="flex h-5 items-center">
+            <input
+              id="datenschutz"
+              name="datenschutz"
+              type="checkbox"
+              required
+              class="text-primary-600 focus:ring-primary-500 h-5 w-5 rounded border-gray-300 transition duration-150 focus:ring-2"
+            />
+          </div>
+          <div class="ml-3">
+            <label for="datenschutz" class="text-sm text-gray-600">
+              Ich habe die <a
+                href="/datenschutz"
+                target="_blank"
+                class="text-primary-600 hover:text-primary-700 font-medium underline">Datenschutzerklärung</a
+              > gelesen und akzeptiere diese. <span class="text-red-500">*</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="pt-4">
+        <button
+          type="submit"
+          id="submit-button"
+          class="bg-primary-600 hover:bg-primary-700 focus:ring-primary-300 w-full transform rounded-lg px-8 py-4 text-base font-semibold text-white shadow-lg transition duration-200 ease-in-out hover:scale-[1.02] focus:outline-none focus:ring-4 disabled:transform-none disabled:cursor-not-allowed disabled:opacity-50"
+        >
+          <span id="button-text">Anamnesebogen absenden & Termin buchen</span>
+          <span id="button-spinner" class="hidden">
+            <svg class="inline h-5 w-5 animate-spin" fill="none" viewBox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path
+                class="opacity-75"
+                fill="currentColor"
+                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+              ></path>
+            </svg>
+            Wird gesendet...
+          </span>
+        </button>
+        <p class="mt-3 text-center text-sm text-gray-500">
+          <span class="text-red-500">*</span> Pflichtfelder
+        </p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<script>
+  // Set minimum date to tomorrow
+  const dateInput = document.getElementById('datum') as HTMLInputElement;
+  if (dateInput) {
+    const tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    const minDate = tomorrow.toISOString().split('T')[0];
+    dateInput.min = minDate;
+  }
+
+  // Form submission handler
+  const form = document.getElementById('anamnese-form') as HTMLFormElement;
+  const submitButton = document.getElementById('submit-button') as HTMLButtonElement;
+  const buttonText = document.getElementById('button-text') as HTMLSpanElement;
+  const buttonSpinner = document.getElementById('button-spinner') as HTMLSpanElement;
+  const successMessage = document.getElementById('success-message') as HTMLDivElement;
+  const errorMessage = document.getElementById('error-message') as HTMLDivElement;
+  const successText = document.getElementById('success-text') as HTMLParagraphElement;
+  const errorText = document.getElementById('error-text') as HTMLParagraphElement;
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // Hide previous messages
+    successMessage.classList.add('hidden');
+    errorMessage.classList.add('hidden');
+
+    // Disable button and show spinner
+    submitButton.disabled = true;
+    buttonText.classList.add('hidden');
+    buttonSpinner.classList.remove('hidden');
+
+    // Collect form data
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch('/api/anamnese-booking.php', {
+        method: 'POST',
+        body: formData,
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        // Show success message
+        successText.textContent = result.message;
+        successMessage.classList.remove('hidden');
+
+        // Reset form
+        form.reset();
+
+        // Scroll to success message
+        successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } else {
+        // Show error message
+        errorText.textContent = result.message || 'Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.';
+        errorMessage.classList.remove('hidden');
+
+        // Scroll to error message
+        errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    } catch (error) {
+      // Show error message
+      errorText.textContent =
+        'Verbindungsfehler. Bitte überprüfen Sie Ihre Internetverbindung und versuchen Sie es erneut.';
+      errorMessage.classList.remove('hidden');
+      errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+      console.error('Form submission error:', error);
+    } finally {
+      // Re-enable button and hide spinner
+      submitButton.disabled = false;
+      buttonText.classList.remove('hidden');
+      buttonSpinner.classList.add('hidden');
+    }
+  });
+</script>

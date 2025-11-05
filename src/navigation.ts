@@ -12,7 +12,7 @@ export const headerData = {
     },
     {
       text: 'Termin buchen',
-      href: getPermalink('/anamnese'),
+      href: getPermalink('/termin-buchen'),
     },
     {
       text: 'Fragen?',
