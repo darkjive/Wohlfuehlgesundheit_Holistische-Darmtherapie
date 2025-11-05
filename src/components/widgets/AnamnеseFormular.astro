@@ -1737,7 +1737,7 @@
         <button
           type="submit"
           id="submit-button"
-          class="bg-primary-600 hover:bg-primary-700 focus:ring-primary-300 w-full transform rounded-lg px-8 py-4 text-base font-semibold text-white shadow-lg transition duration-200 ease-in-out hover:scale-[1.02] focus:outline-none focus:ring-4 disabled:transform-none disabled:cursor-not-allowed disabled:opacity-50"
+          class="btn-primary dark:btn-secondary w-full sm:mb-0"
         >
           <span id="button-text">Anamnesebogen absenden</span>
           <span id="button-spinner" class="hidden">
@@ -1787,7 +1787,7 @@
     const formData = new FormData(form);
 
     try {
-      const response = await fetch('/api/anamnese.php', {
+      const response = await fetch('/api/anamnese-booking.php', {
         method: 'POST',
         body: formData,
       });
