@@ -131,10 +131,50 @@ function validateAndSanitizeInput() {
         throw new Exception('Ungültiges Uhrzeitformat.');
     }
     
-    // Optional fields
+    // Optional fields - Basic info
+    $data['adresse'] = sanitizeInput($_POST['adresse'] ?? '');
+    $data['plz'] = sanitizeInput($_POST['plz'] ?? '');
+    $data['ort'] = sanitizeInput($_POST['ort'] ?? '');
+    $data['alter'] = sanitizeInput($_POST['alter'] ?? '');
+    $data['groesse'] = sanitizeInput($_POST['groesse'] ?? '');
+    $data['gewicht'] = sanitizeInput($_POST['gewicht'] ?? '');
+    $data['familienstand'] = sanitizeInput($_POST['familienstand'] ?? '');
+    $data['kinder'] = sanitizeInput($_POST['kinder'] ?? '');
+    $data['beruf'] = sanitizeInput($_POST['beruf'] ?? '');
+    $data['aufmerksam_durch'] = sanitizeInput($_POST['aufmerksam_durch'] ?? '');
+    $data['erwartungen'] = sanitizeInput($_POST['erwartungen'] ?? '');
+
+    // Optional fields - Health information
+    $data['gesundheitsprobleme'] = sanitizeInput($_POST['gesundheitsprobleme'] ?? '');
+    $data['allergien'] = sanitizeInput($_POST['allergien'] ?? '');
+    $data['nahrungsmittelunvertraeglichkeiten'] = sanitizeInput($_POST['nahrungsmittelunvertraeglichkeiten'] ?? '');
     $data['vorerkrankungen'] = sanitizeInput($_POST['vorerkrankungen'] ?? '');
     $data['medikamente'] = sanitizeInput($_POST['medikamente'] ?? '');
-    $data['ernaehrung'] = sanitizeInput($_POST['ernaehrung'] ?? 'mischkost');
+    $data['nahrungsergaenzungsmittel'] = sanitizeInput($_POST['nahrungsergaenzungsmittel'] ?? '');
+    $data['ernaehrung'] = sanitizeInput($_POST['ernaehrung'] ?? '');
+    $data['ernaehrung_details'] = sanitizeInput($_POST['ernaehrung_details'] ?? '');
+    $data['mahlzeiten_pro_tag'] = sanitizeInput($_POST['mahlzeiten_pro_tag'] ?? '');
+    $data['fruehstueck'] = sanitizeInput($_POST['fruehstueck'] ?? '');
+    $data['mittag'] = sanitizeInput($_POST['mittag'] ?? '');
+    $data['abend'] = sanitizeInput($_POST['abend'] ?? '');
+    $data['zwischenmahlzeiten'] = sanitizeInput($_POST['zwischenmahlzeiten'] ?? '');
+    $data['trinkmenge'] = sanitizeInput($_POST['trinkmenge'] ?? '');
+    $data['getraenke'] = sanitizeInput($_POST['getraenke'] ?? '');
+    $data['alkohol'] = sanitizeInput($_POST['alkohol'] ?? '');
+    $data['rauchen'] = sanitizeInput($_POST['rauchen'] ?? '');
+    $data['sport'] = sanitizeInput($_POST['sport'] ?? '');
+    $data['schlaf'] = sanitizeInput($_POST['schlaf'] ?? '');
+    $data['stress'] = sanitizeInput($_POST['stress'] ?? '');
+    $data['verdauung'] = sanitizeInput($_POST['verdauung'] ?? '');
+    $data['stuhlgang_haeufigkeit'] = sanitizeInput($_POST['stuhlgang_haeufigkeit'] ?? '');
+    $data['stuhlgang_schmerzen'] = sanitizeInput($_POST['stuhlgang_schmerzen'] ?? '');
+    $data['stuhlgang_auffaelligkeiten'] = sanitizeInput($_POST['stuhlgang_auffaelligkeiten'] ?? '');
+    $data['stuhlgang_konsistenz'] = sanitizeInput($_POST['stuhlgang_konsistenz'] ?? '');
+    $data['stuhlgang_geruch_saeuerlich'] = sanitizeInput($_POST['stuhlgang_geruch_saeuerlich'] ?? '');
+    $data['winde_geruch'] = sanitizeInput($_POST['winde_geruch'] ?? '');
+    $data['bereitschaft_nahrungsergaenzung'] = sanitizeInput($_POST['bereitschaft_nahrungsergaenzung'] ?? '');
+    $data['bereitschaft_investieren'] = sanitizeInput($_POST['bereitschaft_investieren'] ?? '');
+    $data['bereitschaft_lebensstil'] = sanitizeInput($_POST['bereitschaft_lebensstil'] ?? '');
     $data['anmerkungen'] = sanitizeInput($_POST['anmerkungen'] ?? '');
     $data['dauer'] = intval($_POST['dauer'] ?? 60);
     
@@ -395,7 +435,7 @@ function sendAdminNotificationEmail($formData, $meetingData) {
     $datumFormatiert = date('d.m.Y', strtotime($formData['datum']));
     $startTime = date('H:i', strtotime($meetingData['start_time']));
     
-    // Plain text message for admin
+    // Build comprehensive admin message
     $message = "
 Neue Anamnese und Terminbuchung
 ================================
@@ -405,11 +445,31 @@ PERSÖNLICHE DATEN:
 Name: {$formData['vorname']} {$formData['nachname']}
 E-Mail: {$formData['email']}
 Telefon: {$formData['telefon']}
+Adresse: {$formData['adresse']}, {$formData['plz']} {$formData['ort']}
+
+Alter: {$formData['alter']}
+Größe: {$formData['groesse']} cm
+Gewicht: {$formData['gewicht']} kg
+Familienstand: {$formData['familienstand']}
+Kinder im Haushalt: {$formData['kinder']}
+Beruf: {$formData['beruf']}
+
+Aufmerksam geworden durch: {$formData['aufmerksam_durch']}
+Erwartungen: {$formData['erwartungen']}
 
 GESUNDHEITSINFORMATIONEN:
 -------------------------
-Hauptbeschwerde(n):
+Hauptbeschwerde:
 {$formData['hauptbeschwerde']}
+
+Weitere gesundheitliche Probleme:
+{$formData['gesundheitsprobleme']}
+
+Allergien:
+{$formData['allergien']}
+
+Nahrungsmittelunverträglichkeiten:
+{$formData['nahrungsmittelunvertraeglichkeiten']}
 
 Vorerkrankungen:
 {$formData['vorerkrankungen']}
@@ -417,9 +477,47 @@ Vorerkrankungen:
 Aktuelle Medikamente:
 {$formData['medikamente']}
 
-Ernährungsgewohnheiten: {$formData['ernaehrung']}
+Nahrungsergänzungsmittel:
+{$formData['nahrungsergaenzungsmittel']}
 
-Weitere Anmerkungen:
+ERNÄHRUNG & LEBENSSTIL:
+-----------------------
+Ernährungsform: {$formData['ernaehrung']}
+Details: {$formData['ernaehrung_details']}
+
+Mahlzeiten pro Tag: {$formData['mahlzeiten_pro_tag']}
+Frühstück: {$formData['fruehstueck']}
+Mittagessen: {$formData['mittag']}
+Abendessen: {$formData['abend']}
+Zwischenmahlzeiten: {$formData['zwischenmahlzeiten']}
+
+Trinkmenge: {$formData['trinkmenge']}
+Getränke: {$formData['getraenke']}
+Alkoholkonsum: {$formData['alkohol']}
+Rauchen: {$formData['rauchen']}
+
+Sport/Bewegung: {$formData['sport']}
+Schlaf: {$formData['schlaf']}
+Stress: {$formData['stress']}
+
+VERDAUUNG & STUHLGANG:
+----------------------
+Verdauung allgemein: {$formData['verdauung']}
+Stuhlgang-Häufigkeit: {$formData['stuhlgang_haeufigkeit']}
+Schmerzen beim Stuhlgang: {$formData['stuhlgang_schmerzen']}
+Auffälligkeiten: {$formData['stuhlgang_auffaelligkeiten']}
+Konsistenz: {$formData['stuhlgang_konsistenz']}
+Säuerlicher Geruch: {$formData['stuhlgang_geruch_saeuerlich']}
+Winde riechen nach faulen Eiern: {$formData['winde_geruch']}
+
+BEREITSCHAFT:
+-------------
+Nahrungsergänzungsmittel einnehmen: {$formData['bereitschaft_nahrungsergaenzung']}
+In sich investieren: {$formData['bereitschaft_investieren']}
+Lebensstil anpassen: {$formData['bereitschaft_lebensstil']}
+
+WEITERE ANMERKUNGEN:
+--------------------
 {$formData['anmerkungen']}
 
 TERMIN-DETAILS:
