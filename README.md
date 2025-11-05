@@ -1,4 +1,4 @@
-# Gesundheitspraxis Stefaniel
+# Stefanie Leidel - Holistische Darmtherapie
 
 Website: Wohlfühlgesundheit Holistische Darmtherapie , entwickelt mit Astro und Tailwind CSS.
 
@@ -61,15 +61,15 @@ Die Hauptkonfigurationsdatei befindet sich unter `./src/config.yaml`:
 
 ```yaml
 site:
-  name: 'Gesundheitspraxis Stefaniel'
+  name: 'Stefanie Leidel - Holistische Darmtherapie'
   site: 'https://gesundheitspraxis-stefaniel.de'
   base: '/'
   trailingSlash: false
 
 metadata:
   title:
-    default: 'Gesundheitspraxis Stefaniel'
-    template: '%s — Gesundheitspraxis Stefaniel'
+    default: 'Stefanie Leidel - Holistische Darmtherapie'
+    template: '%s — Stefanie Leidel - Holistische Darmtherapie'
   description: 'Professionelle Gesundheitsdienstleistungen in [Ort]'
   robots:
     index: true
