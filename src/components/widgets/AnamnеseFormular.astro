@@ -9,7 +9,7 @@
     <div class="mb-10 text-center">
       <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Anamnesebogen & Erstgespräch buchen</h2>
       <p class="mt-4 text-lg text-gray-600">
-        Füllen Sie den Anamnesebogen aus und buchen Sie direkt Ihr persönliches Zoom-Erstgespräch.
+        Füll den Anamnesebogen aus und buche direkt dein persönliches Zoom-Erstgespräch.
       </p>
     </div>
 
@@ -146,7 +146,7 @@
               rows="4"
               required
               class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 shadow-sm transition duration-150 focus:ring-2"
-              placeholder="Beschreiben Sie Ihre aktuellen Beschwerden..."></textarea>
+              placeholder="Beschreibe deine aktuellen Beschwerden..."></textarea>
           </div>
 
           <div>
@@ -192,7 +192,7 @@
               name="anmerkungen"
               rows="3"
               class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 shadow-sm transition duration-150 focus:ring-2"
-              placeholder="Gibt es noch etwas, das wir wissen sollten? (optional)"></textarea>
+              placeholder="Gibt es noch etwas, das ich wissen sollte? (optional)"></textarea>
           </div>
         </div>
       </div>
@@ -366,7 +366,7 @@
         successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
       } else {
         // Show error message
-        errorText.textContent = result.message || 'Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.';
+        errorText.textContent = result.message || 'Ein Fehler ist aufgetreten. Bitte versuche es später erneut.';
         errorMessage.classList.remove('hidden');
 
         // Scroll to error message
@@ -375,7 +375,7 @@
     } catch (error) {
       // Show error message
       errorText.textContent =
-        'Verbindungsfehler. Bitte überprüfen Sie Ihre Internetverbindung und versuchen Sie es erneut.';
+        'Verbindungsfehler. Bitte überprüfe deine Internetverbindung und versuche es erneut.';
       errorMessage.classList.remove('hidden');
       errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
