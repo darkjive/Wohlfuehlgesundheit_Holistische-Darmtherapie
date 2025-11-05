@@ -1,0 +1,157 @@
+# ==============================================
+# Passwortschutz - Entfernen sobald die Seite live geht
+# ==============================================
+# WICHTIG: AuthUserFile Pfad muss an den tatsächlichen Server-Pfad angepasst werden
+# Ersetze "/absolute/pfad/zur/.htpasswd" mit dem vollständigen Pfad auf deinem Server
+# z.B. /var/www/vhosts/deinedomain.de/.htpasswd
+AuthType Basic
+AuthName "Geschützter Bereich"
+AuthUserFile /absolute/pfad/zur/.htpasswd
+Require valid-user
+
+# ==============================================
+# Security Headers
+# ==============================================
+
+# Verhindert Clickjacking-Angriffe
+<IfModule mod_headers.c>
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-XSS-Protection "1; mode=block"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+    # Permissions Policy (ehemals Feature Policy)
+    Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+
+    # Content Security Policy (anpassen nach Bedarf)
+    Header always set Content-Security-Policy "default-src 'self' https: data: 'unsafe-inline' 'unsafe-eval'; img-src 'self' https: data:; script-src 'self' https: 'unsafe-inline' 'unsafe-eval'; style-src 'self' https: 'unsafe-inline';"
+</IfModule>
+
+# ==============================================
+# Performance - Browser Caching
+# ==============================================
+
+<IfModule mod_expires.c>
+    ExpiresActive On
+
+    # Bilder
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+
+    # CSS und JavaScript
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType text/javascript "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+
+    # Fonts
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType font/ttf "access plus 1 year"
+    ExpiresByType font/otf "access plus 1 year"
+    ExpiresByType application/font-woff "access plus 1 year"
+    ExpiresByType application/font-woff2 "access plus 1 year"
+
+    # Andere
+    ExpiresByType application/pdf "access plus 1 month"
+    ExpiresByType application/x-shockwave-flash "access plus 1 month"
+</IfModule>
+
+# ==============================================
+# Performance - GZIP Kompression
+# ==============================================
+
+<IfModule mod_deflate.c>
+    # Komprimiere HTML, CSS, JavaScript, Text, XML und Fonts
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/vnd.ms-fontobject
+    AddOutputFilterByType DEFLATE application/x-font
+    AddOutputFilterByType DEFLATE application/x-font-opentype
+    AddOutputFilterByType DEFLATE application/x-font-otf
+    AddOutputFilterByType DEFLATE application/x-font-truetype
+    AddOutputFilterByType DEFLATE application/x-font-ttf
+    AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE font/opentype
+    AddOutputFilterByType DEFLATE font/otf
+    AddOutputFilterByType DEFLATE font/ttf
+    AddOutputFilterByType DEFLATE image/svg+xml
+    AddOutputFilterByType DEFLATE image/x-icon
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/javascript
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/xml
+
+    # Entferne Browser-Bugs (nur für alte Browser)
+    BrowserMatch ^Mozilla/4 gzip-only-text/html
+    BrowserMatch ^Mozilla/4\.0[678] no-gzip
+    BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+    Header append Vary User-Agent
+</IfModule>
+
+# ==============================================
+# Security - Verzeichnis Browsing deaktivieren
+# ==============================================
+Options -Indexes
+
+# ==============================================
+# Security - Sensitive Dateien schützen
+# ==============================================
+
+<FilesMatch "^\.">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+<FilesMatch "\.(htaccess|htpasswd|ini|log|sh|sql)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# ==============================================
+# URL Rewriting
+# ==============================================
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # HTTPS erzwingen (auskommentiert - bei Bedarf aktivieren)
+    # RewriteCond %{HTTPS} off
+    # RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    # WWW zu non-WWW (oder umgekehrt - bei Bedarf anpassen)
+    # RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+    # RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+</IfModule>
+
+# ==============================================
+# UTF-8 Encoding
+# ==============================================
+AddDefaultCharset UTF-8
+
+# ==============================================
+# MIME Types
+# ==============================================
+
+<IfModule mod_mime.c>
+    # JavaScript
+    AddType application/javascript js mjs
+    AddType application/json json
+
+    # WebP
+    AddType image/webp webp
+
+    # Fonts
+    AddType font/woff woff
+    AddType font/woff2 woff2
+    AddType application/vnd.ms-fontobject eot
+    AddType font/ttf ttf
+    AddType font/otf otf
+</IfModule>
