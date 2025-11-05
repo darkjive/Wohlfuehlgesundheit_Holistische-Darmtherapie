@@ -46,6 +46,7 @@ Alle Sitzungen können wahlweise online via Zoom oder als Hausbesuch (im Umkreis
 **Wichtiger Hinweis:** Die Beraterin ist keine Ärztin und keine Heilpraktikerin. Die Beratung ersetzt keine medizinische Diagnose, Behandlung oder Therapie. Bei gesundheitlichen Beschwerden wird ausdrücklich empfohlen, einen Arzt oder Heilpraktiker zu konsultieren.
 
 Die Beratung dient ausschließlich der:
+
 - Ernährungsberatung und Lebensstiloptimierung
 - Beratung zur Darmgesundheit und zum Darmmikrobiom
 - Interpretation von Laborwerten (ohne medizinische Diagnosestellung)
@@ -64,6 +65,7 @@ Die Kosten für Stuhlbefunde oder andere Laboruntersuchungen sind **nicht** im P
 ### 4.3 Zahlungsweise
 
 Die Zahlung erfolgt nach der ersten Sitzung per:
+
 - Banküberweisung oder
 - PayPal
 
