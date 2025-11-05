@@ -1,0 +1,102 @@
+---
+// PersonalInfo.astro - Persönliche Informationen
+---
+
+<!-- Persönliche Daten -->
+<div class="border-b border-gray-200 pb-8">
+  <h3 class="mb-6 text-xl font-semibold text-gray-900">Persönliche Daten</h3>
+
+  <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    <div>
+      <label for="alter" class="mb-2 block text-sm font-medium text-gray-700">Alter</label>
+      <input
+        type="number"
+        id="alter"
+        name="alter"
+        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+      />
+    </div>
+
+    <div>
+      <label for="groesse" class="mb-2 block text-sm font-medium text-gray-700">Größe (cm)</label>
+      <input
+        type="number"
+        id="groesse"
+        name="groesse"
+        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+      />
+    </div>
+
+    <div>
+      <label for="gewicht" class="mb-2 block text-sm font-medium text-gray-700">Gewicht (kg)</label>
+      <input
+        type="number"
+        id="gewicht"
+        name="gewicht"
+        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+      />
+    </div>
+
+    <div>
+      <label for="familienstand" class="mb-2 block text-sm font-medium text-gray-700">Familienstand</label>
+      <select
+        id="familienstand"
+        name="familienstand"
+        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+      >
+        <option value="">Bitte wählen</option>
+        <option value="ledig">Ledig</option>
+        <option value="verheiratet">Verheiratet</option>
+        <option value="geschieden">Geschieden</option>
+        <option value="verwitwet">Verwitwet</option>
+        <option value="partnerschaft">In Partnerschaft</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="kinder" class="mb-2 block text-sm font-medium text-gray-700">Kinder im Haushalt</label>
+      <input
+        type="text"
+        id="kinder"
+        name="kinder"
+        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+      />
+    </div>
+
+    <div>
+      <label for="beruf" class="mb-2 block text-sm font-medium text-gray-700">Beruf</label>
+      <input
+        type="text"
+        id="beruf"
+        name="beruf"
+        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+      />
+    </div>
+  </div>
+
+  <div class="mt-6 space-y-6">
+    <div>
+      <label for="aufmerksam_durch" class="mb-2 block text-sm font-medium text-gray-700">
+        Wie bist Du auf mich aufmerksam geworden?
+      </label>
+      <input
+        type="text"
+        id="aufmerksam_durch"
+        name="aufmerksam_durch"
+        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+      />
+    </div>
+
+    <div>
+      <label for="erwartungen" class="mb-2 block text-sm font-medium text-gray-700">
+        Was erwartest Du von mir und meiner Arbeit?
+      </label>
+      <textarea
+        id="erwartungen"
+        name="erwartungen"
+        rows="3"
+        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+      ></textarea>
+    </div>
+  </div>
+</div>

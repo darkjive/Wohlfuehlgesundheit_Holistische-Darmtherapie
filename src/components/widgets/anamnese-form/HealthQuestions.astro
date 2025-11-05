@@ -1,0 +1,349 @@
+---
+// HealthQuestions.astro - Fragen zu Deiner gesundheitlichen Situation
+// Abschnitt des Anamnesebogens für gesundheitliche Beschwerden und Probleme
+---
+
+<!-- Fragen zu Deiner gesundheitlichen Situation -->
+<div class="border-b border-gray-200 pb-8">
+  <h3 class="mb-6 flex items-center text-xl font-semibold text-gray-900">
+    <svg class="text-primary-600 mr-2 h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+      ></path>
+    </svg>
+    Fragen zu Deiner gesundheitlichen Situation
+  </h3>
+
+  <div class="space-y-6">
+    <div>
+      <label for="hauptbeschwerde" class="mb-2 block text-sm font-medium text-gray-700">
+        Was ist Deine Hauptbeschwerde? <span class="text-red-500">*</span>
+      </label>
+      <textarea
+        id="hauptbeschwerde"
+        name="hauptbeschwerde"
+        rows="3"
+        required
+        placeholder="z.B. Verdauungsprobleme, Blähungen, chronische Müdigkeit..."
+        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 shadow-sm transition duration-150 focus:ring-2"
+      ></textarea>
+    </div>
+
+    <div>
+      <label for="gesundheitsprobleme" class="mb-2 block text-sm font-medium text-gray-700">
+        Unter welchen weiteren gesundheitlichen Problemen leidest Du derzeit und seit wann bestehen diese?
+      </label>
+      <textarea
+        id="gesundheitsprobleme"
+        name="gesundheitsprobleme"
+        rows="4"
+        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+      ></textarea>
+    </div>
+
+    <div>
+      <label for="allergien" class="mb-2 block text-sm font-medium text-gray-700">Hast Du Allergien?</label>
+      <textarea
+        id="allergien"
+        name="allergien"
+        rows="2"
+        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+      ></textarea>
+    </div>
+
+    <div>
+      <label for="nahrungsmittelunvertraeglichkeiten" class="mb-2 block text-sm font-medium text-gray-700">
+        Bestehen Nahrungsmittelunverträglichkeiten?
+      </label>
+      <textarea
+        id="nahrungsmittelunvertraeglichkeiten"
+        name="nahrungsmittelunvertraeglichkeiten"
+        rows="2"
+        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+      ></textarea>
+    </div>
+
+    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+      <div>
+        <label for="blutdruck" class="mb-2 block text-sm font-medium text-gray-700">
+          Leidest Du unter Bluthochdruck oder niedrigem Blutdruck?
+        </label>
+        <select
+          id="blutdruck"
+          name="blutdruck"
+          class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+        >
+          <option value="">Bitte wählen</option>
+          <option value="nein">Nein</option>
+          <option value="bluthochdruck">Bluthochdruck</option>
+          <option value="niedriger_blutdruck">Niedriger Blutdruck</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="cholesterin" class="mb-2 block text-sm font-medium text-gray-700">
+          Hast Du hohe Cholesterinwerte?
+        </label>
+        <select
+          id="cholesterin"
+          name="cholesterin"
+          class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+        >
+          <option value="">Bitte wählen</option>
+          <option value="nein">Nein</option>
+          <option value="ja">Ja</option>
+          <option value="unbekannt">Unbekannt</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="diabetes" class="mb-2 block text-sm font-medium text-gray-700">
+          Leidest Du unter Diabetes mellitus?
+        </label>
+        <select
+          id="diabetes"
+          name="diabetes"
+          class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+        >
+          <option value="">Bitte wählen</option>
+          <option value="nein">Nein</option>
+          <option value="typ1">Ja, Typ 1</option>
+          <option value="typ2">Ja, Typ 2</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="hautprobleme" class="mb-2 block text-sm font-medium text-gray-700">
+          Hast Du Hautprobleme? Wenn ja, welche?
+        </label>
+        <input
+          type="text"
+          id="hautprobleme"
+          name="hautprobleme"
+          class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+        />
+      </div>
+
+      <div>
+        <label for="kopfschmerzen" class="mb-2 block text-sm font-medium text-gray-700">
+          Hast Du regelmäßig Kopfschmerzen oder Migräne?
+        </label>
+        <select
+          id="kopfschmerzen"
+          name="kopfschmerzen"
+          class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+        >
+          <option value="">Bitte wählen</option>
+          <option value="nein">Nein</option>
+          <option value="kopfschmerzen">Kopfschmerzen</option>
+          <option value="migraene">Migräne</option>
+          <option value="beides">Beides</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="magenprobleme" class="mb-2 block text-sm font-medium text-gray-700">
+          Hast Du Magenprobleme? Wenn ja, welche?
+        </label>
+        <input
+          type="text"
+          id="magenprobleme"
+          name="magenprobleme"
+          class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+        />
+      </div>
+    </div>
+
+    <div>
+      <label for="darmprobleme" class="mb-2 block text-sm font-medium text-gray-700">
+        Hast Du Darmprobleme? Wenn ja, welche? (z. B. Durchfall, Verstopfung, Völlegefühl, Blähungen, Sonstiges)
+      </label>
+      <textarea
+        id="darmprobleme"
+        name="darmprobleme"
+        rows="3"
+        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+      ></textarea>
+    </div>
+
+    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+      <div>
+        <label for="taeglich_stuhlgang" class="mb-2 block text-sm font-medium text-gray-700">
+          Hast Du täglichen Stuhlgang?
+        </label>
+        <select
+          id="taeglich_stuhlgang"
+          name="taeglich_stuhlgang"
+          class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+        >
+          <option value="">Bitte wählen</option>
+          <option value="ja">Ja</option>
+          <option value="nein">Nein</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="stuhlgang_haeufigkeit" class="mb-2 block text-sm font-medium text-gray-700">
+          Wenn nein: Wie oft hast Du Stuhlgang?
+        </label>
+        <input
+          type="text"
+          id="stuhlgang_haeufigkeit"
+          name="stuhlgang_haeufigkeit"
+          class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+        />
+      </div>
+    </div>
+
+    <div>
+      <label for="pilzinfektionen" class="mb-2 block text-sm font-medium text-gray-700">
+        Sind Pilzinfektionen bekannt (Darmpilz, Genitalpilz, Nagelpilz, Hautpilz)?
+      </label>
+      <textarea
+        id="pilzinfektionen"
+        name="pilzinfektionen"
+        rows="2"
+        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+      ></textarea>
+    </div>
+
+    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+      <div>
+        <label for="stuhluntersuchung" class="mb-2 block text-sm font-medium text-gray-700">
+          Wurde bei Dir schon einmal eine Stuhluntersuchung durchgeführt? Was war das Ergebnis?
+        </label>
+        <textarea
+          id="stuhluntersuchung"
+          name="stuhluntersuchung"
+          rows="3"
+          class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+        ></textarea>
+      </div>
+
+      <div>
+        <label for="stuhluntersuchung_verfuegbar" class="mb-2 block text-sm font-medium text-gray-700">
+          Kannst Du mir das Ergebnis zur Verfügung stellen?
+        </label>
+        <select
+          id="stuhluntersuchung_verfuegbar"
+          name="stuhluntersuchung_verfuegbar"
+          class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+        >
+          <option value="">Bitte wählen</option>
+          <option value="ja">Ja</option>
+          <option value="nein">Nein</option>
+          <option value="nicht_zutreffend">Nicht zutreffend</option>
+        </select>
+      </div>
+    </div>
+
+    <div>
+      <label for="darmspiegelung" class="mb-2 block text-sm font-medium text-gray-700">
+        Wurde bei Dir schon mal eine Darmspiegelung gemacht? Wenn ja, warum?
+      </label>
+      <textarea
+        id="darmspiegelung"
+        name="darmspiegelung"
+        rows="2"
+        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+      ></textarea>
+    </div>
+
+    <div>
+      <label for="rheuma_gicht" class="mb-2 block text-sm font-medium text-gray-700">
+        Hast Du Erkrankungen wie Rheuma, Gicht, Arthrose oder Osteoporose?
+      </label>
+      <textarea
+        id="rheuma_gicht"
+        name="rheuma_gicht"
+        rows="2"
+        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+      ></textarea>
+    </div>
+
+    <div>
+      <label for="rueckenprobleme" class="mb-2 block text-sm font-medium text-gray-700">
+        Hast Du akute oder chronische Rückenprobleme?
+      </label>
+      <textarea
+        id="rueckenprobleme"
+        name="rueckenprobleme"
+        rows="2"
+        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+      ></textarea>
+    </div>
+
+    <div>
+      <label for="schilddruese" class="mb-2 block text-sm font-medium text-gray-700">
+        Schilddrüsenunter- oder -überfunktion? Wenn ja, nimmst Du dafür Medikamente? Wenn ja, welche?
+      </label>
+      <textarea
+        id="schilddruese"
+        name="schilddruese"
+        rows="3"
+        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+      ></textarea>
+    </div>
+
+    <div>
+      <label for="infektanfaellig" class="mb-2 block text-sm font-medium text-gray-700">
+        Bist Du häufig krank oder infektanfällig (z. B. Grippe, Schnupfen)?
+      </label>
+      <select
+        id="infektanfaellig"
+        name="infektanfaellig"
+        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+      >
+        <option value="">Bitte wählen</option>
+        <option value="nein">Nein</option>
+        <option value="manchmal">Manchmal</option>
+        <option value="haeufig">Häufig</option>
+        <option value="sehr_haeufig">Sehr häufig</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="schlafstoerungen" class="mb-2 block text-sm font-medium text-gray-700">
+        Leidest Du unter Ein- oder Durchschlafstörungen?
+      </label>
+      <select
+        id="schlafstoerungen"
+        name="schlafstoerungen"
+        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+      >
+        <option value="">Bitte wählen</option>
+        <option value="nein">Nein</option>
+        <option value="einschlafstoerungen">Einschlafstörungen</option>
+        <option value="durchschlafstoerungen">Durchschlafstörungen</option>
+        <option value="beides">Beides</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="sonstige_beschwerden" class="mb-2 block text-sm font-medium text-gray-700">
+        Gibt es sonstige Beschwerden, chronische Erkrankungen oder Autoimmunerkrankungen?
+      </label>
+      <textarea
+        id="sonstige_beschwerden"
+        name="sonstige_beschwerden"
+        rows="3"
+        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+      ></textarea>
+    </div>
+
+    <div>
+      <label for="hauptproblem" class="mb-2 block text-sm font-medium text-gray-700">
+        Was ist Dein Hauptproblem?
+      </label>
+      <textarea
+        id="hauptproblem"
+        name="hauptproblem"
+        rows="3"
+        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+      ></textarea>
+    </div>
+  </div>
+</div>
