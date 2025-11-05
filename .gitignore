@@ -24,3 +24,7 @@ pnpm-lock.yaml
 .astro
 
 tmp.md
+
+# security files
+public/.htaccess
+public/_sec/.htpasswd
