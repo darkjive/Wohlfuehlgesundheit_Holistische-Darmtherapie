@@ -70,8 +70,8 @@ try {
     
     // 6. Success response
     sendJsonResponse(
-        true, 
-        'Vielen Dank! Dein Termin wurde erfolgreich gebucht. Du erhälst in Kürze eine Bestätigungsmail mit den Zoom-Zugangsdaten.'
+        true,
+        'Vielen Dank! Dein Termin wurde erfolgreich gebucht. Du erhältst in Kürze eine Bestätigungsmail mit den Zoom-Zugangsdaten.'
     );
     
 } catch (Exception $e) {
@@ -288,7 +288,7 @@ function createZoomMeeting($accessToken, $formData) {
  */
 function sendUserConfirmationEmail($formData, $meetingData) {
     $to = $formData['email'];
-    $subject = 'Terminbestätigung - Ihr Zoom-Erstgespräch';
+    $subject = 'Terminbestätigung - Dein Zoom-Erstgespräch';
     
     // Format date and time in German
     $datumFormatiert = date('d.m.Y', strtotime($formData['datum']));
@@ -318,12 +318,12 @@ function sendUserConfirmationEmail($formData, $meetingData) {
                 <h1>Terminbestätigung</h1>
             </div>
             <div class='content'>
-                <p>Liebe/r {$formData['vorname']} {$formData['nachname']},</p>
-                
-                <p>vielen Dank für Ihr Vertrauen! Ihr Zoom-Erstgespräch wurde erfolgreich gebucht.</p>
-                
+                <p>Hallo {$formData['vorname']},</p>
+
+                <p>vielen Dank für dein Vertrauen! Dein Zoom-Erstgespräch wurde erfolgreich gebucht.</p>
+
                 <div class='meeting-details'>
-                    <h2 style='margin-top: 0; color: #047857;'>Ihre Termin-Details</h2>
+                    <h2 style='margin-top: 0; color: #047857;'>Deine Termin-Details</h2>
                     <p><strong>Datum:</strong> {$datumFormatiert}</p>
                     <p><strong>Uhrzeit:</strong> {$startTime} Uhr</p>
                     <p><strong>Dauer:</strong> {$formData['dauer']} Minuten</p>
@@ -331,31 +331,31 @@ function sendUserConfirmationEmail($formData, $meetingData) {
                     <p><strong>Passcode:</strong> {$meetingData['password']}</p>
                 </div>
                 
-                <p><strong>So nehmen Sie am Meeting teil:</strong></p>
-                <p>Klicken Sie zum gewählten Zeitpunkt einfach auf folgenden Link:</p>
+                <p><strong>So nimmst du am Meeting teil:</strong></p>
+                <p>Klick zum gewählten Zeitpunkt einfach auf folgenden Link:</p>
                 
                 <p style='text-align: center;'>
                     <a href='{$meetingData['join_url']}' class='button'>Zum Zoom-Meeting</a>
                 </p>
                 
                 <p style='font-size: 14px; color: #666;'>
-                    Alternativ können Sie auch die Zoom-App öffnen und die Meeting-ID manuell eingeben.
+                    Alternativ kannst du auch die Zoom-App öffnen und die Meeting-ID manuell eingeben.
                 </p>
-                
+
                 <p><strong>Wichtige Hinweise:</strong></p>
                 <ul>
-                    <li>Bitte stellen Sie sicher, dass Sie Zoom installiert haben oder nutzen Sie die Browser-Version</li>
-                    <li>Testen Sie vorab Ihre Kamera und Ihr Mikrofon</li>
-                    <li>Suchen Sie sich einen ruhigen Ort für das Gespräch</li>
+                    <li>Bitte stell sicher, dass du Zoom installiert hast oder nutze die Browser-Version</li>
+                    <li>Teste vorab deine Kamera und dein Mikrofon</li>
+                    <li>Such dir einen ruhigen Ort für das Gespräch</li>
                 </ul>
-                
-                <p>Wir freuen uns auf das Gespräch mit Ihnen!</p>
-                
-                <p>Mit herzlichen Grüßen,<br>
-                Ihr Team von Wohlfuehlgesundheit</p>
+
+                <p>Ich freue mich auf das Gespräch mit dir!</p>
+
+                <p>Herzliche Grüße,<br>
+                Stefanie von Wohlfühlgesundheit</p>
                 
                 <div class='footer'>
-                    <p>Bei Fragen oder Änderungswünschen kontaktieren Sie uns bitte unter:<br>
+                    <p>Bei Fragen oder Änderungswünschen kontaktiere mich bitte unter:<br>
                     <a href='mailto:" . ADMIN_EMAIL . "'>" . ADMIN_EMAIL . "</a></p>
                 </div>
             </div>
