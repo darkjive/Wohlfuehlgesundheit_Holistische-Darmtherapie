@@ -7,9 +7,7 @@
   <div class="mx-auto max-w-4xl px-4 sm:px-6">
     <!-- Header -->
     <div class="mb-10 text-center">
-      <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-        Anamnesebogen & Erstgespräch buchen
-      </h2>
+      <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Anamnesebogen & Erstgespräch buchen</h2>
       <p class="mt-4 text-lg text-gray-600">
         Füllen Sie den Anamnesebogen aus und buchen Sie direkt Ihr persönliches Zoom-Erstgespräch.
       </p>
@@ -18,8 +16,12 @@
     <!-- Success Message (hidden by default) -->
     <div id="success-message" class="mb-6 hidden rounded-lg bg-green-50 p-6 shadow-md">
       <div class="flex items-start">
-        <svg class="h-6 w-6 text-green-600 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        <svg class="mt-0.5 h-6 w-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
         </svg>
         <div class="ml-3">
           <h3 class="text-lg font-semibold text-green-800">Termin erfolgreich gebucht!</h3>
@@ -31,8 +33,12 @@
     <!-- Error Message (hidden by default) -->
     <div id="error-message" class="mb-6 hidden rounded-lg bg-red-50 p-6 shadow-md">
       <div class="flex items-start">
-        <svg class="h-6 w-6 text-red-600 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        <svg class="mt-0.5 h-6 w-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
         </svg>
         <div class="ml-3">
           <h3 class="text-lg font-semibold text-red-800">Fehler beim Senden</h3>
@@ -42,19 +48,23 @@
     </div>
 
     <!-- Form -->
-    <form id="anamnese-form" class="space-y-8 bg-white rounded-2xl shadow-xl p-6 sm:p-10">
+    <form id="anamnese-form" class="space-y-8 rounded-2xl bg-white p-6 shadow-xl sm:p-10">
       <!-- Persönliche Daten -->
       <div class="border-b border-gray-200 pb-8">
-        <h3 class="text-xl font-semibold text-gray-900 mb-6 flex items-center">
-          <svg class="w-6 h-6 mr-2 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+        <h3 class="mb-6 flex items-center text-xl font-semibold text-gray-900">
+          <svg class="text-primary-600 mr-2 h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
           </svg>
           Persönliche Daten
         </h3>
-        
+
         <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
           <div>
-            <label for="vorname" class="block text-sm font-medium text-gray-700 mb-2">
+            <label for="vorname" class="mb-2 block text-sm font-medium text-gray-700">
               Vorname <span class="text-red-500">*</span>
             </label>
             <input
@@ -62,13 +72,13 @@
               id="vorname"
               name="vorname"
               required
-              class="block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 shadow-sm focus:border-primary-500 focus:ring-2 focus:ring-primary-500 transition duration-150"
+              class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 shadow-sm transition duration-150 focus:ring-2"
               placeholder="Max"
             />
           </div>
 
           <div>
-            <label for="nachname" class="block text-sm font-medium text-gray-700 mb-2">
+            <label for="nachname" class="mb-2 block text-sm font-medium text-gray-700">
               Nachname <span class="text-red-500">*</span>
             </label>
             <input
@@ -76,13 +86,13 @@
               id="nachname"
               name="nachname"
               required
-              class="block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 shadow-sm focus:border-primary-500 focus:ring-2 focus:ring-primary-500 transition duration-150"
+              class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 shadow-sm transition duration-150 focus:ring-2"
               placeholder="Mustermann"
             />
           </div>
 
           <div>
-            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
+            <label for="email" class="mb-2 block text-sm font-medium text-gray-700">
               E-Mail-Adresse <span class="text-red-500">*</span>
             </label>
             <input
@@ -90,13 +100,13 @@
               id="email"
               name="email"
               required
-              class="block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 shadow-sm focus:border-primary-500 focus:ring-2 focus:ring-primary-500 transition duration-150"
+              class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 shadow-sm transition duration-150 focus:ring-2"
               placeholder="max@beispiel.de"
             />
           </div>
 
           <div>
-            <label for="telefon" class="block text-sm font-medium text-gray-700 mb-2">
+            <label for="telefon" class="mb-2 block text-sm font-medium text-gray-700">
               Telefonnummer <span class="text-red-500">*</span>
             </label>
             <input
@@ -104,7 +114,7 @@
               id="telefon"
               name="telefon"
               required
-              class="block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 shadow-sm focus:border-primary-500 focus:ring-2 focus:ring-primary-500 transition duration-150"
+              class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 shadow-sm transition duration-150 focus:ring-2"
               placeholder="+49 123 456789"
             />
           </div>
@@ -113,16 +123,21 @@
 
       <!-- Gesundheitsinformationen -->
       <div class="border-b border-gray-200 pb-8">
-        <h3 class="text-xl font-semibold text-gray-900 mb-6 flex items-center">
-          <svg class="w-6 h-6 mr-2 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+        <h3 class="mb-6 flex items-center text-xl font-semibold text-gray-900">
+          <svg class="text-primary-600 mr-2 h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+            ></path>
           </svg>
           Gesundheitsinformationen
         </h3>
 
         <div class="space-y-6">
           <div>
-            <label for="hauptbeschwerde" class="block text-sm font-medium text-gray-700 mb-2">
+            <label for="hauptbeschwerde" class="mb-2 block text-sm font-medium text-gray-700">
               Hauptbeschwerde(n) <span class="text-red-500">*</span>
             </label>
             <textarea
@@ -130,45 +145,38 @@
               name="hauptbeschwerde"
               rows="4"
               required
-              class="block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 shadow-sm focus:border-primary-500 focus:ring-2 focus:ring-primary-500 transition duration-150"
-              placeholder="Beschreiben Sie Ihre aktuellen Beschwerden..."
-            ></textarea>
+              class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 shadow-sm transition duration-150 focus:ring-2"
+              placeholder="Beschreiben Sie Ihre aktuellen Beschwerden..."></textarea>
           </div>
 
           <div>
-            <label for="vorerkrankungen" class="block text-sm font-medium text-gray-700 mb-2">
-              Vorerkrankungen
-            </label>
+            <label for="vorerkrankungen" class="mb-2 block text-sm font-medium text-gray-700"> Vorerkrankungen </label>
             <textarea
               id="vorerkrankungen"
               name="vorerkrankungen"
               rows="3"
-              class="block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 shadow-sm focus:border-primary-500 focus:ring-2 focus:ring-primary-500 transition duration-150"
-              placeholder="Relevante Vorerkrankungen (optional)"
-            ></textarea>
+              class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 shadow-sm transition duration-150 focus:ring-2"
+              placeholder="Relevante Vorerkrankungen (optional)"></textarea>
           </div>
 
           <div>
-            <label for="medikamente" class="block text-sm font-medium text-gray-700 mb-2">
-              Aktuelle Medikamente
-            </label>
+            <label for="medikamente" class="mb-2 block text-sm font-medium text-gray-700"> Aktuelle Medikamente </label>
             <textarea
               id="medikamente"
               name="medikamente"
               rows="3"
-              class="block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 shadow-sm focus:border-primary-500 focus:ring-2 focus:ring-primary-500 transition duration-150"
-              placeholder="Nehmen Sie aktuell Medikamente ein? (optional)"
-            ></textarea>
+              class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 shadow-sm transition duration-150 focus:ring-2"
+              placeholder="Nehmen Sie aktuell Medikamente ein? (optional)"></textarea>
           </div>
 
           <div>
-            <label for="ernaehrung" class="block text-sm font-medium text-gray-700 mb-2">
+            <label for="ernaehrung" class="mb-2 block text-sm font-medium text-gray-700">
               Ernährungsgewohnheiten
             </label>
             <select
               id="ernaehrung"
               name="ernaehrung"
-              class="block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm focus:border-primary-500 focus:ring-2 focus:ring-primary-500 transition duration-150"
+              class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
             >
               <option value="mischkost">Mischkost</option>
               <option value="vegetarisch">Vegetarisch</option>
@@ -178,32 +186,33 @@
           </div>
 
           <div>
-            <label for="anmerkungen" class="block text-sm font-medium text-gray-700 mb-2">
-              Weitere Anmerkungen
-            </label>
+            <label for="anmerkungen" class="mb-2 block text-sm font-medium text-gray-700"> Weitere Anmerkungen </label>
             <textarea
               id="anmerkungen"
               name="anmerkungen"
               rows="3"
-              class="block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 shadow-sm focus:border-primary-500 focus:ring-2 focus:ring-primary-500 transition duration-150"
-              placeholder="Gibt es noch etwas, das wir wissen sollten? (optional)"
-            ></textarea>
+              class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 shadow-sm transition duration-150 focus:ring-2"
+              placeholder="Gibt es noch etwas, das wir wissen sollten? (optional)"></textarea>
           </div>
         </div>
       </div>
 
       <!-- Terminauswahl -->
       <div class="border-b border-gray-200 pb-8">
-        <h3 class="text-xl font-semibold text-gray-900 mb-6 flex items-center">
-          <svg class="w-6 h-6 mr-2 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+        <h3 class="mb-6 flex items-center text-xl font-semibold text-gray-900">
+          <svg class="text-primary-600 mr-2 h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
           </svg>
           Terminauswahl für Zoom-Erstgespräch
         </h3>
 
         <div class="grid grid-cols-1 gap-6 sm:grid-cols-3">
           <div>
-            <label for="datum" class="block text-sm font-medium text-gray-700 mb-2">
+            <label for="datum" class="mb-2 block text-sm font-medium text-gray-700">
               Wunschdatum <span class="text-red-500">*</span>
             </label>
             <input
@@ -211,19 +220,19 @@
               id="datum"
               name="datum"
               required
-              class="block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm focus:border-primary-500 focus:ring-2 focus:ring-primary-500 transition duration-150"
+              class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
             />
           </div>
 
           <div>
-            <label for="uhrzeit" class="block text-sm font-medium text-gray-700 mb-2">
+            <label for="uhrzeit" class="mb-2 block text-sm font-medium text-gray-700">
               Uhrzeit <span class="text-red-500">*</span>
             </label>
             <select
               id="uhrzeit"
               name="uhrzeit"
               required
-              class="block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm focus:border-primary-500 focus:ring-2 focus:ring-primary-500 transition duration-150"
+              class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
             >
               <option value="">Bitte wählen</option>
               <option value="09:00">09:00 Uhr</option>
@@ -237,13 +246,11 @@
           </div>
 
           <div>
-            <label for="dauer" class="block text-sm font-medium text-gray-700 mb-2">
-              Dauer
-            </label>
+            <label for="dauer" class="mb-2 block text-sm font-medium text-gray-700"> Dauer </label>
             <select
               id="dauer"
               name="dauer"
-              class="block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm focus:border-primary-500 focus:ring-2 focus:ring-primary-500 transition duration-150"
+              class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
             >
               <option value="30">30 Minuten</option>
               <option value="60" selected>60 Minuten</option>
@@ -261,12 +268,16 @@
               name="datenschutz"
               type="checkbox"
               required
-              class="h-5 w-5 rounded border-gray-300 text-primary-600 focus:ring-2 focus:ring-primary-500 transition duration-150"
+              class="text-primary-600 focus:ring-primary-500 h-5 w-5 rounded border-gray-300 transition duration-150 focus:ring-2"
             />
           </div>
           <div class="ml-3">
             <label for="datenschutz" class="text-sm text-gray-600">
-              Ich habe die <a href="/datenschutz" target="_blank" class="font-medium text-primary-600 hover:text-primary-700 underline">Datenschutzerklärung</a> gelesen und akzeptiere diese. <span class="text-red-500">*</span>
+              Ich habe die <a
+                href="/datenschutz"
+                target="_blank"
+                class="text-primary-600 hover:text-primary-700 font-medium underline">Datenschutzerklärung</a
+              > gelesen und akzeptiere diese. <span class="text-red-500">*</span>
             </label>
           </div>
         </div>
@@ -277,13 +288,17 @@
         <button
           type="submit"
           id="submit-button"
-          class="w-full rounded-lg bg-primary-600 px-8 py-4 text-base font-semibold text-white shadow-lg hover:bg-primary-700 focus:outline-none focus:ring-4 focus:ring-primary-300 transition duration-200 ease-in-out transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+          class="bg-primary-600 hover:bg-primary-700 focus:ring-primary-300 w-full transform rounded-lg px-8 py-4 text-base font-semibold text-white shadow-lg transition duration-200 ease-in-out hover:scale-[1.02] focus:outline-none focus:ring-4 disabled:transform-none disabled:cursor-not-allowed disabled:opacity-50"
         >
           <span id="button-text">Anamnesebogen absenden & Termin buchen</span>
           <span id="button-spinner" class="hidden">
-            <svg class="inline w-5 h-5 animate-spin" fill="none" viewBox="0 0 24 24">
+            <svg class="inline h-5 w-5 animate-spin" fill="none" viewBox="0 0 24 24">
               <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+              <path
+                class="opacity-75"
+                fill="currentColor"
+                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+              ></path>
             </svg>
             Wird gesendet...
           </span>
@@ -343,26 +358,27 @@
         // Show success message
         successText.textContent = result.message;
         successMessage.classList.remove('hidden');
-        
+
         // Reset form
         form.reset();
-        
+
         // Scroll to success message
         successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
       } else {
         // Show error message
         errorText.textContent = result.message || 'Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.';
         errorMessage.classList.remove('hidden');
-        
+
         // Scroll to error message
         errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }
     } catch (error) {
       // Show error message
-      errorText.textContent = 'Verbindungsfehler. Bitte überprüfen Sie Ihre Internetverbindung und versuchen Sie es erneut.';
+      errorText.textContent =
+        'Verbindungsfehler. Bitte überprüfen Sie Ihre Internetverbindung und versuchen Sie es erneut.';
       errorMessage.classList.remove('hidden');
       errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      
+
       console.error('Form submission error:', error);
     } finally {
       // Re-enable button and hide spinner
