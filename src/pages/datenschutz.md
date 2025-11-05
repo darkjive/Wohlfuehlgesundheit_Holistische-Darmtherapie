@@ -17,7 +17,7 @@ Beim Besuch meiner Website werden automatisch technische Daten erfasst (z. B. Br
 
 ## Erhebung und Verarbeitung personenbezogener Daten
 
-Personenbezogene Daten erfasse ich nur, wenn Sie mir diese freiwillig mitteilen (z. B. per E-Mail). Ich nutze diese Daten ausschließlich zur Bearbeitung Ihrer Anfrage.
+Personenbezogene Daten erfasse ich nur, wenn Sie mir diese freiwillig mitteilen. Ich nutze diese Daten ausschließlich zur Bearbeitung Ihrer Anfrage.
 
 ## Weitergabe personenbezogener Daten
 
@@ -30,6 +30,20 @@ Meine Website verwendet Cookies. Sie können die Speicherung in Ihren Browser-Ei
 ## Ihre Rechte
 
 Sie haben das Recht auf Auskunft, Berichtigung und Löschung Ihrer gespeicherten Daten. Kontaktieren Sie mich dazu gerne.
+
+## Hinweis zu ZOOM Meetings
+
+Meine Daten dürfen verwendet werden, um:
+
+- mich telefonisch zu kontaktieren
+- meine Daten in der digitalen Kundenkartei zu speichern
+- meine Daten in Papierform zu archivieren
+- per E-Mail mit mir Kontakt zu halten
+- mit mir über ZOOM zu sprechen
+
+Hinweis zu ZOOM: ZOOM ist ein Produkt der Zoom Video Communications Inc., 55 Almaden Blvd, Suite 600, San Jose, CA 95113, USA. Der EuGH stuft die USA als Land mit unzureichendem Datenschutzniveau ein. Es besteht die Möglichkeit, dass US-Behörden personenbezogene Daten zur Terrorabwehr verarbeiten. Ein Rechtsbehelf dagegen steht möglicherweise nicht zur Verfügung.
+
+Ich habe mit ZOOM einen Vertrag zur Auftragsverarbeitung gemäß Art. 28 DSGVO abgeschlossen. Rechtsgrundlage für diese Verarbeitung ist Art. 6 Abs. 1 S. 1 lit. a) DSGVO. Weitere Informationen findest Du in den Datenschutzbestimmungen von ZOOM: 👉 https://zoom.us/de-de/privacy.html
 
 ## Änderungen dieser Datenschutzerklärung
 
