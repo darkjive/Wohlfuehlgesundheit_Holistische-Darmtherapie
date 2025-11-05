@@ -1,5 +1,6 @@
 ---
 // PersonalData.astro - Persönliche Daten Sektion
+import FormInput from '~/components/ui/FormInput.astro';
 ---
 
 <!-- Deine Angaben -->
@@ -16,95 +17,57 @@
   </h3>
 
   <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
-    <div>
-      <label for="vorname" class="mb-2 block text-sm font-medium text-gray-700">
-        Vorname <span class="text-red-500">*</span>
-      </label>
-      <input
-        type="text"
-        id="vorname"
-        name="vorname"
-        required
-        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 shadow-sm transition duration-150 focus:ring-2"
-      />
-    </div>
+    <FormInput
+      id="vorname"
+      name="vorname"
+      label="Vorname"
+      required
+    />
 
-    <div>
-      <label for="nachname" class="mb-2 block text-sm font-medium text-gray-700">
-        Nachname <span class="text-red-500">*</span>
-      </label>
-      <input
-        type="text"
-        id="nachname"
-        name="nachname"
-        required
-        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 shadow-sm transition duration-150 focus:ring-2"
-      />
-    </div>
+    <FormInput
+      id="nachname"
+      name="nachname"
+      label="Nachname"
+      required
+    />
 
     <div class="sm:col-span-2">
-      <label for="adresse" class="mb-2 block text-sm font-medium text-gray-700">
-        Adresse <span class="text-red-500">*</span>
-      </label>
-      <input
-        type="text"
+      <FormInput
         id="adresse"
         name="adresse"
+        label="Adresse"
         required
-        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 shadow-sm transition duration-150 focus:ring-2"
       />
     </div>
 
-    <div>
-      <label for="plz" class="mb-2 block text-sm font-medium text-gray-700">
-        PLZ <span class="text-red-500">*</span>
-      </label>
-      <input
-        type="text"
-        id="plz"
-        name="plz"
-        required
-        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 shadow-sm transition duration-150 focus:ring-2"
-      />
-    </div>
+    <FormInput
+      id="plz"
+      name="plz"
+      label="PLZ"
+      required
+    />
 
-    <div>
-      <label for="ort" class="mb-2 block text-sm font-medium text-gray-700">
-        Ort <span class="text-red-500">*</span>
-      </label>
-      <input
-        type="text"
-        id="ort"
-        name="ort"
-        required
-        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 shadow-sm transition duration-150 focus:ring-2"
-      />
-    </div>
+    <FormInput
+      id="ort"
+      name="ort"
+      label="Ort"
+      required
+    />
 
-    <div>
-      <label for="telefon" class="mb-2 block text-sm font-medium text-gray-700">
-        Telefon <span class="text-red-500">*</span>
-      </label>
-      <input
-        type="tel"
-        id="telefon"
-        name="telefon"
-        required
-        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 shadow-sm transition duration-150 focus:ring-2"
-      />
-    </div>
+    <FormInput
+      id="telefon"
+      name="telefon"
+      type="tel"
+      label="Telefon"
+      required
+    />
 
-    <div>
-      <label for="email" class="mb-2 block text-sm font-medium text-gray-700">
-        E-Mail-Adresse <span class="text-red-500">*</span>
-      </label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        required
-        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 shadow-sm transition duration-150 focus:ring-2"
-      />
-    </div>
+    <FormInput
+      id="email"
+      name="email"
+      type="email"
+      label="E-Mail-Adresse"
+      required
+    />
   </div>
 </div>

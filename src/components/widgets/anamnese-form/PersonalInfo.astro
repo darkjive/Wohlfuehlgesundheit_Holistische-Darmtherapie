@@ -1,5 +1,16 @@
 ---
 // PersonalInfo.astro - Persönliche Informationen
+import FormInput from '~/components/ui/FormInput.astro';
+import FormTextarea from '~/components/ui/FormTextarea.astro';
+import FormSelect from '~/components/ui/FormSelect.astro';
+
+const familienstandOptions = [
+  { value: 'ledig', label: 'Ledig' },
+  { value: 'verheiratet', label: 'Verheiratet' },
+  { value: 'geschieden', label: 'Geschieden' },
+  { value: 'verwitwet', label: 'Verwitwet' },
+  { value: 'partnerschaft', label: 'In Partnerschaft' },
+];
 ---
 
 <!-- Persönliche Daten -->
@@ -7,96 +18,58 @@
   <h3 class="mb-6 text-xl font-semibold text-gray-900">Persönliche Daten</h3>
 
   <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-    <div>
-      <label for="alter" class="mb-2 block text-sm font-medium text-gray-700">Alter</label>
-      <input
-        type="number"
-        id="alter"
-        name="alter"
-        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
-      />
-    </div>
+    <FormInput
+      id="alter"
+      name="alter"
+      type="number"
+      label="Alter"
+    />
 
-    <div>
-      <label for="groesse" class="mb-2 block text-sm font-medium text-gray-700">Größe (cm)</label>
-      <input
-        type="number"
-        id="groesse"
-        name="groesse"
-        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
-      />
-    </div>
+    <FormInput
+      id="groesse"
+      name="groesse"
+      type="number"
+      label="Größe (cm)"
+    />
 
-    <div>
-      <label for="gewicht" class="mb-2 block text-sm font-medium text-gray-700">Gewicht (kg)</label>
-      <input
-        type="number"
-        id="gewicht"
-        name="gewicht"
-        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
-      />
-    </div>
+    <FormInput
+      id="gewicht"
+      name="gewicht"
+      type="number"
+      label="Gewicht (kg)"
+    />
 
-    <div>
-      <label for="familienstand" class="mb-2 block text-sm font-medium text-gray-700">Familienstand</label>
-      <select
-        id="familienstand"
-        name="familienstand"
-        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
-      >
-        <option value="">Bitte wählen</option>
-        <option value="ledig">Ledig</option>
-        <option value="verheiratet">Verheiratet</option>
-        <option value="geschieden">Geschieden</option>
-        <option value="verwitwet">Verwitwet</option>
-        <option value="partnerschaft">In Partnerschaft</option>
-      </select>
-    </div>
+    <FormSelect
+      id="familienstand"
+      name="familienstand"
+      label="Familienstand"
+      options={familienstandOptions}
+    />
 
-    <div>
-      <label for="kinder" class="mb-2 block text-sm font-medium text-gray-700">Kinder im Haushalt</label>
-      <input
-        type="text"
-        id="kinder"
-        name="kinder"
-        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
-      />
-    </div>
+    <FormInput
+      id="kinder"
+      name="kinder"
+      label="Kinder im Haushalt"
+    />
 
-    <div>
-      <label for="beruf" class="mb-2 block text-sm font-medium text-gray-700">Beruf</label>
-      <input
-        type="text"
-        id="beruf"
-        name="beruf"
-        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
-      />
-    </div>
+    <FormInput
+      id="beruf"
+      name="beruf"
+      label="Beruf"
+    />
   </div>
 
   <div class="mt-6 space-y-6">
-    <div>
-      <label for="aufmerksam_durch" class="mb-2 block text-sm font-medium text-gray-700">
-        Wie bist Du auf mich aufmerksam geworden?
-      </label>
-      <input
-        type="text"
-        id="aufmerksam_durch"
-        name="aufmerksam_durch"
-        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
-      />
-    </div>
+    <FormInput
+      id="aufmerksam_durch"
+      name="aufmerksam_durch"
+      label="Wie bist Du auf mich aufmerksam geworden?"
+    />
 
-    <div>
-      <label for="erwartungen" class="mb-2 block text-sm font-medium text-gray-700">
-        Was erwartest Du von mir und meiner Arbeit?
-      </label>
-      <textarea
-        id="erwartungen"
-        name="erwartungen"
-        rows="3"
-        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
-      ></textarea>
-    </div>
+    <FormTextarea
+      id="erwartungen"
+      name="erwartungen"
+      label="Was erwartest Du von mir und meiner Arbeit?"
+    />
   </div>
 </div>

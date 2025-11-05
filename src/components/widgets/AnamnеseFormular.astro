@@ -3,6 +3,8 @@
 // Komponente für Stefanie Leidel - Holistische Darmtherapie
 // Modular aufgebaut mit wiederverwendbaren Komponenten
 
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import Headline from '~/components/ui/Headline.astro';
 import PersonalData from './anamnese-form/PersonalData.astro';
 import PersonalInfo from './anamnese-form/PersonalInfo.astro';
 import HealthQuestions from './anamnese-form/HealthQuestions.astro';
@@ -12,20 +14,23 @@ import Digestion from './anamnese-form/Digestion.astro';
 import Readiness from './anamnese-form/Readiness.astro';
 import ZoomBooking from './anamnese-form/ZoomBooking.astro';
 import Consent from './anamnese-form/Consent.astro';
+import type { Booking as Props } from '~/types';
+
+const {
+  title = await Astro.slots.render('title'),
+  subtitle = await Astro.slots.render('subtitle'),
+  tagline = await Astro.slots.render('tagline'),
+  id,
+  isDark = false,
+  classes = {},
+  bg = await Astro.slots.render('bg'),
+} = Astro.props;
 ---
 
-<section class="bg-gradient-to-b from-white to-gray-50 py-16 sm:py-20">
+<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-5xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
+  <Headline title={title} subtitle={subtitle} tagline={tagline} classes={{ container: 'text-center mb-10' }} />
+
   <div class="mx-auto max-w-5xl px-4 sm:px-6">
-    <!-- Header -->
-    <div class="mb-10 text-center">
-      <h1 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-        Anamnesebogen für Stefanie Leidel - Holistische Darmtherapie
-      </h1>
-      <p class="mt-4 text-lg text-gray-600">
-        Fülle den Anamnesebogen sorgfältig aus, damit ich mir ein umfassendes Bild von Deiner gesundheitlichen Situation
-        machen kann.
-      </p>
-    </div>
 
     <!-- Success Message -->
     <div id="success-message" class="mb-6 hidden rounded-lg bg-green-50 p-6 shadow-md">
@@ -112,7 +117,7 @@ import Consent from './anamnese-form/Consent.astro';
       </div>
     </form>
   </div>
-</section>
+</WidgetWrapper>
 
 <script>
   // Set minimum date to tomorrow
