@@ -65,14 +65,16 @@ Die Daten werden gelöscht, sobald sie für die Erreichung des Zweckes ihrer Erh
 
 Diese Website wird gehostet bei:
 
-**Netlify, Inc.**
-2325 3rd Street, Suite 215
-San Francisco, CA 94107
-USA
+**1&1 IONOS SE**
+Elgendorfer Straße 57
+56410 Montabaur
+Deutschland
 
-Die Verarbeitung erfolgt auf Grundlage von **Art. 6 Abs. 1 lit. f DSGVO** (berechtigtes Interesse an einem sicheren und effizienten Hosting). Mit Netlify wurde ein Vertrag zur Auftragsverarbeitung gemäß Art. 28 DSGVO abgeschlossen.
+Die Verarbeitung erfolgt auf Grundlage von **Art. 6 Abs. 1 lit. f DSGVO** (berechtigtes Interesse an einem sicheren und effizienten Hosting). Mit IONOS wurde ein Vertrag zur Auftragsverarbeitung gemäß Art. 28 DSGVO abgeschlossen.
 
-Weitere Informationen zum Datenschutz bei Netlify: [https://www.netlify.com/privacy/](https://www.netlify.com/privacy/)
+**Vorteil:** IONOS ist ein deutscher Hosting-Anbieter mit Serverstandorten in Deutschland. Es erfolgt keine Datenübermittlung in Drittländer (z. B. USA), wodurch ein höheres Datenschutzniveau gemäß DSGVO gewährleistet ist.
+
+Weitere Informationen zum Datenschutz bei IONOS: [https://www.ionos.de/terms-gtc/datenschutzerklaerung/](https://www.ionos.de/terms-gtc/datenschutzerklaerung/)
 
 ## 5. Kontaktformular und E-Mail-Kontakt
 
