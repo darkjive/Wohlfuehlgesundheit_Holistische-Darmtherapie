@@ -26,5 +26,7 @@ pnpm-lock.yaml
 tmp.md
 
 # security files
+.htaccess
+.htpasswd
 public/.htaccess
 public/_sec/.htpasswd
