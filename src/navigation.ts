@@ -29,6 +29,8 @@ export const footerData = {
   secondaryLinks: [
     { text: 'Impressum', href: getPermalink('/impressum') },
     { text: 'Datenschutz', href: getPermalink('/datenschutz') },
+    { text: 'AGB', href: getPermalink('/agb') },
+    { text: 'Widerrufsbelehrung', href: getPermalink('/widerrufsbelehrung') },
   ],
   socialLinks: [
     {
@@ -39,6 +41,6 @@ export const footerData = {
     },
   ],
   footNote: `
-    © Wohlfühlgesundheit · <a class="text-primary hover:text-black dark:text-secondary" href="/impressum">Impressum</a> · <a class="text-primary hover:text-black dark:text-secondary" href="/datenschutz">Datenschutz</a>
+    © Wohlfühlgesundheit · <a class="text-primary hover:text-black dark:text-secondary" href="/impressum">Impressum</a> · <a class="text-primary hover:text-black dark:text-secondary" href="/datenschutz">Datenschutz</a> · <a class="text-primary hover:text-black dark:text-secondary" href="/agb">AGB</a> · <a class="text-primary hover:text-black dark:text-secondary" href="/widerrufsbelehrung">Widerrufsbelehrung</a>
   `,
 };
