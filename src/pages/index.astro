@@ -45,8 +45,8 @@ const metadata = {
 
     <Fragment slot="subtitle">
       <span class="sm:inline">
-        Dein Darm ist das Zentrum deines Wohlbefindens. Gemeinsam entdecken wir, wie du deine Verdauung stärkst, dein
-        Immunsystem unterstützt und mehr Balance in dein Leben bringst.
+        Dein Darm ist das Zentrum deines Wohlbefindens. Gemeinsam entdecken wir, wie du deine Verdauung optimieren kannst, dein
+        Wohlbefinden förderst und mehr Balance in dein Leben bringst.
       </span>
     </Fragment>
     <Fragment slot="bg">
@@ -56,6 +56,78 @@ const metadata = {
       </div>
     </Fragment>
   </Hero>
+
+  <!-- Beschwerden Section *************** -->
+  <section class="bg-white py-12 dark:bg-slate-900 md:py-16 lg:py-20">
+    <div class="mx-auto max-w-6xl px-4 md:px-6">
+      <div class="mb-8 text-center">
+        <h2 class="mb-4 font-heading text-3xl font-bold tracking-tight dark:text-white sm:text-4xl">
+          Plagst Du dich auch mit...?
+        </h2>
+        <p class="mx-auto max-w-3xl text-lg text-gray-600 dark:text-gray-300">
+          All das können Anzeichen für ein Ungleichgewicht im Darm sein. Dies liegt oft an unserer ungesunden Ernährung, den Umweltgiften und dem Stress, dem wir ausgesetzt sind.
+        </p>
+      </div>
+
+      <div class="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        <div class="rounded-lg bg-green-50 p-4 dark:bg-slate-800">
+          <p class="text-sm text-gray-700 dark:text-gray-300">Müdigkeit, Abgeschlagenheit</p>
+        </div>
+        <div class="rounded-lg bg-green-50 p-4 dark:bg-slate-800">
+          <p class="text-sm text-gray-700 dark:text-gray-300">Verdauungsbeschwerden wie Verstopfung, Durchfall, Blähbauch</p>
+        </div>
+        <div class="rounded-lg bg-green-50 p-4 dark:bg-slate-800">
+          <p class="text-sm text-gray-700 dark:text-gray-300">Hauterkrankungen wie Neurodermitis, Rosazea, Schuppenflechte</p>
+        </div>
+        <div class="rounded-lg bg-green-50 p-4 dark:bg-slate-800">
+          <p class="text-sm text-gray-700 dark:text-gray-300">Allergien</p>
+        </div>
+        <div class="rounded-lg bg-green-50 p-4 dark:bg-slate-800">
+          <p class="text-sm text-gray-700 dark:text-gray-300">Nahrungsmittelunverträglichkeiten (Laktose, Fruktose, Gluten, Histamin)</p>
+        </div>
+        <div class="rounded-lg bg-green-50 p-4 dark:bg-slate-800">
+          <p class="text-sm text-gray-700 dark:text-gray-300">Zöliakie</p>
+        </div>
+        <div class="rounded-lg bg-green-50 p-4 dark:bg-slate-800">
+          <p class="text-sm text-gray-700 dark:text-gray-300">Diabetes mellitus Typ 2</p>
+        </div>
+        <div class="rounded-lg bg-green-50 p-4 dark:bg-slate-800">
+          <p class="text-sm text-gray-700 dark:text-gray-300">Hashimoto Thyreoiditis</p>
+        </div>
+        <div class="rounded-lg bg-green-50 p-4 dark:bg-slate-800">
+          <p class="text-sm text-gray-700 dark:text-gray-300">Psychische Belastungen, Depressionen</p>
+        </div>
+        <div class="rounded-lg bg-green-50 p-4 dark:bg-slate-800">
+          <p class="text-sm text-gray-700 dark:text-gray-300">Reizdarmsyndrom</p>
+        </div>
+        <div class="rounded-lg bg-green-50 p-4 dark:bg-slate-800">
+          <p class="text-sm text-gray-700 dark:text-gray-300">CED (Morbus Crohn, Colitis ulcerosa)</p>
+        </div>
+        <div class="rounded-lg bg-green-50 p-4 dark:bg-slate-800">
+          <p class="text-sm text-gray-700 dark:text-gray-300">SIBO (Dünndarmfehlbesiedlung)</p>
+        </div>
+        <div class="rounded-lg bg-green-50 p-4 dark:bg-slate-800">
+          <p class="text-sm text-gray-700 dark:text-gray-300">Pilze und Parasiten</p>
+        </div>
+        <div class="rounded-lg bg-green-50 p-4 dark:bg-slate-800">
+          <p class="text-sm text-gray-700 dark:text-gray-300">Rheumatoide Arthritis</p>
+        </div>
+        <div class="rounded-lg bg-green-50 p-4 dark:bg-slate-800">
+          <p class="text-sm text-gray-700 dark:text-gray-300">Endometriose</p>
+        </div>
+        <div class="rounded-lg bg-green-50 p-4 dark:bg-slate-800">
+          <p class="text-sm text-gray-700 dark:text-gray-300">PCOS</p>
+        </div>
+        <div class="rounded-lg bg-green-50 p-4 dark:bg-slate-800">
+          <p class="text-sm text-gray-700 dark:text-gray-300">Geschwächtes Immunsystem</p>
+        </div>
+        <div class="rounded-lg bg-green-50 p-4 dark:bg-slate-800">
+          <p class="text-sm text-gray-700 dark:text-gray-300">ADHS</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Features Widget *************** -->
 
   <!-- Quote Widget: Inspirierendes Zitat mit Hintergrundbild -->
@@ -117,19 +189,19 @@ const metadata = {
     title="Dein Darm - Das Zentrum Deiner Gesundheit"
     items={[
       {
-        title: 'Immunsystem stärken',
+        title: 'Wohlbefinden fördern',
         description:
-          'Über 70% der Immunzellen sitzen im Darm. Ein gesundes Darmmikrobiom bedeutet bessere Abwehrkräfte und weniger Infekte.',
+          'Über 70% der Immunzellen sitzen im Darm. Ein ausgeglichenes Darmmikrobiom kann zu mehr Vitalität und allgemeinem Wohlbefinden beitragen.',
       },
       {
         title: 'Mehr Energie & Vitalität',
         description:
-          'Eine optimale Darmgesundheit sorgt für bessere Nährstoffaufnahme, weniger Entzündungen und spürbar mehr Energie im Alltag.',
+          'Eine ausgeglichene Darmgesundheit kann die Nährstoffaufnahme unterstützen und zu mehr Energie im Alltag beitragen.',
       },
       {
         title: 'Darm-Hirn-Achse',
         description:
-          'Darm und Gehirn kommunizieren ständig miteinander. Eine gesunde Darmflora wirkt sich positiv auf Stimmung, Stress und mentales Wohlbefinden aus.',
+          'Darm und Gehirn kommunizieren ständig miteinander. Eine ausgeglichene Darmflora kann sich positiv auf Stimmung und allgemeines Wohlbefinden auswirken.',
       },
     ]}
     image={{
