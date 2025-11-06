@@ -8,25 +8,25 @@ import CollapsibleSection from '~/components/ui/CollapsibleSection.astro';
 <CollapsibleSection title="Fragen zu Deiner Ernährungsweise" isOptional={true}>
   <div class="space-y-6">
     <div>
-      <label for="ernaehrung_umgestellt" class="mb-2 block text-sm font-medium text-gray-700">
+      <label for="ernaehrung_umgestellt" class="mb-3 block text-base font-medium">
         Hast Du Deine Ernährung bereits (teilweise) umgestellt?
       </label>
       <textarea
         id="ernaehrung_umgestellt"
         name="ernaehrung_umgestellt"
         rows="2"
-        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+        class="text-md dark:bg-dark block w-full rounded-lg border border-gray-200 bg-white px-4 py-3 dark:border-none"
       ></textarea>
     </div>
 
     <div>
-      <label for="ernaehrungsweise" class="mb-2 block text-sm font-medium text-gray-700">
+      <label for="ernaehrungsweise" class="mb-3 block text-base font-medium">
         Ernährst Du Dich vegetarisch, vegan oder rohköstlich?
       </label>
       <select
         id="ernaehrungsweise"
         name="ernaehrungsweise"
-        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+        class="text-md dark:bg-dark block w-full rounded-lg border border-gray-200 bg-white px-4 py-3 dark:border-none"
       >
         <option value="">Bitte wählen</option>
         <option value="mischkost">Mischkost</option>
@@ -39,13 +39,13 @@ import CollapsibleSection from '~/components/ui/CollapsibleSection.astro';
 
     <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
       <div>
-        <label for="mittagessen_selbst" class="mb-2 block text-sm font-medium text-gray-700">
+        <label for="mittagessen_selbst" class="mb-3 block text-base font-medium">
           Bereitest Du Dein Mittagessen selbst zu?
         </label>
         <select
           id="mittagessen_selbst"
           name="mittagessen_selbst"
-          class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+          class="text-md dark:bg-dark block w-full rounded-lg border border-gray-200 bg-white px-4 py-3 dark:border-none"
         >
           <option value="">Bitte wählen</option>
           <option value="ja">Ja</option>
@@ -55,27 +55,27 @@ import CollapsibleSection from '~/components/ui/CollapsibleSection.astro';
       </div>
 
       <div>
-        <label for="mittagessen_wo" class="mb-2 block text-sm font-medium text-gray-700">
+        <label for="mittagessen_wo" class="mb-3 block text-base font-medium">
           Isst Du mittags in der Kantine, Gaststätte, im Imbiss oder woanders?
         </label>
         <input
           type="text"
           id="mittagessen_wo"
           name="mittagessen_wo"
-          class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+          class="text-md dark:bg-dark block w-full rounded-lg border border-gray-200 bg-white px-4 py-3 dark:border-none"
         />
       </div>
     </div>
 
     <div class="grid grid-cols-1 gap-6 sm:grid-cols-3">
       <div>
-        <label for="mikrowelle" class="mb-2 block text-sm font-medium text-gray-700">
+        <label for="mikrowelle" class="mb-3 block text-base font-medium">
           Verwendest Du eine Mikrowelle?
         </label>
         <select
           id="mikrowelle"
           name="mikrowelle"
-          class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+          class="text-md dark:bg-dark block w-full rounded-lg border border-gray-200 bg-white px-4 py-3 dark:border-none"
         >
           <option value="">Bitte wählen</option>
           <option value="ja">Ja</option>
@@ -84,11 +84,11 @@ import CollapsibleSection from '~/components/ui/CollapsibleSection.astro';
       </div>
 
       <div>
-        <label for="suessstoff" class="mb-2 block text-sm font-medium text-gray-700"> Verwendest Du Süßstoff? </label>
+        <label for="suessstoff" class="mb-3 block text-base font-medium"> Verwendest Du Süßstoff? </label>
         <select
           id="suessstoff"
           name="suessstoff"
-          class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+          class="text-md dark:bg-dark block w-full rounded-lg border border-gray-200 bg-white px-4 py-3 dark:border-none"
         >
           <option value="">Bitte wählen</option>
           <option value="ja">Ja</option>
@@ -97,13 +97,13 @@ import CollapsibleSection from '~/components/ui/CollapsibleSection.astro';
       </div>
 
       <div>
-        <label for="light_produkte" class="mb-2 block text-sm font-medium text-gray-700">
+        <label for="light_produkte" class="mb-3 block text-base font-medium">
           Greifst Du gerne zu Light-Produkten?
         </label>
         <select
           id="light_produkte"
           name="light_produkte"
-          class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+          class="text-md dark:bg-dark block w-full rounded-lg border border-gray-200 bg-white px-4 py-3 dark:border-none"
         >
           <option value="">Bitte wählen</option>
           <option value="ja">Ja</option>
@@ -119,40 +119,40 @@ import CollapsibleSection from '~/components/ui/CollapsibleSection.astro';
   <div class="space-y-6">
     <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
       <div>
-        <label for="fruehstueck_uhrzeit" class="mb-2 block text-sm font-medium text-gray-700">
+        <label for="fruehstueck_uhrzeit" class="mb-3 block text-base font-medium">
           Um welche Uhrzeit frühstückst Du?
         </label>
         <input
           type="text"
           id="fruehstueck_uhrzeit"
           name="fruehstueck_uhrzeit"
-          class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+          class="text-md dark:bg-dark block w-full rounded-lg border border-gray-200 bg-white px-4 py-3 dark:border-none"
           placeholder="z.B. 7:00 Uhr"
         />
       </div>
 
       <div>
-        <label for="fruehstueck_was" class="mb-2 block text-sm font-medium text-gray-700">
+        <label for="fruehstueck_was" class="mb-3 block text-base font-medium">
           Was frühstückst Du und in welcher Menge?
         </label>
         <input
           type="text"
           id="fruehstueck_was"
           name="fruehstueck_was"
-          class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+          class="text-md dark:bg-dark block w-full rounded-lg border border-gray-200 bg-white px-4 py-3 dark:border-none"
         />
       </div>
     </div>
 
     <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
       <div>
-        <label for="brotbelag" class="mb-2 block text-sm font-medium text-gray-700">
+        <label for="brotbelag" class="mb-3 block text-base font-medium">
           Bevorzugst Du Butter oder Margarine auf Deinem Brot?
         </label>
         <select
           id="brotbelag"
           name="brotbelag"
-          class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+          class="text-md dark:bg-dark block w-full rounded-lg border border-gray-200 bg-white px-4 py-3 dark:border-none"
         >
           <option value="">Bitte wählen</option>
           <option value="butter">Butter</option>
@@ -163,27 +163,27 @@ import CollapsibleSection from '~/components/ui/CollapsibleSection.astro';
       </div>
 
       <div>
-        <label for="muesli_zusatz" class="mb-2 block text-sm font-medium text-gray-700">
+        <label for="muesli_zusatz" class="mb-3 block text-base font-medium">
           Isst Du Dein Müsli mit oder ohne Zucker, mit oder ohne Früchten?
         </label>
         <input
           type="text"
           id="muesli_zusatz"
           name="muesli_zusatz"
-          class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+          class="text-md dark:bg-dark block w-full rounded-lg border border-gray-200 bg-white px-4 py-3 dark:border-none"
         />
       </div>
     </div>
 
     <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
       <div>
-        <label for="muesli_milch" class="mb-2 block text-sm font-medium text-gray-700">
+        <label for="muesli_milch" class="mb-3 block text-base font-medium">
           Verwendest Du für Dein Müsli Kuhmilch, Pflanzenmilch oder Joghurt?
         </label>
         <select
           id="muesli_milch"
           name="muesli_milch"
-          class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+          class="text-md dark:bg-dark block w-full rounded-lg border border-gray-200 bg-white px-4 py-3 dark:border-none"
         >
           <option value="">Bitte wählen</option>
           <option value="kuhmilch">Kuhmilch</option>
@@ -194,27 +194,27 @@ import CollapsibleSection from '~/components/ui/CollapsibleSection.astro';
       </div>
 
       <div>
-        <label for="morgen_getraenke" class="mb-2 block text-sm font-medium text-gray-700">
+        <label for="morgen_getraenke" class="mb-3 block text-base font-medium">
           Trinkst Du morgens Bohnenkaffee, Getreidekaffee, Tee oder Säfte? Und in welcher Menge?
         </label>
         <input
           type="text"
           id="morgen_getraenke"
           name="morgen_getraenke"
-          class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+          class="text-md dark:bg-dark block w-full rounded-lg border border-gray-200 bg-white px-4 py-3 dark:border-none"
         />
       </div>
     </div>
 
     <div>
-      <label for="snack_vormittag" class="mb-2 block text-sm font-medium text-gray-700">
+      <label for="snack_vormittag" class="mb-3 block text-base font-medium">
         Was isst Du zwischen dem Frühstück und dem Mittagessen?
       </label>
       <input
         type="text"
         id="snack_vormittag"
         name="snack_vormittag"
-        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+        class="text-md dark:bg-dark block w-full rounded-lg border border-gray-200 bg-white px-4 py-3 dark:border-none"
       />
     </div>
   </div>
@@ -224,14 +224,14 @@ import CollapsibleSection from '~/components/ui/CollapsibleSection.astro';
 <CollapsibleSection title="Deine aktuelle Ernährungsweise - Mittagessen" isOptional={true}>
   <div class="space-y-6">
     <div>
-      <label for="mittag_uhrzeit" class="mb-2 block text-sm font-medium text-gray-700">
+      <label for="mittag_uhrzeit" class="mb-3 block text-base font-medium">
         Um welche Uhrzeit isst Du zu Mittag?
       </label>
       <input
         type="text"
         id="mittag_uhrzeit"
         name="mittag_uhrzeit"
-        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+        class="text-md dark:bg-dark block w-full rounded-lg border border-gray-200 bg-white px-4 py-3 dark:border-none"
         placeholder="z.B. 12:30 Uhr"
       />
     </div>
@@ -246,7 +246,7 @@ import CollapsibleSection from '~/components/ui/CollapsibleSection.astro';
             id="mittag_kartoffeln"
             name="mittag_kartoffeln"
             placeholder="z.B. 2x pro Woche"
-            class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+            class="text-md dark:bg-dark block w-full rounded-lg border border-gray-200 bg-white px-3 py-2 dark:border-none"
           />
         </div>
 
@@ -257,7 +257,7 @@ import CollapsibleSection from '~/components/ui/CollapsibleSection.astro';
             id="mittag_reis"
             name="mittag_reis"
             placeholder="z.B. 3x pro Woche"
-            class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+            class="text-md dark:bg-dark block w-full rounded-lg border border-gray-200 bg-white px-3 py-2 dark:border-none"
           />
         </div>
 
@@ -268,7 +268,7 @@ import CollapsibleSection from '~/components/ui/CollapsibleSection.astro';
             id="mittag_getreide"
             name="mittag_getreide"
             placeholder="z.B. Quinoa, Hirse"
-            class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+            class="text-md dark:bg-dark block w-full rounded-lg border border-gray-200 bg-white px-3 py-2 dark:border-none"
           />
         </div>
 
@@ -279,7 +279,7 @@ import CollapsibleSection from '~/components/ui/CollapsibleSection.astro';
             id="mittag_gemuese"
             name="mittag_gemuese"
             placeholder="z.B. täglich"
-            class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+            class="text-md dark:bg-dark block w-full rounded-lg border border-gray-200 bg-white px-3 py-2 dark:border-none"
           />
         </div>
 
@@ -290,7 +290,7 @@ import CollapsibleSection from '~/components/ui/CollapsibleSection.astro';
             id="mittag_kaese"
             name="mittag_kaese"
             placeholder="z.B. 1x pro Woche"
-            class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+            class="text-md dark:bg-dark block w-full rounded-lg border border-gray-200 bg-white px-3 py-2 dark:border-none"
           />
         </div>
 
@@ -301,7 +301,7 @@ import CollapsibleSection from '~/components/ui/CollapsibleSection.astro';
             id="mittag_eier"
             name="mittag_eier"
             placeholder="z.B. 2x pro Woche"
-            class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+            class="text-md dark:bg-dark block w-full rounded-lg border border-gray-200 bg-white px-3 py-2 dark:border-none"
           />
         </div>
 
@@ -312,7 +312,7 @@ import CollapsibleSection from '~/components/ui/CollapsibleSection.astro';
             id="mittag_fleisch"
             name="mittag_fleisch"
             placeholder="z.B. 3x pro Woche"
-            class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+            class="text-md dark:bg-dark block w-full rounded-lg border border-gray-200 bg-white px-3 py-2 dark:border-none"
           />
         </div>
 
@@ -323,7 +323,7 @@ import CollapsibleSection from '~/components/ui/CollapsibleSection.astro';
             id="mittag_fisch"
             name="mittag_fisch"
             placeholder="z.B. 1x pro Woche"
-            class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+            class="text-md dark:bg-dark block w-full rounded-lg border border-gray-200 bg-white px-3 py-2 dark:border-none"
           />
         </div>
 
@@ -334,7 +334,7 @@ import CollapsibleSection from '~/components/ui/CollapsibleSection.astro';
             id="mittag_tofu"
             name="mittag_tofu"
             placeholder="z.B. 2x pro Woche"
-            class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+            class="text-md dark:bg-dark block w-full rounded-lg border border-gray-200 bg-white px-3 py-2 dark:border-none"
           />
         </div>
 
@@ -344,33 +344,33 @@ import CollapsibleSection from '~/components/ui/CollapsibleSection.astro';
             type="text"
             id="mittag_sonstiges"
             name="mittag_sonstiges"
-            class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+            class="text-md dark:bg-dark block w-full rounded-lg border border-gray-200 bg-white px-3 py-2 dark:border-none"
           />
         </div>
       </div>
     </div>
 
     <div>
-      <label for="gemuese_nicht_mogen" class="mb-2 block text-sm font-medium text-gray-700">
+      <label for="gemuese_nicht_mogen" class="mb-3 block text-base font-medium">
         Welches Gemüse magst Du gar nicht?
       </label>
       <input
         type="text"
         id="gemuese_nicht_mogen"
         name="gemuese_nicht_mogen"
-        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+        class="text-md dark:bg-dark block w-full rounded-lg border border-gray-200 bg-white px-4 py-3 dark:border-none"
       />
     </div>
 
     <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
       <div>
-        <label for="salat_wann" class="mb-2 block text-sm font-medium text-gray-700">
+        <label for="salat_wann" class="mb-3 block text-base font-medium">
           Isst Du den Salat vor oder während der Hauptmahlzeit?
         </label>
         <select
           id="salat_wann"
           name="salat_wann"
-          class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+          class="text-md dark:bg-dark block w-full rounded-lg border border-gray-200 bg-white px-4 py-3 dark:border-none"
         >
           <option value="">Bitte wählen</option>
           <option value="vor">Vor der Hauptmahlzeit</option>
@@ -380,27 +380,27 @@ import CollapsibleSection from '~/components/ui/CollapsibleSection.astro';
       </div>
 
       <div>
-        <label for="salat_dressing" class="mb-2 block text-sm font-medium text-gray-700">
+        <label for="salat_dressing" class="mb-3 block text-base font-medium">
           Dressing: Essig & Öl, Joghurtdressing, Sahnedressing oder anderes?
         </label>
         <input
           type="text"
           id="salat_dressing"
           name="salat_dressing"
-          class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+          class="text-md dark:bg-dark block w-full rounded-lg border border-gray-200 bg-white px-4 py-3 dark:border-none"
         />
       </div>
     </div>
 
     <div>
-      <label for="snack_nachmittag" class="mb-2 block text-sm font-medium text-gray-700">
+      <label for="snack_nachmittag" class="mb-3 block text-base font-medium">
         Was isst Du zwischen Mittag- und Abendessen?
       </label>
       <input
         type="text"
         id="snack_nachmittag"
         name="snack_nachmittag"
-        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+        class="text-md dark:bg-dark block w-full rounded-lg border border-gray-200 bg-white px-4 py-3 dark:border-none"
       />
     </div>
   </div>
@@ -410,14 +410,14 @@ import CollapsibleSection from '~/components/ui/CollapsibleSection.astro';
 <CollapsibleSection title="Deine aktuelle Ernährungsweise - Abendessen" isOptional={true}>
   <div class="space-y-6">
     <div>
-      <label for="abend_uhrzeit" class="mb-2 block text-sm font-medium text-gray-700">
+      <label for="abend_uhrzeit" class="mb-3 block text-base font-medium">
         Um welche Uhrzeit isst Du zu Abend?
       </label>
       <input
         type="text"
         id="abend_uhrzeit"
         name="abend_uhrzeit"
-        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+        class="text-md dark:bg-dark block w-full rounded-lg border border-gray-200 bg-white px-4 py-3 dark:border-none"
         placeholder="z.B. 18:30 Uhr"
       />
     </div>
@@ -432,7 +432,7 @@ import CollapsibleSection from '~/components/ui/CollapsibleSection.astro';
             id="abend_brot"
             name="abend_brot"
             placeholder="z.B. täglich"
-            class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+            class="text-md dark:bg-dark block w-full rounded-lg border border-gray-200 bg-white px-3 py-2 dark:border-none"
           />
         </div>
 
@@ -443,7 +443,7 @@ import CollapsibleSection from '~/components/ui/CollapsibleSection.astro';
             id="abend_wurst"
             name="abend_wurst"
             placeholder="z.B. 3x pro Woche"
-            class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+            class="text-md dark:bg-dark block w-full rounded-lg border border-gray-200 bg-white px-3 py-2 dark:border-none"
           />
         </div>
 
@@ -454,7 +454,7 @@ import CollapsibleSection from '~/components/ui/CollapsibleSection.astro';
             id="abend_kaese"
             name="abend_kaese"
             placeholder="z.B. täglich"
-            class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+            class="text-md dark:bg-dark block w-full rounded-lg border border-gray-200 bg-white px-3 py-2 dark:border-none"
           />
         </div>
 
@@ -465,7 +465,7 @@ import CollapsibleSection from '~/components/ui/CollapsibleSection.astro';
             id="abend_salat"
             name="abend_salat"
             placeholder="z.B. 2x pro Woche"
-            class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+            class="text-md dark:bg-dark block w-full rounded-lg border border-gray-200 bg-white px-3 py-2 dark:border-none"
           />
         </div>
 
@@ -476,7 +476,7 @@ import CollapsibleSection from '~/components/ui/CollapsibleSection.astro';
             id="abend_milchprodukte"
             name="abend_milchprodukte"
             placeholder="z.B. täglich"
-            class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+            class="text-md dark:bg-dark block w-full rounded-lg border border-gray-200 bg-white px-3 py-2 dark:border-none"
           />
         </div>
 
@@ -487,7 +487,7 @@ import CollapsibleSection from '~/components/ui/CollapsibleSection.astro';
             id="abend_obst"
             name="abend_obst"
             placeholder="z.B. täglich"
-            class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+            class="text-md dark:bg-dark block w-full rounded-lg border border-gray-200 bg-white px-3 py-2 dark:border-none"
           />
         </div>
 
@@ -498,7 +498,7 @@ import CollapsibleSection from '~/components/ui/CollapsibleSection.astro';
             id="abend_kartoffeln"
             name="abend_kartoffeln"
             placeholder="z.B. 2x pro Woche"
-            class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+            class="text-md dark:bg-dark block w-full rounded-lg border border-gray-200 bg-white px-3 py-2 dark:border-none"
           />
         </div>
 
@@ -509,7 +509,7 @@ import CollapsibleSection from '~/components/ui/CollapsibleSection.astro';
             id="abend_fleisch"
             name="abend_fleisch"
             placeholder="z.B. 3x pro Woche"
-            class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+            class="text-md dark:bg-dark block w-full rounded-lg border border-gray-200 bg-white px-3 py-2 dark:border-none"
           />
         </div>
 
@@ -520,7 +520,7 @@ import CollapsibleSection from '~/components/ui/CollapsibleSection.astro';
             id="abend_gemuese"
             name="abend_gemuese"
             placeholder="z.B. täglich"
-            class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+            class="text-md dark:bg-dark block w-full rounded-lg border border-gray-200 bg-white px-3 py-2 dark:border-none"
           />
         </div>
 
@@ -530,21 +530,21 @@ import CollapsibleSection from '~/components/ui/CollapsibleSection.astro';
             type="text"
             id="abend_sonstiges"
             name="abend_sonstiges"
-            class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+            class="text-md dark:bg-dark block w-full rounded-lg border border-gray-200 bg-white px-3 py-2 dark:border-none"
           />
         </div>
       </div>
     </div>
 
     <div>
-      <label for="snack_abend" class="mb-2 block text-sm font-medium text-gray-700">
+      <label for="snack_abend" class="mb-3 block text-base font-medium">
         Was isst Du zwischen dem Abendessen und dem Schlafengehen?
       </label>
       <input
         type="text"
         id="snack_abend"
         name="snack_abend"
-        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+        class="text-md dark:bg-dark block w-full rounded-lg border border-gray-200 bg-white px-4 py-3 dark:border-none"
       />
     </div>
   </div>
@@ -562,7 +562,7 @@ import CollapsibleSection from '~/components/ui/CollapsibleSection.astro';
           id="getraenk_kaffee"
           name="getraenk_kaffee"
           placeholder="z.B. 2 Tassen"
-          class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+          class="text-md dark:bg-dark block w-full rounded-lg border border-gray-200 bg-white px-3 py-2 dark:border-none"
         />
       </div>
 
@@ -573,7 +573,7 @@ import CollapsibleSection from '~/components/ui/CollapsibleSection.astro';
           id="getraenk_tee"
           name="getraenk_tee"
           placeholder="z.B. 1 Liter"
-          class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+          class="text-md dark:bg-dark block w-full rounded-lg border border-gray-200 bg-white px-3 py-2 dark:border-none"
         />
       </div>
 
@@ -584,7 +584,7 @@ import CollapsibleSection from '~/components/ui/CollapsibleSection.astro';
           id="getraenk_softdrinks"
           name="getraenk_softdrinks"
           placeholder="z.B. 0,5 Liter"
-          class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+          class="text-md dark:bg-dark block w-full rounded-lg border border-gray-200 bg-white px-3 py-2 dark:border-none"
         />
       </div>
 
@@ -595,7 +595,7 @@ import CollapsibleSection from '~/components/ui/CollapsibleSection.astro';
           id="getraenk_gesuesst"
           name="getraenk_gesuesst"
           placeholder="z.B. 0,5 Liter"
-          class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+          class="text-md dark:bg-dark block w-full rounded-lg border border-gray-200 bg-white px-3 py-2 dark:border-none"
         />
       </div>
 
@@ -606,7 +606,7 @@ import CollapsibleSection from '~/components/ui/CollapsibleSection.astro';
           id="getraenk_kohlen"
           name="getraenk_kohlen"
           placeholder="z.B. 1 Liter"
-          class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+          class="text-md dark:bg-dark block w-full rounded-lg border border-gray-200 bg-white px-3 py-2 dark:border-none"
         />
       </div>
 
@@ -617,7 +617,7 @@ import CollapsibleSection from '~/components/ui/CollapsibleSection.astro';
           id="getraenk_still"
           name="getraenk_still"
           placeholder="z.B. 2 Liter"
-          class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+          class="text-md dark:bg-dark block w-full rounded-lg border border-gray-200 bg-white px-3 py-2 dark:border-none"
         />
       </div>
 
@@ -628,7 +628,7 @@ import CollapsibleSection from '~/components/ui/CollapsibleSection.astro';
           id="getraenk_leitungswasser"
           name="getraenk_leitungswasser"
           placeholder="z.B. 1 Liter"
-          class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+          class="text-md dark:bg-dark block w-full rounded-lg border border-gray-200 bg-white px-3 py-2 dark:border-none"
         />
       </div>
     </div>
@@ -639,26 +639,26 @@ import CollapsibleSection from '~/components/ui/CollapsibleSection.astro';
 <CollapsibleSection title="Weitere Angaben" isOptional={true}>
   <div class="space-y-6">
     <div>
-      <label for="zusaetzlich_mitteilen" class="mb-2 block text-sm font-medium text-gray-700">
+      <label for="zusaetzlich_mitteilen" class="mb-3 block text-base font-medium">
         Was möchtest Du mir zusätzlich mitteilen?
       </label>
       <textarea
         id="zusaetzlich_mitteilen"
         name="zusaetzlich_mitteilen"
         rows="3"
-        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+        class="text-md dark:bg-dark block w-full rounded-lg border border-gray-200 bg-white px-4 py-3 dark:border-none"
       ></textarea>
     </div>
 
     <div>
-      <label for="wichtig_wissen" class="mb-2 block text-sm font-medium text-gray-700">
+      <label for="wichtig_wissen" class="mb-3 block text-base font-medium">
         Was sollte ich unbedingt noch über Dich wissen?
       </label>
       <textarea
         id="wichtig_wissen"
         name="wichtig_wissen"
         rows="3"
-        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+        class="text-md dark:bg-dark block w-full rounded-lg border border-gray-200 bg-white px-4 py-3 dark:border-none"
       ></textarea>
     </div>
   </div>

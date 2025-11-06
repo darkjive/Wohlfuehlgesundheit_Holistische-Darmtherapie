@@ -7,41 +7,41 @@ import CollapsibleSection from '~/components/ui/CollapsibleSection.astro';
 <CollapsibleSection title="Persönliche Daten" isOptional={true}>
   <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
     <div>
-      <label for="alter" class="mb-2 block text-sm font-medium text-gray-700">Alter</label>
+      <label for="alter" class="mb-3 block text-base font-medium">Alter</label>
       <input
         type="number"
         id="alter"
         name="alter"
-        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+        class="text-md dark:bg-dark block w-full rounded-lg border border-gray-200 bg-white px-4 py-3 dark:border-none"
       />
     </div>
 
     <div>
-      <label for="groesse" class="mb-2 block text-sm font-medium text-gray-700">Größe (cm)</label>
+      <label for="groesse" class="mb-3 block text-base font-medium">Größe (cm)</label>
       <input
         type="number"
         id="groesse"
         name="groesse"
-        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+        class="text-md dark:bg-dark block w-full rounded-lg border border-gray-200 bg-white px-4 py-3 dark:border-none"
       />
     </div>
 
     <div>
-      <label for="gewicht" class="mb-2 block text-sm font-medium text-gray-700">Gewicht (kg)</label>
+      <label for="gewicht" class="mb-3 block text-base font-medium">Gewicht (kg)</label>
       <input
         type="number"
         id="gewicht"
         name="gewicht"
-        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+        class="text-md dark:bg-dark block w-full rounded-lg border border-gray-200 bg-white px-4 py-3 dark:border-none"
       />
     </div>
 
     <div>
-      <label for="familienstand" class="mb-2 block text-sm font-medium text-gray-700">Familienstand</label>
+      <label for="familienstand" class="mb-3 block text-base font-medium">Familienstand</label>
       <select
         id="familienstand"
         name="familienstand"
-        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+        class="text-md dark:bg-dark block w-full rounded-lg border border-gray-200 bg-white px-4 py-3 dark:border-none"
       >
         <option value="">Bitte wählen</option>
         <option value="ledig">Ledig</option>
@@ -53,48 +53,48 @@ import CollapsibleSection from '~/components/ui/CollapsibleSection.astro';
     </div>
 
     <div>
-      <label for="kinder" class="mb-2 block text-sm font-medium text-gray-700">Kinder im Haushalt</label>
+      <label for="kinder" class="mb-3 block text-base font-medium">Kinder im Haushalt</label>
       <input
         type="text"
         id="kinder"
         name="kinder"
-        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+        class="text-md dark:bg-dark block w-full rounded-lg border border-gray-200 bg-white px-4 py-3 dark:border-none"
       />
     </div>
 
     <div>
-      <label for="beruf" class="mb-2 block text-sm font-medium text-gray-700">Beruf</label>
+      <label for="beruf" class="mb-3 block text-base font-medium">Beruf</label>
       <input
         type="text"
         id="beruf"
         name="beruf"
-        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+        class="text-md dark:bg-dark block w-full rounded-lg border border-gray-200 bg-white px-4 py-3 dark:border-none"
       />
     </div>
   </div>
 
   <div class="mt-6 space-y-6">
     <div>
-      <label for="aufmerksam_durch" class="mb-2 block text-sm font-medium text-gray-700">
+      <label for="aufmerksam_durch" class="mb-3 block text-base font-medium">
         Wie bist Du auf mich aufmerksam geworden?
       </label>
       <input
         type="text"
         id="aufmerksam_durch"
         name="aufmerksam_durch"
-        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+        class="text-md dark:bg-dark block w-full rounded-lg border border-gray-200 bg-white px-4 py-3 dark:border-none"
       />
     </div>
 
     <div>
-      <label for="erwartungen" class="mb-2 block text-sm font-medium text-gray-700">
+      <label for="erwartungen" class="mb-3 block text-base font-medium">
         Was erwartest Du von mir und meiner Arbeit?
       </label>
       <textarea
         id="erwartungen"
         name="erwartungen"
         rows="3"
-        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+        class="text-md dark:bg-dark block w-full rounded-lg border border-gray-200 bg-white px-4 py-3 dark:border-none"
       ></textarea>
     </div>
   </div>

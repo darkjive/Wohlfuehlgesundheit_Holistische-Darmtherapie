@@ -18,7 +18,7 @@
 
   <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
     <div>
-      <label for="datum" class="mb-2 block text-sm font-medium text-gray-700">
+      <label for="datum" class="mb-3 block text-base font-medium">
         Wunschtermin (Datum) <span class="text-red-500">*</span>
       </label>
       <input
@@ -27,20 +27,20 @@
         name="datum"
         required
         min=""
-        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+        class="text-md dark:bg-dark block w-full rounded-lg border border-gray-200 bg-white px-4 py-3 dark:border-none"
       />
       <p class="mt-1 text-xs text-gray-500">Bitte wähle ein Datum in der Zukunft</p>
     </div>
 
     <div>
-      <label for="uhrzeit" class="mb-2 block text-sm font-medium text-gray-700">
+      <label for="uhrzeit" class="mb-3 block text-base font-medium">
         Wunschzeit <span class="text-red-500">*</span>
       </label>
       <select
         id="uhrzeit"
         name="uhrzeit"
         required
-        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+        class="text-md dark:bg-dark block w-full rounded-lg border border-gray-200 bg-white px-4 py-3 dark:border-none"
       >
         <option value="">Bitte wählen</option>
         <option value="08:00">08:00 Uhr</option>
@@ -59,14 +59,14 @@
     </div>
 
     <div>
-      <label for="dauer" class="mb-2 block text-sm font-medium text-gray-700">
+      <label for="dauer" class="mb-3 block text-base font-medium">
         Gesprächsdauer <span class="text-red-500">*</span>
       </label>
       <select
         id="dauer"
         name="dauer"
         required
-        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+        class="text-md dark:bg-dark block w-full rounded-lg border border-gray-200 bg-white px-4 py-3 dark:border-none"
       >
         <option value="60" selected>60 Minuten (empfohlen)</option>
         <option value="30">30 Minuten</option>
