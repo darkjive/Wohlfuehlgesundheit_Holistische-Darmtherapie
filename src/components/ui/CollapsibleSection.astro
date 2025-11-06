@@ -17,7 +17,7 @@ const { title, subtitle, isOptional = true } = Astro.props;
   >
     <div class="flex items-center gap-3">
       <span class="section-title">{title}</span>
-      {isOptional && <span class="text-sm font-normal text-gray-400 dark:text-gray-500">(Optional)</span>}
+      {isOptional && <span class="text-base font-normal text-gray-400 dark:text-gray-500">(Optional)</span>}
     </div>
     <svg
       class="h-5 w-5 text-gray-500 transition-transform duration-200 group-open:rotate-180 group-open:text-gray-900 dark:text-gray-400 dark:group-open:text-gray-100"
@@ -30,7 +30,7 @@ const { title, subtitle, isOptional = true } = Astro.props;
   </summary>
 
   <div class="px-6 pb-6 pt-2">
-    {subtitle && <p class="mb-4 text-sm text-gray-600 dark:text-gray-400">{subtitle}</p>}
+    {subtitle && <p class="mb-4 text-base text-gray-600 dark:text-gray-400">{subtitle}</p>}
     <slot />
   </div>
 </details>
