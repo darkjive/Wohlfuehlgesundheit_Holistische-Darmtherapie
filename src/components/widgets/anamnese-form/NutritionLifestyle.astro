@@ -1,12 +1,11 @@
 ---
 // NutritionLifestyle.astro - Ernährung und Lebensstil
 // Abschnitt für Ernährungsweise, Mahlzeiten, Getränke und Lebensstil
+import CollapsibleSection from '~/components/ui/CollapsibleSection.astro';
 ---
 
 <!-- Fragen zu Deiner Ernährungsweise -->
-<div class="border-b border-gray-200 pb-8">
-  <h3 class="mb-6 text-xl font-semibold text-gray-900">Fragen zu Deiner Ernährungsweise</h3>
-
+<CollapsibleSection title="Fragen zu Deiner Ernährungsweise" isOptional={true}>
   <div class="space-y-6">
     <div>
       <label for="ernaehrung_umgestellt" class="mb-2 block text-sm font-medium text-gray-700">
@@ -113,12 +112,10 @@
       </div>
     </div>
   </div>
-</div>
+</CollapsibleSection>
 
 <!-- Deine aktuelle Ernährungsweise - Frühstück -->
-<div class="border-b border-gray-200 pb-8">
-  <h3 class="mb-6 text-xl font-semibold text-gray-900">Deine aktuelle Ernährungsweise - Frühstück</h3>
-
+<CollapsibleSection title="Deine aktuelle Ernährungsweise - Frühstück" isOptional={true}>
   <div class="space-y-6">
     <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
       <div>
@@ -221,12 +218,10 @@
       />
     </div>
   </div>
-</div>
+</CollapsibleSection>
 
 <!-- Deine aktuelle Ernährungsweise - Mittagessen -->
-<div class="border-b border-gray-200 pb-8">
-  <h3 class="mb-6 text-xl font-semibold text-gray-900">Deine aktuelle Ernährungsweise - Mittagessen</h3>
-
+<CollapsibleSection title="Deine aktuelle Ernährungsweise - Mittagessen" isOptional={true}>
   <div class="space-y-6">
     <div>
       <label for="mittag_uhrzeit" class="mb-2 block text-sm font-medium text-gray-700">
@@ -409,12 +404,10 @@
       />
     </div>
   </div>
-</div>
+</CollapsibleSection>
 
 <!-- Deine aktuelle Ernährungsweise - Abendessen -->
-<div class="border-b border-gray-200 pb-8">
-  <h3 class="mb-6 text-xl font-semibold text-gray-900">Deine aktuelle Ernährungsweise - Abendessen</h3>
-
+<CollapsibleSection title="Deine aktuelle Ernährungsweise - Abendessen" isOptional={true}>
   <div class="space-y-6">
     <div>
       <label for="abend_uhrzeit" class="mb-2 block text-sm font-medium text-gray-700">
@@ -555,12 +548,10 @@
       />
     </div>
   </div>
-</div>
+</CollapsibleSection>
 
 <!-- Getränke -->
-<div class="border-b border-gray-200 pb-8">
-  <h3 class="mb-6 text-xl font-semibold text-gray-900">Getränke</h3>
-
+<CollapsibleSection title="Getränke" isOptional={true}>
   <div>
     <label class="mb-3 block text-sm font-medium text-gray-700">Was und wie viel trinkst Du am Tag?</label>
     <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -642,12 +633,10 @@
       </div>
     </div>
   </div>
-</div>
+</CollapsibleSection>
 
 <!-- Weitere Angaben -->
-<div class="border-b border-gray-200 pb-8">
-  <h3 class="mb-6 text-xl font-semibold text-gray-900">Weitere Angaben</h3>
-
+<CollapsibleSection title="Weitere Angaben" isOptional={true}>
   <div class="space-y-6">
     <div>
       <label for="zusaetzlich_mitteilen" class="mb-2 block text-sm font-medium text-gray-700">
@@ -673,4 +662,4 @@
       ></textarea>
     </div>
   </div>
-</div>
+</CollapsibleSection>

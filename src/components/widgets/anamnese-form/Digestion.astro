@@ -1,12 +1,11 @@
 ---
 // Digestion.astro - Verdauung und Stuhlgang
 // Abschnitt für detaillierte Fragen zum Stuhlgang und zur Verdauung
+import CollapsibleSection from '~/components/ui/CollapsibleSection.astro';
 ---
 
 <!-- Fragen zum Stuhlgang -->
-<div class="border-b border-gray-200 pb-8">
-  <h3 class="mb-6 text-xl font-semibold text-gray-900">Fragen zum Stuhlgang</h3>
-
+<CollapsibleSection title="Fragen zum Stuhlgang" isOptional={true}>
   <div class="space-y-6">
     <div>
       <label for="stuhlgang_freq" class="mb-2 block text-sm font-medium text-gray-700">
@@ -94,4 +93,4 @@
       </div>
     </div>
   </div>
-</div>
+</CollapsibleSection>
