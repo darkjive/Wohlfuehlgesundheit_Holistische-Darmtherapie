@@ -23,7 +23,7 @@ define('ADMIN_EMAIL', 'steffi@xn--wohlfhlgesundheit-62b.de');
 define('ADMIN_NAME', 'Holistische Darmtherapie');
 
 // E-Mail Absender
-define('FROM_EMAIL', 'steffi@wohlfühlgesundheit.de');
+define('FROM_EMAIL', 'steffi@xn--wohlfhlgesundheit-62b.de');
 define('FROM_NAME', 'Wohlfuehlgesundheit');
 
 // ============================================================================
