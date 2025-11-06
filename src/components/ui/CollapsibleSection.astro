@@ -11,20 +11,16 @@ interface Props {
 const { title, subtitle, isOptional = true } = Astro.props;
 ---
 
-<details class="collapsible-section group mb-6 rounded-lg border border-gray-300 dark:border-gray-600 transition-all">
+<details class="collapsible-section group mb-6 rounded-lg border border-gray-300 transition-all dark:border-gray-600">
   <summary
-    class="flex cursor-pointer items-center justify-between rounded-lg px-6 py-4 text-lg font-semibold transition-colors
-           text-gray-500 dark:text-gray-400
-           hover:bg-gray-50 dark:hover:bg-gray-800
-           group-open:text-gray-900 dark:group-open:text-gray-100
-           group-open:bg-gray-50 dark:group-open:bg-gray-800"
+    class="flex cursor-pointer items-center justify-between rounded-lg px-6 py-4 text-lg font-semibold text-gray-500 transition-colors hover:bg-gray-50 group-open:bg-gray-50 group-open:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:group-open:bg-gray-800 dark:group-open:text-gray-100"
   >
     <div class="flex items-center gap-3">
       <span class="section-title">{title}</span>
       {isOptional && <span class="text-sm font-normal text-gray-400 dark:text-gray-500">(Optional)</span>}
     </div>
     <svg
-      class="h-5 w-5 transition-transform duration-200 group-open:rotate-180 text-gray-500 dark:text-gray-400 group-open:text-gray-900 dark:group-open:text-gray-100"
+      class="h-5 w-5 text-gray-500 transition-transform duration-200 group-open:rotate-180 group-open:text-gray-900 dark:text-gray-400 dark:group-open:text-gray-100"
       fill="none"
       stroke="currentColor"
       viewBox="0 0 24 24"
