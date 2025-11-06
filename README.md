@@ -60,20 +60,30 @@ Alle Befehle werden im Hauptverzeichnis des Projekts ausgeführt:
 Die Hauptkonfigurationsdatei befindet sich unter `./src/config.yaml`:
 
 ```yaml
-site:
-  name: 'Stefanie Leidel - Holistische Darmtherapie'
-  site: 'https://gesundheitspraxis-stefaniel.de'
+  name: ''
+  site: 'https://wohlfühlgesundheit.de'
   base: '/'
   trailingSlash: false
 
 metadata:
   title:
-    default: 'Stefanie Leidel - Holistische Darmtherapie'
-    template: '%s — Stefanie Leidel - Holistische Darmtherapie'
-  description: 'Professionelle Gesundheitsdienstleistungen in [Ort]'
+    default:
+    template: '%s | Wohlfühlgesundheit - Holistische Darmtherapie'
+  description: 'Wohlfühlgesundheit - Holistische Darmtherapie, Ihre Holistische Darmtherapeutin. Entdecken Sie Tipps und Programme zur Verbesserung Ihrer Gesundheit und Ihres Wohlbefindens. Starten Sie Ihre Reise zu einem gesünderen Lebensstil noch heute!'
   robots:
     index: true
     follow: true
+  openGraph:
+    site_name: Wohlfühlgesundheit - Holistische Darmtherapie
+    images:
+      - url: '~/assets/images/default.png'
+        width: 1200
+        height: 628
+    type: website
+  twitter:
+    handle: '@onwidget'
+    site: '@onwidget'
+    cardType: summary_large_image
 
 ui:
   theme: 'system' # "system" | "light" | "dark"
@@ -106,6 +116,7 @@ Für Anpassungen der Schriftarten, Farben oder anderen Design-Elementen:
 ## Technische Details
 
 ### Frontend
+
 - **Framework**: Astro 5.x (Static Site Generator)
 - **Styling**: Tailwind CSS 3.x mit Typography Plugin
 - **Programmiersprache**: TypeScript
@@ -115,6 +126,7 @@ Für Anpassungen der Schriftarten, Farben oder anderen Design-Elementen:
   - Quicksand (Variable Font)
 
 ### Backend & APIs
+
 - **PHP Backend**: Custom PHP API für Formular-Handling (`/public/api/anamnese-booking.php`)
 - **Zoom Integration**:
   - Server-to-Server OAuth Authentifizierung
@@ -123,6 +135,7 @@ Für Anpassungen der Schriftarten, Farben oder anderen Design-Elementen:
   - Terminverwaltung über Zoom API
 
 ### Integrationen & Plugins
+
 - **@astrojs/sitemap**: XML-Sitemap-Generierung
 - **@astrojs/rss**: RSS-Feed-Support
 - **@astrojs/partytown**: Optimierung von Third-Party-Scripts
@@ -134,6 +147,7 @@ Für Anpassungen der Schriftarten, Farben oder anderen Design-Elementen:
 - **astro-emoji**: Emoji-Support
 
 ### Analytics & SEO
+
 - **Google Analytics**: G-TT6VB0HM46
 - **Google Site Verification**: orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M
 - **OpenGraph & Twitter Cards**: Vollständige Social-Media-Integration
@@ -142,7 +156,9 @@ Für Anpassungen der Schriftarten, Farben oder anderen Design-Elementen:
 ### Besondere Features
 
 #### 1. Zoom-Booking-System
+
 Vollautomatisches Terminbuchungssystem mit:
+
 - Zoom-Meeting-Erstellung via API
 - Automatische E-Mail-Benachrichtigungen (HTML für Kunden, Text für Admin)
 - Terminvalidierung und Zeitzonenmanagement (Europe/Berlin)
@@ -150,7 +166,9 @@ Vollautomatisches Terminbuchungssystem mit:
 - Flexible Terminlängen (30/60 Minuten)
 
 #### 2. Umfangreicher Anamnesebogen
+
 Mehrstufiges Formular mit:
+
 - Persönliche Daten & Kontaktinformationen
 - Gesundheitsinformationen & Vorerkrankungen
 - Ernährungs- und Lifestyle-Analyse
@@ -159,17 +177,20 @@ Mehrstufiges Formular mit:
 - DSGVO-konforme Datenverarbeitung
 
 #### 3. Dark Mode
+
 - System-Theme-Erkennung
 - Manueller Light/Dark Mode Toggle
 - Persistente Theme-Speicherung
 
 #### 4. Cookie Consent Management
+
 - DSGVO-konform
 - Kategorien: Notwendig, Statistik, Marketing
 - Vollständig auf Deutsch lokalisiert
 - Anpassbare Einstellungen
 
 #### 5. Performance-Optimierungen
+
 - Statische Site-Generierung für beste Performance
 - Asset-Komprimierung (HTML, CSS, JS)
 - Lazy Loading für Bilder
@@ -177,6 +198,7 @@ Mehrstufiges Formular mit:
 - Optimierte Font-Loading-Strategie
 
 ### Deployment
+
 - **Build-Output**: Statische HTML/CSS/JS-Dateien
 - **PHP-Support erforderlich**: Für Backend-API (`/public/api/`)
 - **HTTPS empfohlen**: Für sichere Datenübertragung
