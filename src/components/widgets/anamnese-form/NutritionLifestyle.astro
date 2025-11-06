@@ -1,6 +1,54 @@
 ---
 // NutritionLifestyle.astro - Ernährung und Lebensstil
 // Abschnitt für Ernährungsweise, Mahlzeiten, Getränke und Lebensstil
+import FormInput from '~/components/ui/FormInput.astro';
+import FormTextarea from '~/components/ui/FormTextarea.astro';
+import FormSelect from '~/components/ui/FormSelect.astro';
+
+const ernaehrungsweiseOptions = [
+  { value: '', label: 'Bitte wählen' },
+  { value: 'mischkost', label: 'Mischkost' },
+  { value: 'vegetarisch', label: 'Vegetarisch' },
+  { value: 'vegan', label: 'Vegan' },
+  { value: 'rohkoestlich', label: 'Rohköstlich' },
+  { value: 'sonstiges', label: 'Sonstiges' },
+];
+
+const mittagesseSelbstOptions = [
+  { value: '', label: 'Bitte wählen' },
+  { value: 'ja', label: 'Ja' },
+  { value: 'nein', label: 'Nein' },
+  { value: 'manchmal', label: 'Manchmal' },
+];
+
+const jaOderNeinOptions = [
+  { value: '', label: 'Bitte wählen' },
+  { value: 'ja', label: 'Ja' },
+  { value: 'nein', label: 'Nein' },
+];
+
+const brotbelagOptions = [
+  { value: '', label: 'Bitte wählen' },
+  { value: 'butter', label: 'Butter' },
+  { value: 'margarine', label: 'Margarine' },
+  { value: 'keines', label: 'Keines' },
+  { value: 'sonstiges', label: 'Sonstiges' },
+];
+
+const muesliMilchOptions = [
+  { value: '', label: 'Bitte wählen' },
+  { value: 'kuhmilch', label: 'Kuhmilch' },
+  { value: 'pflanzenmilch', label: 'Pflanzenmilch' },
+  { value: 'joghurt', label: 'Joghurt' },
+  { value: 'keines', label: 'Keines' },
+];
+
+const salatWannOptions = [
+  { value: '', label: 'Bitte wählen' },
+  { value: 'vor', label: 'Vor der Hauptmahlzeit' },
+  { value: 'waehrend', label: 'Während der Hauptmahlzeit' },
+  { value: 'keinen', label: 'Esse keinen Salat' },
+];
 ---
 
 <!-- Fragen zu Deiner Ernährungsweise -->
@@ -8,109 +56,56 @@
   <h3 class="mb-6 text-xl font-semibold text-gray-900">Fragen zu Deiner Ernährungsweise</h3>
 
   <div class="space-y-6">
-    <div>
-      <label for="ernaehrung_umgestellt" class="mb-2 block text-sm font-medium text-gray-700">
-        Hast Du Deine Ernährung bereits (teilweise) umgestellt?
-      </label>
-      <textarea
-        id="ernaehrung_umgestellt"
-        name="ernaehrung_umgestellt"
-        rows="2"
-        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
-      ></textarea>
-    </div>
+    <FormTextarea
+      id="ernaehrung_umgestellt"
+      name="ernaehrung_umgestellt"
+      label="Hast Du Deine Ernährung bereits (teilweise) umgestellt?"
+      rows={2}
+    />
 
-    <div>
-      <label for="ernaehrungsweise" class="mb-2 block text-sm font-medium text-gray-700">
-        Ernährst Du Dich vegetarisch, vegan oder rohköstlich?
-      </label>
-      <select
-        id="ernaehrungsweise"
-        name="ernaehrungsweise"
-        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
-      >
-        <option value="">Bitte wählen</option>
-        <option value="mischkost">Mischkost</option>
-        <option value="vegetarisch">Vegetarisch</option>
-        <option value="vegan">Vegan</option>
-        <option value="rohkoestlich">Rohköstlich</option>
-        <option value="sonstiges">Sonstiges</option>
-      </select>
-    </div>
+    <FormSelect
+      id="ernaehrungsweise"
+      name="ernaehrungsweise"
+      label="Ernährst Du Dich vegetarisch, vegan oder rohköstlich?"
+      options={ernaehrungsweiseOptions}
+    />
 
     <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
-      <div>
-        <label for="mittagessen_selbst" class="mb-2 block text-sm font-medium text-gray-700">
-          Bereitest Du Dein Mittagessen selbst zu?
-        </label>
-        <select
-          id="mittagessen_selbst"
-          name="mittagessen_selbst"
-          class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
-        >
-          <option value="">Bitte wählen</option>
-          <option value="ja">Ja</option>
-          <option value="nein">Nein</option>
-          <option value="manchmal">Manchmal</option>
-        </select>
-      </div>
+      <FormSelect
+        id="mittagessen_selbst"
+        name="mittagessen_selbst"
+        label="Bereitest Du Dein Mittagessen selbst zu?"
+        options={mittagesseSelbstOptions}
+      />
 
-      <div>
-        <label for="mittagessen_wo" class="mb-2 block text-sm font-medium text-gray-700">
-          Isst Du mittags in der Kantine, Gaststätte, im Imbiss oder woanders?
-        </label>
-        <input
-          type="text"
-          id="mittagessen_wo"
-          name="mittagessen_wo"
-          class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
-        />
-      </div>
+      <FormInput
+        id="mittagessen_wo"
+        name="mittagessen_wo"
+        label="Isst Du mittags in der Kantine, Gaststätte, im Imbiss oder woanders?"
+      />
     </div>
 
     <div class="grid grid-cols-1 gap-6 sm:grid-cols-3">
-      <div>
-        <label for="mikrowelle" class="mb-2 block text-sm font-medium text-gray-700">
-          Verwendest Du eine Mikrowelle?
-        </label>
-        <select
-          id="mikrowelle"
-          name="mikrowelle"
-          class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
-        >
-          <option value="">Bitte wählen</option>
-          <option value="ja">Ja</option>
-          <option value="nein">Nein</option>
-        </select>
-      </div>
+      <FormSelect
+        id="mikrowelle"
+        name="mikrowelle"
+        label="Verwendest Du eine Mikrowelle?"
+        options={jaOderNeinOptions}
+      />
 
-      <div>
-        <label for="suessstoff" class="mb-2 block text-sm font-medium text-gray-700"> Verwendest Du Süßstoff? </label>
-        <select
-          id="suessstoff"
-          name="suessstoff"
-          class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
-        >
-          <option value="">Bitte wählen</option>
-          <option value="ja">Ja</option>
-          <option value="nein">Nein</option>
-        </select>
-      </div>
+      <FormSelect
+        id="suessstoff"
+        name="suessstoff"
+        label="Verwendest Du Süßstoff?"
+        options={jaOderNeinOptions}
+      />
 
-      <div>
-        <label for="light_produkte" class="mb-2 block text-sm font-medium text-gray-700">
-          Greifst Du gerne zu Light-Produkten?
-        </label>
-        <select
-          id="light_produkte"
-          name="light_produkte"
-          class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
-        >
-          <option value="">Bitte wählen</option>
-          <option value="ja">Ja</option>
-          <option value="nein">Nein</option>
-        </select>
-      </div>
+      <FormSelect
+        id="light_produkte"
+        name="light_produkte"
+        label="Greifst Du gerne zu Light-Produkten?"
+        options={jaOderNeinOptions}
+      />
     </div>
   </div>
 </div>
@@ -121,105 +116,55 @@
 
   <div class="space-y-6">
     <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
-      <div>
-        <label for="fruehstueck_uhrzeit" class="mb-2 block text-sm font-medium text-gray-700">
-          Um welche Uhrzeit frühstückst Du?
-        </label>
-        <input
-          type="text"
-          id="fruehstueck_uhrzeit"
-          name="fruehstueck_uhrzeit"
-          class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
-          placeholder="z.B. 7:00 Uhr"
-        />
-      </div>
+      <FormInput
+        id="fruehstueck_uhrzeit"
+        name="fruehstueck_uhrzeit"
+        label="Um welche Uhrzeit frühstückst Du?"
+        placeholder="z.B. 7:00 Uhr"
+      />
 
-      <div>
-        <label for="fruehstueck_was" class="mb-2 block text-sm font-medium text-gray-700">
-          Was frühstückst Du und in welcher Menge?
-        </label>
-        <input
-          type="text"
-          id="fruehstueck_was"
-          name="fruehstueck_was"
-          class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
-        />
-      </div>
-    </div>
-
-    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
-      <div>
-        <label for="brotbelag" class="mb-2 block text-sm font-medium text-gray-700">
-          Bevorzugst Du Butter oder Margarine auf Deinem Brot?
-        </label>
-        <select
-          id="brotbelag"
-          name="brotbelag"
-          class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
-        >
-          <option value="">Bitte wählen</option>
-          <option value="butter">Butter</option>
-          <option value="margarine">Margarine</option>
-          <option value="keines">Keines</option>
-          <option value="sonstiges">Sonstiges</option>
-        </select>
-      </div>
-
-      <div>
-        <label for="muesli_zusatz" class="mb-2 block text-sm font-medium text-gray-700">
-          Isst Du Dein Müsli mit oder ohne Zucker, mit oder ohne Früchten?
-        </label>
-        <input
-          type="text"
-          id="muesli_zusatz"
-          name="muesli_zusatz"
-          class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
-        />
-      </div>
-    </div>
-
-    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
-      <div>
-        <label for="muesli_milch" class="mb-2 block text-sm font-medium text-gray-700">
-          Verwendest Du für Dein Müsli Kuhmilch, Pflanzenmilch oder Joghurt?
-        </label>
-        <select
-          id="muesli_milch"
-          name="muesli_milch"
-          class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
-        >
-          <option value="">Bitte wählen</option>
-          <option value="kuhmilch">Kuhmilch</option>
-          <option value="pflanzenmilch">Pflanzenmilch</option>
-          <option value="joghurt">Joghurt</option>
-          <option value="keines">Keines</option>
-        </select>
-      </div>
-
-      <div>
-        <label for="morgen_getraenke" class="mb-2 block text-sm font-medium text-gray-700">
-          Trinkst Du morgens Bohnenkaffee, Getreidekaffee, Tee oder Säfte? Und in welcher Menge?
-        </label>
-        <input
-          type="text"
-          id="morgen_getraenke"
-          name="morgen_getraenke"
-          class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
-        />
-      </div>
-    </div>
-
-    <div>
-      <label for="snack_vormittag" class="mb-2 block text-sm font-medium text-gray-700">
-        Was isst Du zwischen dem Frühstück und dem Mittagessen?
-      </label>
-      <input
-        type="text"
-        id="snack_vormittag"
-        name="snack_vormittag"
-        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+      <FormInput
+        id="fruehstueck_was"
+        name="fruehstueck_was"
+        label="Was frühstückst Du und in welcher Menge?"
       />
     </div>
+
+    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+      <FormSelect
+        id="brotbelag"
+        name="brotbelag"
+        label="Bevorzugst Du Butter oder Margarine auf Deinem Brot?"
+        options={brotbelagOptions}
+      />
+
+      <FormInput
+        id="muesli_zusatz"
+        name="muesli_zusatz"
+        label="Isst Du Dein Müsli mit oder ohne Zucker, mit oder ohne Früchten?"
+      />
+    </div>
+
+    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+      <FormSelect
+        id="muesli_milch"
+        name="muesli_milch"
+        label="Verwendest Du für Dein Müsli Kuhmilch, Pflanzenmilch oder Joghurt?"
+        options={muesliMilchOptions}
+      />
+
+      <FormInput
+        id="morgen_getraenke"
+        name="morgen_getraenke"
+        label="Trinkst Du morgens Bohnenkaffee, Getreidekaffee, Tee oder Säfte? Und in welcher Menge?"
+      />
+    </div>
+
+    <FormInput
+      id="snack_vormittag"
+      name="snack_vormittag"
+      label="Was isst Du zwischen dem Frühstück und dem Mittagessen?"
+    />
   </div>
 </div>
 
@@ -228,186 +173,133 @@
   <h3 class="mb-6 text-xl font-semibold text-gray-900">Deine aktuelle Ernährungsweise - Mittagessen</h3>
 
   <div class="space-y-6">
-    <div>
-      <label for="mittag_uhrzeit" class="mb-2 block text-sm font-medium text-gray-700">
-        Um welche Uhrzeit isst Du zu Mittag?
-      </label>
-      <input
-        type="text"
-        id="mittag_uhrzeit"
-        name="mittag_uhrzeit"
-        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
-        placeholder="z.B. 12:30 Uhr"
-      />
-    </div>
+    <FormInput
+      id="mittag_uhrzeit"
+      name="mittag_uhrzeit"
+      label="Um welche Uhrzeit isst Du zu Mittag?"
+      placeholder="z.B. 12:30 Uhr"
+    />
 
     <div>
       <label class="mb-3 block text-sm font-medium text-gray-700"> Was isst Du mittags und wie oft pro Woche? </label>
       <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <div>
           <label for="mittag_kartoffeln" class="mb-1 block text-xs text-gray-600">Kartoffeln:</label>
-          <input
-            type="text"
+          <FormInput
             id="mittag_kartoffeln"
             name="mittag_kartoffeln"
             placeholder="z.B. 2x pro Woche"
-            class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
           />
         </div>
 
         <div>
           <label for="mittag_reis" class="mb-1 block text-xs text-gray-600">Weißer oder Vollkornreis:</label>
-          <input
-            type="text"
+          <FormInput
             id="mittag_reis"
             name="mittag_reis"
             placeholder="z.B. 3x pro Woche"
-            class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
           />
         </div>
 
         <div>
           <label for="mittag_getreide" class="mb-1 block text-xs text-gray-600">Anderes Getreide:</label>
-          <input
-            type="text"
+          <FormInput
             id="mittag_getreide"
             name="mittag_getreide"
             placeholder="z.B. Quinoa, Hirse"
-            class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
           />
         </div>
 
         <div>
           <label for="mittag_gemuese" class="mb-1 block text-xs text-gray-600">Gemüse:</label>
-          <input
-            type="text"
+          <FormInput
             id="mittag_gemuese"
             name="mittag_gemuese"
             placeholder="z.B. täglich"
-            class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
           />
         </div>
 
         <div>
           <label for="mittag_kaese" class="mb-1 block text-xs text-gray-600">Käsegerichte:</label>
-          <input
-            type="text"
+          <FormInput
             id="mittag_kaese"
             name="mittag_kaese"
             placeholder="z.B. 1x pro Woche"
-            class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
           />
         </div>
 
         <div>
           <label for="mittag_eier" class="mb-1 block text-xs text-gray-600">Eiergerichte:</label>
-          <input
-            type="text"
+          <FormInput
             id="mittag_eier"
             name="mittag_eier"
             placeholder="z.B. 2x pro Woche"
-            class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
           />
         </div>
 
         <div>
           <label for="mittag_fleisch" class="mb-1 block text-xs text-gray-600">Fleisch:</label>
-          <input
-            type="text"
+          <FormInput
             id="mittag_fleisch"
             name="mittag_fleisch"
             placeholder="z.B. 3x pro Woche"
-            class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
           />
         </div>
 
         <div>
           <label for="mittag_fisch" class="mb-1 block text-xs text-gray-600">Fisch:</label>
-          <input
-            type="text"
+          <FormInput
             id="mittag_fisch"
             name="mittag_fisch"
             placeholder="z.B. 1x pro Woche"
-            class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
           />
         </div>
 
         <div>
           <label for="mittag_tofu" class="mb-1 block text-xs text-gray-600">Tofu:</label>
-          <input
-            type="text"
+          <FormInput
             id="mittag_tofu"
             name="mittag_tofu"
             placeholder="z.B. 2x pro Woche"
-            class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
           />
         </div>
 
         <div>
           <label for="mittag_sonstiges" class="mb-1 block text-xs text-gray-600">Sonstiges:</label>
-          <input
-            type="text"
+          <FormInput
             id="mittag_sonstiges"
             name="mittag_sonstiges"
-            class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
           />
         </div>
       </div>
     </div>
 
-    <div>
-      <label for="gemuese_nicht_mogen" class="mb-2 block text-sm font-medium text-gray-700">
-        Welches Gemüse magst Du gar nicht?
-      </label>
-      <input
-        type="text"
-        id="gemuese_nicht_mogen"
-        name="gemuese_nicht_mogen"
-        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
-      />
-    </div>
+    <FormInput
+      id="gemuese_nicht_mogen"
+      name="gemuese_nicht_mogen"
+      label="Welches Gemüse magst Du gar nicht?"
+    />
 
     <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
-      <div>
-        <label for="salat_wann" class="mb-2 block text-sm font-medium text-gray-700">
-          Isst Du den Salat vor oder während der Hauptmahlzeit?
-        </label>
-        <select
-          id="salat_wann"
-          name="salat_wann"
-          class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
-        >
-          <option value="">Bitte wählen</option>
-          <option value="vor">Vor der Hauptmahlzeit</option>
-          <option value="waehrend">Während der Hauptmahlzeit</option>
-          <option value="keinen">Esse keinen Salat</option>
-        </select>
-      </div>
+      <FormSelect
+        id="salat_wann"
+        name="salat_wann"
+        label="Isst Du den Salat vor oder während der Hauptmahlzeit?"
+        options={salatWannOptions}
+      />
 
-      <div>
-        <label for="salat_dressing" class="mb-2 block text-sm font-medium text-gray-700">
-          Dressing: Essig & Öl, Joghurtdressing, Sahnedressing oder anderes?
-        </label>
-        <input
-          type="text"
-          id="salat_dressing"
-          name="salat_dressing"
-          class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
-        />
-      </div>
-    </div>
-
-    <div>
-      <label for="snack_nachmittag" class="mb-2 block text-sm font-medium text-gray-700">
-        Was isst Du zwischen Mittag- und Abendessen?
-      </label>
-      <input
-        type="text"
-        id="snack_nachmittag"
-        name="snack_nachmittag"
-        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
+      <FormInput
+        id="salat_dressing"
+        name="salat_dressing"
+        label="Dressing: Essig & Öl, Joghurtdressing, Sahnedressing oder anderes?"
       />
     </div>
+
+    <FormInput
+      id="snack_nachmittag"
+      name="snack_nachmittag"
+      label="Was isst Du zwischen Mittag- und Abendessen?"
+    />
   </div>
 </div>
 
@@ -416,144 +308,112 @@
   <h3 class="mb-6 text-xl font-semibold text-gray-900">Deine aktuelle Ernährungsweise - Abendessen</h3>
 
   <div class="space-y-6">
-    <div>
-      <label for="abend_uhrzeit" class="mb-2 block text-sm font-medium text-gray-700">
-        Um welche Uhrzeit isst Du zu Abend?
-      </label>
-      <input
-        type="text"
-        id="abend_uhrzeit"
-        name="abend_uhrzeit"
-        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
-        placeholder="z.B. 18:30 Uhr"
-      />
-    </div>
+    <FormInput
+      id="abend_uhrzeit"
+      name="abend_uhrzeit"
+      label="Um welche Uhrzeit isst Du zu Abend?"
+      placeholder="z.B. 18:30 Uhr"
+    />
 
     <div>
       <label class="mb-3 block text-sm font-medium text-gray-700"> Was isst Du abends und wie oft pro Woche? </label>
       <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <div>
           <label for="abend_brot" class="mb-1 block text-xs text-gray-600">Brot:</label>
-          <input
-            type="text"
+          <FormInput
             id="abend_brot"
             name="abend_brot"
             placeholder="z.B. täglich"
-            class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
           />
         </div>
 
         <div>
           <label for="abend_wurst" class="mb-1 block text-xs text-gray-600">Wurst:</label>
-          <input
-            type="text"
+          <FormInput
             id="abend_wurst"
             name="abend_wurst"
             placeholder="z.B. 3x pro Woche"
-            class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
           />
         </div>
 
         <div>
           <label for="abend_kaese" class="mb-1 block text-xs text-gray-600">Käse:</label>
-          <input
-            type="text"
+          <FormInput
             id="abend_kaese"
             name="abend_kaese"
             placeholder="z.B. täglich"
-            class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
           />
         </div>
 
         <div>
           <label for="abend_salat" class="mb-1 block text-xs text-gray-600">Salat:</label>
-          <input
-            type="text"
+          <FormInput
             id="abend_salat"
             name="abend_salat"
             placeholder="z.B. 2x pro Woche"
-            class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
           />
         </div>
 
         <div>
           <label for="abend_milchprodukte" class="mb-1 block text-xs text-gray-600">Milchprodukte:</label>
-          <input
-            type="text"
+          <FormInput
             id="abend_milchprodukte"
             name="abend_milchprodukte"
             placeholder="z.B. täglich"
-            class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
           />
         </div>
 
         <div>
           <label for="abend_obst" class="mb-1 block text-xs text-gray-600">Obst:</label>
-          <input
-            type="text"
+          <FormInput
             id="abend_obst"
             name="abend_obst"
             placeholder="z.B. täglich"
-            class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
           />
         </div>
 
         <div>
           <label for="abend_kartoffeln" class="mb-1 block text-xs text-gray-600">Kartoffeln, Nudeln, Reis:</label>
-          <input
-            type="text"
+          <FormInput
             id="abend_kartoffeln"
             name="abend_kartoffeln"
             placeholder="z.B. 2x pro Woche"
-            class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
           />
         </div>
 
         <div>
           <label for="abend_fleisch" class="mb-1 block text-xs text-gray-600">Fleisch, Fisch, Tofu, Eier:</label>
-          <input
-            type="text"
+          <FormInput
             id="abend_fleisch"
             name="abend_fleisch"
             placeholder="z.B. 3x pro Woche"
-            class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
           />
         </div>
 
         <div>
           <label for="abend_gemuese" class="mb-1 block text-xs text-gray-600">Gemüse:</label>
-          <input
-            type="text"
+          <FormInput
             id="abend_gemuese"
             name="abend_gemuese"
             placeholder="z.B. täglich"
-            class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
           />
         </div>
 
         <div>
           <label for="abend_sonstiges" class="mb-1 block text-xs text-gray-600">Sonstiges:</label>
-          <input
-            type="text"
+          <FormInput
             id="abend_sonstiges"
             name="abend_sonstiges"
-            class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
           />
         </div>
       </div>
     </div>
 
-    <div>
-      <label for="snack_abend" class="mb-2 block text-sm font-medium text-gray-700">
-        Was isst Du zwischen dem Abendessen und dem Schlafengehen?
-      </label>
-      <input
-        type="text"
-        id="snack_abend"
-        name="snack_abend"
-        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
-      />
-    </div>
+    <FormInput
+      id="snack_abend"
+      name="snack_abend"
+      label="Was isst Du zwischen dem Abendessen und dem Schlafengehen?"
+    />
   </div>
 </div>
 
@@ -566,78 +426,64 @@
     <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
       <div>
         <label for="getraenk_kaffee" class="mb-1 block text-xs text-gray-600">Kaffee:</label>
-        <input
-          type="text"
+        <FormInput
           id="getraenk_kaffee"
           name="getraenk_kaffee"
           placeholder="z.B. 2 Tassen"
-          class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
         />
       </div>
 
       <div>
         <label for="getraenk_tee" class="mb-1 block text-xs text-gray-600">Tee:</label>
-        <input
-          type="text"
+        <FormInput
           id="getraenk_tee"
           name="getraenk_tee"
           placeholder="z.B. 1 Liter"
-          class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
         />
       </div>
 
       <div>
         <label for="getraenk_softdrinks" class="mb-1 block text-xs text-gray-600">Softgetränke:</label>
-        <input
-          type="text"
+        <FormInput
           id="getraenk_softdrinks"
           name="getraenk_softdrinks"
           placeholder="z.B. 0,5 Liter"
-          class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
         />
       </div>
 
       <div>
         <label for="getraenk_gesuesst" class="mb-1 block text-xs text-gray-600">Gesüßte Getränke:</label>
-        <input
-          type="text"
+        <FormInput
           id="getraenk_gesuesst"
           name="getraenk_gesuesst"
           placeholder="z.B. 0,5 Liter"
-          class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
         />
       </div>
 
       <div>
         <label for="getraenk_kohlen" class="mb-1 block text-xs text-gray-600">Kohlensäurehaltiges Wasser:</label>
-        <input
-          type="text"
+        <FormInput
           id="getraenk_kohlen"
           name="getraenk_kohlen"
           placeholder="z.B. 1 Liter"
-          class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
         />
       </div>
 
       <div>
         <label for="getraenk_still" class="mb-1 block text-xs text-gray-600">Stilles Wasser:</label>
-        <input
-          type="text"
+        <FormInput
           id="getraenk_still"
           name="getraenk_still"
           placeholder="z.B. 2 Liter"
-          class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
         />
       </div>
 
       <div>
         <label for="getraenk_leitungswasser" class="mb-1 block text-xs text-gray-600">Leitungswasser:</label>
-        <input
-          type="text"
+        <FormInput
           id="getraenk_leitungswasser"
           name="getraenk_leitungswasser"
           placeholder="z.B. 1 Liter"
-          class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
         />
       </div>
     </div>
@@ -649,28 +495,18 @@
   <h3 class="mb-6 text-xl font-semibold text-gray-900">Weitere Angaben</h3>
 
   <div class="space-y-6">
-    <div>
-      <label for="zusaetzlich_mitteilen" class="mb-2 block text-sm font-medium text-gray-700">
-        Was möchtest Du mir zusätzlich mitteilen?
-      </label>
-      <textarea
-        id="zusaetzlich_mitteilen"
-        name="zusaetzlich_mitteilen"
-        rows="3"
-        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
-      ></textarea>
-    </div>
+    <FormTextarea
+      id="zusaetzlich_mitteilen"
+      name="zusaetzlich_mitteilen"
+      label="Was möchtest Du mir zusätzlich mitteilen?"
+      rows={3}
+    />
 
-    <div>
-      <label for="wichtig_wissen" class="mb-2 block text-sm font-medium text-gray-700">
-        Was sollte ich unbedingt noch über Dich wissen?
-      </label>
-      <textarea
-        id="wichtig_wissen"
-        name="wichtig_wissen"
-        rows="3"
-        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
-      ></textarea>
-    </div>
+    <FormTextarea
+      id="wichtig_wissen"
+      name="wichtig_wissen"
+      label="Was sollte ich unbedingt noch über Dich wissen?"
+      rows={3}
+    />
   </div>
 </div>

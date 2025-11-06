@@ -1,6 +1,67 @@
 ---
 // HealthQuestions.astro - Fragen zu Deiner gesundheitlichen Situation
 // Abschnitt des Anamnesebogens für gesundheitliche Beschwerden und Probleme
+import FormInput from '~/components/ui/FormInput.astro';
+import FormTextarea from '~/components/ui/FormTextarea.astro';
+import FormSelect from '~/components/ui/FormSelect.astro';
+
+const blutdruckOptions = [
+  { value: '', label: 'Bitte wählen' },
+  { value: 'nein', label: 'Nein' },
+  { value: 'bluthochdruck', label: 'Bluthochdruck' },
+  { value: 'niedriger_blutdruck', label: 'Niedriger Blutdruck' },
+];
+
+const cholesterinOptions = [
+  { value: '', label: 'Bitte wählen' },
+  { value: 'nein', label: 'Nein' },
+  { value: 'ja', label: 'Ja' },
+  { value: 'unbekannt', label: 'Unbekannt' },
+];
+
+const diabetesOptions = [
+  { value: '', label: 'Bitte wählen' },
+  { value: 'nein', label: 'Nein' },
+  { value: 'typ1', label: 'Ja, Typ 1' },
+  { value: 'typ2', label: 'Ja, Typ 2' },
+];
+
+const kopfschmerzenOptions = [
+  { value: '', label: 'Bitte wählen' },
+  { value: 'nein', label: 'Nein' },
+  { value: 'kopfschmerzen', label: 'Kopfschmerzen' },
+  { value: 'migraene', label: 'Migräne' },
+  { value: 'beides', label: 'Beides' },
+];
+
+const jaOderNeinOptions = [
+  { value: '', label: 'Bitte wählen' },
+  { value: 'ja', label: 'Ja' },
+  { value: 'nein', label: 'Nein' },
+];
+
+const stuhluntersuchungVerfuegbarOptions = [
+  { value: '', label: 'Bitte wählen' },
+  { value: 'ja', label: 'Ja' },
+  { value: 'nein', label: 'Nein' },
+  { value: 'nicht_zutreffend', label: 'Nicht zutreffend' },
+];
+
+const infektanfaelligOptions = [
+  { value: '', label: 'Bitte wählen' },
+  { value: 'nein', label: 'Nein' },
+  { value: 'manchmal', label: 'Manchmal' },
+  { value: 'haeufig', label: 'Häufig' },
+  { value: 'sehr_haeufig', label: 'Sehr häufig' },
+];
+
+const schlafstoerungOptions = [
+  { value: '', label: 'Bitte wählen' },
+  { value: 'nein', label: 'Nein' },
+  { value: 'einschlafstoerungen', label: 'Einschlafstörungen' },
+  { value: 'durchschlafstoerungen', label: 'Durchschlafstörungen' },
+  { value: 'beides', label: 'Beides' },
+];
 ---
 
 <!-- Fragen zu Deiner gesundheitlichen Situation -->
@@ -18,332 +79,177 @@
   </h3>
 
   <div class="space-y-6">
-    <div>
-      <label for="hauptbeschwerde" class="mb-2 block text-sm font-medium text-gray-700">
-        Was ist Deine Hauptbeschwerde? <span class="text-red-500">*</span>
-      </label>
-      <textarea
-        id="hauptbeschwerde"
-        name="hauptbeschwerde"
-        rows="3"
-        required
-        placeholder="z.B. Verdauungsprobleme, Blähungen, chronische Müdigkeit..."
-        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 shadow-sm transition duration-150 focus:ring-2"
-      ></textarea>
-    </div>
+    <FormTextarea
+      id="hauptbeschwerde"
+      name="hauptbeschwerde"
+      label="Was ist Deine Hauptbeschwerde?"
+      rows={3}
+      required
+      placeholder="z.B. Verdauungsprobleme, Blähungen, chronische Müdigkeit..."
+    />
 
-    <div>
-      <label for="gesundheitsprobleme" class="mb-2 block text-sm font-medium text-gray-700">
-        Unter welchen weiteren gesundheitlichen Problemen leidest Du derzeit und seit wann bestehen diese?
-      </label>
-      <textarea
-        id="gesundheitsprobleme"
-        name="gesundheitsprobleme"
-        rows="4"
-        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
-      ></textarea>
-    </div>
+    <FormTextarea
+      id="gesundheitsprobleme"
+      name="gesundheitsprobleme"
+      label="Unter welchen weiteren gesundheitlichen Problemen leidest Du derzeit und seit wann bestehen diese?"
+      rows={4}
+    />
 
-    <div>
-      <label for="allergien" class="mb-2 block text-sm font-medium text-gray-700">Hast Du Allergien?</label>
-      <textarea
-        id="allergien"
-        name="allergien"
-        rows="2"
-        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
-      ></textarea>
-    </div>
+    <FormTextarea
+      id="allergien"
+      name="allergien"
+      label="Hast Du Allergien?"
+      rows={2}
+    />
 
-    <div>
-      <label for="nahrungsmittelunvertraeglichkeiten" class="mb-2 block text-sm font-medium text-gray-700">
-        Bestehen Nahrungsmittelunverträglichkeiten?
-      </label>
-      <textarea
-        id="nahrungsmittelunvertraeglichkeiten"
-        name="nahrungsmittelunvertraeglichkeiten"
-        rows="2"
-        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
-      ></textarea>
-    </div>
+    <FormTextarea
+      id="nahrungsmittelunvertraeglichkeiten"
+      name="nahrungsmittelunvertraeglichkeiten"
+      label="Bestehen Nahrungsmittelunverträglichkeiten?"
+      rows={2}
+    />
 
     <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
-      <div>
-        <label for="blutdruck" class="mb-2 block text-sm font-medium text-gray-700">
-          Leidest Du unter Bluthochdruck oder niedrigem Blutdruck?
-        </label>
-        <select
-          id="blutdruck"
-          name="blutdruck"
-          class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
-        >
-          <option value="">Bitte wählen</option>
-          <option value="nein">Nein</option>
-          <option value="bluthochdruck">Bluthochdruck</option>
-          <option value="niedriger_blutdruck">Niedriger Blutdruck</option>
-        </select>
-      </div>
+      <FormSelect
+        id="blutdruck"
+        name="blutdruck"
+        label="Leidest Du unter Bluthochdruck oder niedrigem Blutdruck?"
+        options={blutdruckOptions}
+      />
 
-      <div>
-        <label for="cholesterin" class="mb-2 block text-sm font-medium text-gray-700">
-          Hast Du hohe Cholesterinwerte?
-        </label>
-        <select
-          id="cholesterin"
-          name="cholesterin"
-          class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
-        >
-          <option value="">Bitte wählen</option>
-          <option value="nein">Nein</option>
-          <option value="ja">Ja</option>
-          <option value="unbekannt">Unbekannt</option>
-        </select>
-      </div>
+      <FormSelect
+        id="cholesterin"
+        name="cholesterin"
+        label="Hast Du hohe Cholesterinwerte?"
+        options={cholesterinOptions}
+      />
 
-      <div>
-        <label for="diabetes" class="mb-2 block text-sm font-medium text-gray-700">
-          Leidest Du unter Diabetes mellitus?
-        </label>
-        <select
-          id="diabetes"
-          name="diabetes"
-          class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
-        >
-          <option value="">Bitte wählen</option>
-          <option value="nein">Nein</option>
-          <option value="typ1">Ja, Typ 1</option>
-          <option value="typ2">Ja, Typ 2</option>
-        </select>
-      </div>
+      <FormSelect
+        id="diabetes"
+        name="diabetes"
+        label="Leidest Du unter Diabetes mellitus?"
+        options={diabetesOptions}
+      />
 
-      <div>
-        <label for="hautprobleme" class="mb-2 block text-sm font-medium text-gray-700">
-          Hast Du Hautprobleme? Wenn ja, welche?
-        </label>
-        <input
-          type="text"
-          id="hautprobleme"
-          name="hautprobleme"
-          class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
-        />
-      </div>
+      <FormInput
+        id="hautprobleme"
+        name="hautprobleme"
+        label="Hast Du Hautprobleme? Wenn ja, welche?"
+      />
 
-      <div>
-        <label for="kopfschmerzen" class="mb-2 block text-sm font-medium text-gray-700">
-          Hast Du regelmäßig Kopfschmerzen oder Migräne?
-        </label>
-        <select
-          id="kopfschmerzen"
-          name="kopfschmerzen"
-          class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
-        >
-          <option value="">Bitte wählen</option>
-          <option value="nein">Nein</option>
-          <option value="kopfschmerzen">Kopfschmerzen</option>
-          <option value="migraene">Migräne</option>
-          <option value="beides">Beides</option>
-        </select>
-      </div>
+      <FormSelect
+        id="kopfschmerzen"
+        name="kopfschmerzen"
+        label="Hast Du regelmäßig Kopfschmerzen oder Migräne?"
+        options={kopfschmerzenOptions}
+      />
 
-      <div>
-        <label for="magenprobleme" class="mb-2 block text-sm font-medium text-gray-700">
-          Hast Du Magenprobleme? Wenn ja, welche?
-        </label>
-        <input
-          type="text"
-          id="magenprobleme"
-          name="magenprobleme"
-          class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
-        />
-      </div>
+      <FormInput
+        id="magenprobleme"
+        name="magenprobleme"
+        label="Hast Du Magenprobleme? Wenn ja, welche?"
+      />
     </div>
 
-    <div>
-      <label for="darmprobleme" class="mb-2 block text-sm font-medium text-gray-700">
-        Hast Du Darmprobleme? Wenn ja, welche? (z. B. Durchfall, Verstopfung, Völlegefühl, Blähungen, Sonstiges)
-      </label>
-      <textarea
-        id="darmprobleme"
-        name="darmprobleme"
-        rows="3"
-        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
-      ></textarea>
-    </div>
+    <FormTextarea
+      id="darmprobleme"
+      name="darmprobleme"
+      label="Hast Du Darmprobleme? Wenn ja, welche? (z. B. Durchfall, Verstopfung, Völlegefühl, Blähungen, Sonstiges)"
+      rows={3}
+    />
 
     <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
-      <div>
-        <label for="taeglich_stuhlgang" class="mb-2 block text-sm font-medium text-gray-700">
-          Hast Du täglichen Stuhlgang?
-        </label>
-        <select
-          id="taeglich_stuhlgang"
-          name="taeglich_stuhlgang"
-          class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
-        >
-          <option value="">Bitte wählen</option>
-          <option value="ja">Ja</option>
-          <option value="nein">Nein</option>
-        </select>
-      </div>
+      <FormSelect
+        id="taeglich_stuhlgang"
+        name="taeglich_stuhlgang"
+        label="Hast Du täglichen Stuhlgang?"
+        options={jaOderNeinOptions}
+      />
 
-      <div>
-        <label for="stuhlgang_haeufigkeit" class="mb-2 block text-sm font-medium text-gray-700">
-          Wenn nein: Wie oft hast Du Stuhlgang?
-        </label>
-        <input
-          type="text"
-          id="stuhlgang_haeufigkeit"
-          name="stuhlgang_haeufigkeit"
-          class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
-        />
-      </div>
+      <FormInput
+        id="stuhlgang_haeufigkeit"
+        name="stuhlgang_haeufigkeit"
+        label="Wenn nein: Wie oft hast Du Stuhlgang?"
+      />
     </div>
 
-    <div>
-      <label for="pilzinfektionen" class="mb-2 block text-sm font-medium text-gray-700">
-        Sind Pilzinfektionen bekannt (Darmpilz, Genitalpilz, Nagelpilz, Hautpilz)?
-      </label>
-      <textarea
-        id="pilzinfektionen"
-        name="pilzinfektionen"
-        rows="2"
-        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
-      ></textarea>
-    </div>
+    <FormTextarea
+      id="pilzinfektionen"
+      name="pilzinfektionen"
+      label="Sind Pilzinfektionen bekannt (Darmpilz, Genitalpilz, Nagelpilz, Hautpilz)?"
+      rows={2}
+    />
 
     <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
-      <div>
-        <label for="stuhluntersuchung" class="mb-2 block text-sm font-medium text-gray-700">
-          Wurde bei Dir schon einmal eine Stuhluntersuchung durchgeführt? Was war das Ergebnis?
-        </label>
-        <textarea
-          id="stuhluntersuchung"
-          name="stuhluntersuchung"
-          rows="3"
-          class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
-        ></textarea>
-      </div>
+      <FormTextarea
+        id="stuhluntersuchung"
+        name="stuhluntersuchung"
+        label="Wurde bei Dir schon einmal eine Stuhluntersuchung durchgeführt? Was war das Ergebnis?"
+        rows={3}
+      />
 
-      <div>
-        <label for="stuhluntersuchung_verfuegbar" class="mb-2 block text-sm font-medium text-gray-700">
-          Kannst Du mir das Ergebnis zur Verfügung stellen?
-        </label>
-        <select
-          id="stuhluntersuchung_verfuegbar"
-          name="stuhluntersuchung_verfuegbar"
-          class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
-        >
-          <option value="">Bitte wählen</option>
-          <option value="ja">Ja</option>
-          <option value="nein">Nein</option>
-          <option value="nicht_zutreffend">Nicht zutreffend</option>
-        </select>
-      </div>
+      <FormSelect
+        id="stuhluntersuchung_verfuegbar"
+        name="stuhluntersuchung_verfuegbar"
+        label="Kannst Du mir das Ergebnis zur Verfügung stellen?"
+        options={stuhluntersuchungVerfuegbarOptions}
+      />
     </div>
 
-    <div>
-      <label for="darmspiegelung" class="mb-2 block text-sm font-medium text-gray-700">
-        Wurde bei Dir schon mal eine Darmspiegelung gemacht? Wenn ja, warum?
-      </label>
-      <textarea
-        id="darmspiegelung"
-        name="darmspiegelung"
-        rows="2"
-        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
-      ></textarea>
-    </div>
+    <FormTextarea
+      id="darmspiegelung"
+      name="darmspiegelung"
+      label="Wurde bei Dir schon mal eine Darmspiegelung gemacht? Wenn ja, warum?"
+      rows={2}
+    />
 
-    <div>
-      <label for="rheuma_gicht" class="mb-2 block text-sm font-medium text-gray-700">
-        Hast Du Erkrankungen wie Rheuma, Gicht, Arthrose oder Osteoporose?
-      </label>
-      <textarea
-        id="rheuma_gicht"
-        name="rheuma_gicht"
-        rows="2"
-        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
-      ></textarea>
-    </div>
+    <FormTextarea
+      id="rheuma_gicht"
+      name="rheuma_gicht"
+      label="Hast Du Erkrankungen wie Rheuma, Gicht, Arthrose oder Osteoporose?"
+      rows={2}
+    />
 
-    <div>
-      <label for="rueckenprobleme" class="mb-2 block text-sm font-medium text-gray-700">
-        Hast Du akute oder chronische Rückenprobleme?
-      </label>
-      <textarea
-        id="rueckenprobleme"
-        name="rueckenprobleme"
-        rows="2"
-        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
-      ></textarea>
-    </div>
+    <FormTextarea
+      id="rueckenprobleme"
+      name="rueckenprobleme"
+      label="Hast Du akute oder chronische Rückenprobleme?"
+      rows={2}
+    />
 
-    <div>
-      <label for="schilddruese" class="mb-2 block text-sm font-medium text-gray-700">
-        Schilddrüsenunter- oder -überfunktion? Wenn ja, nimmst Du dafür Medikamente? Wenn ja, welche?
-      </label>
-      <textarea
-        id="schilddruese"
-        name="schilddruese"
-        rows="3"
-        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
-      ></textarea>
-    </div>
+    <FormTextarea
+      id="schilddruese"
+      name="schilddruese"
+      label="Schilddrüsenunter- oder -überfunktion? Wenn ja, nimmst Du dafür Medikamente? Wenn ja, welche?"
+      rows={3}
+    />
 
-    <div>
-      <label for="infektanfaellig" class="mb-2 block text-sm font-medium text-gray-700">
-        Bist Du häufig krank oder infektanfällig (z. B. Grippe, Schnupfen)?
-      </label>
-      <select
-        id="infektanfaellig"
-        name="infektanfaellig"
-        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
-      >
-        <option value="">Bitte wählen</option>
-        <option value="nein">Nein</option>
-        <option value="manchmal">Manchmal</option>
-        <option value="haeufig">Häufig</option>
-        <option value="sehr_haeufig">Sehr häufig</option>
-      </select>
-    </div>
+    <FormSelect
+      id="infektanfaellig"
+      name="infektanfaellig"
+      label="Bist Du häufig krank oder infektanfällig (z. B. Grippe, Schnupfen)?"
+      options={infektanfaelligOptions}
+    />
 
-    <div>
-      <label for="schlafstoerungen" class="mb-2 block text-sm font-medium text-gray-700">
-        Leidest Du unter Ein- oder Durchschlafstörungen?
-      </label>
-      <select
-        id="schlafstoerungen"
-        name="schlafstoerungen"
-        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
-      >
-        <option value="">Bitte wählen</option>
-        <option value="nein">Nein</option>
-        <option value="einschlafstoerungen">Einschlafstörungen</option>
-        <option value="durchschlafstoerungen">Durchschlafstörungen</option>
-        <option value="beides">Beides</option>
-      </select>
-    </div>
+    <FormSelect
+      id="schlafstoerungen"
+      name="schlafstoerungen"
+      label="Leidest Du unter Ein- oder Durchschlafstörungen?"
+      options={schlafstoerungOptions}
+    />
 
-    <div>
-      <label for="sonstige_beschwerden" class="mb-2 block text-sm font-medium text-gray-700">
-        Gibt es sonstige Beschwerden, chronische Erkrankungen oder Autoimmunerkrankungen?
-      </label>
-      <textarea
-        id="sonstige_beschwerden"
-        name="sonstige_beschwerden"
-        rows="3"
-        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
-      ></textarea>
-    </div>
+    <FormTextarea
+      id="sonstige_beschwerden"
+      name="sonstige_beschwerden"
+      label="Gibt es sonstige Beschwerden, chronische Erkrankungen oder Autoimmunerkrankungen?"
+      rows={3}
+    />
 
-    <div>
-      <label for="hauptproblem" class="mb-2 block text-sm font-medium text-gray-700">
-        Was ist Dein Hauptproblem?
-      </label>
-      <textarea
-        id="hauptproblem"
-        name="hauptproblem"
-        rows="3"
-        class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition duration-150 focus:ring-2"
-      ></textarea>
-    </div>
+    <FormTextarea
+      id="hauptproblem"
+      name="hauptproblem"
+      label="Was ist Dein Hauptproblem?"
+      rows={3}
+    />
   </div>
 </div>

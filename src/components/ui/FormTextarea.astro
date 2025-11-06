@@ -1,0 +1,43 @@
+---
+// FormTextarea.astro - Wiederverwendbare Textarea-Komponente für Formulare
+export interface Props {
+  id: string;
+  name: string;
+  label?: string;
+  placeholder?: string;
+  required?: boolean;
+  rows?: number;
+  value?: string;
+  class?: string;
+}
+
+const {
+  id,
+  name,
+  label,
+  placeholder,
+  required = false,
+  rows = 3,
+  value,
+  class: customClass,
+} = Astro.props;
+
+const textareaClass = customClass || 'focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 shadow-sm transition duration-150 focus:ring-2';
+---
+
+<div>
+  {label && (
+    <label for={id} class="mb-2 block text-sm font-medium text-gray-700">
+      {label}
+      {required && <span class="text-red-500">*</span>}
+    </label>
+  )}
+  <textarea
+    id={id}
+    name={name}
+    placeholder={placeholder}
+    required={required}
+    rows={rows}
+    class={textareaClass}
+  >{value}</textarea>
+</div>
