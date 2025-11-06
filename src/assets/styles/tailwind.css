@@ -40,6 +40,23 @@
   .btn-tertiary {
     @apply btn border-none text-muted shadow-none hover:text-gray-900 dark:text-gray-400 dark:hover:text-white;
   }
+
+  /* Anamnese Form - Dark Mode Support */
+  #anamnese-form label {
+    @apply dark:text-gray-300;
+  }
+
+  #anamnese-form input,
+  #anamnese-form select,
+  #anamnese-form textarea {
+    @apply dark:bg-gray-800 dark:border-gray-600 dark:text-gray-100 dark:placeholder-gray-400;
+  }
+
+  #anamnese-form input:focus,
+  #anamnese-form select:focus,
+  #anamnese-form textarea:focus {
+    @apply dark:border-primary-400 dark:ring-primary-400;
+  }
 }
 
 #header.scroll > div:first-child {
