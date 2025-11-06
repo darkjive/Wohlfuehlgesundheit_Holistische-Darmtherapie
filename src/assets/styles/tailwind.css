@@ -30,7 +30,7 @@
   }
 
   .btn-primary {
-    @apply btn border-primary bg-primary font-semibold text-white hover:border-secondary hover:bg-secondary hover:text-[#2a700d] dark:border-gray-700 dark:bg-primary dark:hover:border-secondary dark:hover:bg-secondary;
+    @apply btn border-primary bg-primary font-semibold text-white hover:border-secondary hover:bg-secondary hover:text-[#2a700d] dark:border-[#2a700d] dark:bg-primary dark:hover:border-secondary dark:hover:bg-secondary;
   }
 
   .btn-secondary {
