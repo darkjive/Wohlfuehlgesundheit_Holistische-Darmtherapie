@@ -19,7 +19,7 @@ define('ZOOM_CLIENT_ID', 'Ue1txJL0SxKvAOsy1LMl9Q');
 define('ZOOM_CLIENT_SECRET', '0khVoIrVoQoAU0kqQrtScNk1xn6vbt12');
 
 // Admin E-Mail für Benachrichtigungen
-define('ADMIN_EMAIL', 'steffi@xwohlfühlgesundheit.de');
+define('ADMIN_EMAIL', 'steffi@xn--wohlfhlgesundheit-62b.de');
 define('ADMIN_NAME', 'Holistische Darmtherapie');
 
 // E-Mail Absender
