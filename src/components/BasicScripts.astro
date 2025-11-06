@@ -62,6 +62,7 @@ import { UI } from 'astrowind:config';
 
   const onLoad = function () {
     let lastKnownScrollPosition = window.scrollY;
+    let previousScrollPosition = window.scrollY;
     let ticking = false;
 
     // AOS initialisieren nach dem Laden
@@ -128,11 +129,34 @@ import { UI } from 'astrowind:config';
     function applyHeaderStylesOnScroll() {
       const header = document.querySelector('#header[data-aw-sticky-header]');
       if (!header) return;
+
+      // Bestehende scroll Klasse für Desktop
       if (lastKnownScrollPosition > 60 && !header.classList.contains('scroll')) {
         header.classList.add('scroll');
       } else if (lastKnownScrollPosition <= 60 && header.classList.contains('scroll')) {
         header.classList.remove('scroll');
       }
+
+      // Auto-hide Navigation nur auf mobilen Geräten
+      const isMobile = window.matchMedia('(max-width: 767px)').matches;
+      if (isMobile) {
+        const scrollingDown = lastKnownScrollPosition > previousScrollPosition;
+        const scrollDelta = Math.abs(lastKnownScrollPosition - previousScrollPosition);
+
+        // Nur verstecken wenn mindestens 5px gescrollt wurde und weiter als 100px runter
+        if (scrollingDown && lastKnownScrollPosition > 100 && scrollDelta > 5) {
+          header.classList.add('header-hidden');
+        }
+        // Zeigen beim Hochscrollen oder ganz oben
+        else if (!scrollingDown && scrollDelta > 5 || lastKnownScrollPosition < 100) {
+          header.classList.remove('header-hidden');
+        }
+      } else {
+        // Auf Desktop immer sichtbar
+        header.classList.remove('header-hidden');
+      }
+
+      previousScrollPosition = lastKnownScrollPosition;
       ticking = false;
     }
     applyHeaderStylesOnScroll();

@@ -45,4 +45,13 @@ import '@fontsource-variable/quicksand';
       color: rgb(255, 255, 255);
     }
   }
+
+  /* Auto-hide Navigation für mobile Geräte */
+  #header[data-aw-sticky-header] {
+    transition: transform 0.3s ease-in-out;
+  }
+
+  #header[data-aw-sticky-header].header-hidden {
+    transform: translateY(-100%);
+  }
 </style>
