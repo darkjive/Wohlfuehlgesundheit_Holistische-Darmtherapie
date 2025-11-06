@@ -1,5 +1,5 @@
 ---
-import Logo from '~/components/Logo-sm.astro';
+import Logo from '~/components/Logo.astro';
 import ToggleTheme from '~/components/ui/ToggleTheme.astro';
 import ToggleMenu from '~/components/ui/ToggleMenu.astro';
 
@@ -61,7 +61,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
   >
     <div class:list={[{ 'md:flex-1': position === 'center' }]}>
       <a class="flex items-center" href={getHomePermalink()}>
-        <Logo />
+        <Logo size="sm" showName={true} />
       </a>
     </div>
 

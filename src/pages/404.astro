@@ -1,7 +1,6 @@
 ---
 import Layout from '~/layouts/Layout.astro';
 import { getHomePermalink } from '~/utils/permalinks';
-import Emoji from 'astro-emoji';
 
 const title = `Error 404`;
 ---
@@ -14,7 +13,7 @@ const title = `Error 404`;
           <span class="sr-only">Error</span>
 
           <br />
-          <span class="text-primary"><Emoji symbol="💩" label="Shit" /></span>
+          <span class="text-primary">💩</span>
         </h2>
         <p class="text-3xl font-semibold md:text-3xl">Hoppla, das sollte nicht passieren.</p>
         <p class="mb-8 mt-4 text-lg text-muted dark:text-slate-400">

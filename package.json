@@ -23,22 +23,17 @@
     "format": "prettier --write ."
   },
   "dependencies": {
-    "@astrojs/rss": "^4.0.12",
     "@astrojs/sitemap": "^3.6.0",
-    "@astrolib/analytics": "^0.6.1",
     "@astrolib/seo": "^1.0.0-beta.8",
     "@fontsource-variable/noto-serif-display": "^5.1.0",
     "@fontsource-variable/quicksand": "^5.1.0",
     "@jop-software/astro-cookieconsent": "^3.0.1",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "astro": "^5.13.9",
-    "astro-embed": "^0.7.4",
-    "astro-emoji": "^1.2.0",
     "astro-icon": "^1.1.1",
     "limax": "4.1.0",
     "lodash.merge": "^4.6.2",
-    "unpic": "^3.18.0",
-    "vanilla-cookieconsent": "^3.1.0"
+    "unpic": "^3.18.0"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.4",
@@ -49,12 +44,9 @@
     "@iconify-json/flat-color-icons": "^1.2.0",
     "@iconify-json/tabler": "^1.2.5",
     "@tailwindcss/typography": "^0.5.15",
-    "@types/aos": "^3.0.7",
     "@types/eslint__js": "^8.42.3",
     "@types/js-yaml": "^4.0.9",
     "@types/lodash.merge": "^4.6.9",
-    "@types/mdx": "^2.0.13",
-    "@typescript-eslint/eslint-plugin": "^8.8.1",
     "@typescript-eslint/parser": "^8.8.1",
     "astro-compress": "2.3.3",
     "astro-eslint-parser": "^1.0.3",
@@ -62,16 +54,13 @@
     "eslint-plugin-astro": "^1.2.4",
     "globals": "^15.11.0",
     "js-yaml": "^4.1.0",
-    "mdast-util-to-string": "^4.0.0",
     "prettier": "^3.6.2",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.6.14",
-    "reading-time": "^1.5.0",
     "sharp": "0.33.5",
     "tailwind-merge": "^2.5.3",
     "tailwindcss": "^3.4.13",
     "typescript": "^5.6.3",
-    "typescript-eslint": "^8.8.1",
-    "unist-util-visit": "^5.0.0"
+    "typescript-eslint": "^8.8.1"
   }
 }

@@ -1,7 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
-import Logo2 from '~/components/Logo-lg.astro';
+import Logo from '~/components/Logo.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
@@ -11,7 +11,7 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <!-- HeroText Widget ******************* -->
-  <Logo2 />
+  <Logo size="lg" />
   <HeroText tagline="💖 💖 💖" title="Danke, das hat geklappt!" />
   <!-- Call To Action **************** -->
   <CallToAction
