@@ -344,12 +344,12 @@ function sendUserConfirmationEmail($formData, $meetingData) {
         <style>
             body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
             .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-            .header { background-color: #047857; color: white; padding: 20px; text-align: center; border-radius: 8px 8px 0 0; }
+            .header { background-color: #2a700d; color: white; padding: 20px; text-align: center; border-radius: 8px 8px 0 0; }
             .content { background-color: #f9fafb; padding: 30px; border-radius: 0 0 8px 8px; }
-            .meeting-details { background-color: white; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #047857; }
-            .button { display: inline-block; background-color: #047857; color: white; padding: 12px 30px; text-decoration: none; border-radius: 6px; margin: 10px 0; }
+            .meeting-details { background-color: white; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #2a700d; }
+            .button { display: inline-block; background-color: #2a700d; color: white; padding: 12px 30px; text-decoration: none; border-radius: 6px; margin: 10px 0; }
             .footer { text-align: center; margin-top: 30px; font-size: 12px; color: #666; }
-            strong { color: #047857; }
+            strong { color: #2a700d; }
         </style>
     </head>
     <body>
@@ -363,7 +363,7 @@ function sendUserConfirmationEmail($formData, $meetingData) {
                 <p>vielen Dank für dein Vertrauen! Dein Zoom-Erstgespräch wurde erfolgreich gebucht.</p>
 
                 <div class='meeting-details'>
-                    <h2 style='margin-top: 0; color: #047857;'>Deine Termin-Details</h2>
+                    <h2 style='margin-top: 0; color: #2a700d;'>Deine Termin-Details</h2>
                     <p><strong>Datum:</strong> {$datumFormatiert}</p>
                     <p><strong>Uhrzeit:</strong> {$startTime} Uhr</p>
                     <p><strong>Dauer:</strong> {$formData['dauer']} Minuten</p>
