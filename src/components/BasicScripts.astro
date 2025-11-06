@@ -75,15 +75,25 @@ import { UI } from 'astrowind:config';
       document.getElementById('header')?.classList.remove('expanded');
       document.getElementById('header')?.classList.remove('bg-page');
       document.querySelector('#header nav')?.classList.add('hidden');
+      // Navigation wieder verstecken erlauben nach Menü-Schließung
+      document.getElementById('header')?.classList.remove('header-hidden');
     });
 
     attachEvent('[data-aw-toggle-menu]', 'click', function (_, elem) {
+      const header = document.getElementById('header');
+      const isExpanding = !elem.classList.contains('expanded');
+
       elem.classList.toggle('expanded');
       document.body.classList.toggle('overflow-hidden');
-      document.getElementById('header')?.classList.toggle('h-screen');
-      document.getElementById('header')?.classList.toggle('expanded');
-      document.getElementById('header')?.classList.toggle('bg-page');
+      header?.classList.toggle('h-screen');
+      header?.classList.toggle('expanded');
+      header?.classList.toggle('bg-page');
       document.querySelector('#header nav')?.classList.toggle('hidden');
+
+      // Beim Öffnen des Menüs: Navigation immer sichtbar machen
+      if (isExpanding) {
+        header?.classList.remove('header-hidden');
+      }
     });
 
     attachEvent('[data-aw-toggle-color-scheme]', 'click', function () {
@@ -122,6 +132,7 @@ import { UI } from 'astrowind:config';
       document.getElementById('header')?.classList.remove('h-screen');
       document.getElementById('header')?.classList.remove('expanded');
       document.getElementById('header')?.classList.remove('bg-page');
+      document.getElementById('header')?.classList.remove('header-hidden');
       document.querySelector('#header nav')?.classList.add('hidden');
       document.querySelector('#header > div > div:last-child')?.classList.add('hidden');
     });
@@ -139,7 +150,10 @@ import { UI } from 'astrowind:config';
 
       // Auto-hide Navigation nur auf mobilen Geräten
       const isMobile = window.matchMedia('(max-width: 767px)').matches;
-      if (isMobile) {
+      const isMenuOpen = header.classList.contains('expanded');
+
+      // Nicht verstecken wenn das Menü geöffnet ist
+      if (isMobile && !isMenuOpen) {
         const scrollingDown = lastKnownScrollPosition > previousScrollPosition;
         const scrollDelta = Math.abs(lastKnownScrollPosition - previousScrollPosition);
 
@@ -152,7 +166,7 @@ import { UI } from 'astrowind:config';
           header.classList.remove('header-hidden');
         }
       } else {
-        // Auf Desktop immer sichtbar
+        // Auf Desktop oder bei geöffnetem Menü immer sichtbar
         header.classList.remove('header-hidden');
       }
 
@@ -182,6 +196,7 @@ import { UI } from 'astrowind:config';
     document.body.classList.remove('overflow-hidden');
     document.getElementById('header')?.classList.remove('h-screen');
     document.getElementById('header')?.classList.remove('expanded');
+    document.getElementById('header')?.classList.remove('header-hidden');
     document.querySelector('#header nav')?.classList.add('hidden');
   };
 
